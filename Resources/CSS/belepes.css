@@ -1,0 +1,72 @@
+#fejlec 
+{
+	height: 40px;
+	background-color: red;
+}
+
+.login 
+{
+	width:40%;
+	height: 60%;
+	margin: auto;
+	margin-top: 100px;
+	background-color: green;
+	text-align: center;
+	display: block;
+
+}
+
+
+.register 
+{
+		background-color: gray;
+	margin: auto;
+width: 50%;
+		margin-top: 100px;
+		display: block;
+		text-align: center;
+}
+
+.register input 
+{
+font-size: 20px;
+padding: 15 20;
+margin-bottom: 15px;
+width: 90%;
+margin-top: 15px;
+}
+
+.login input
+{
+	margin-top: 30px;
+	margin-bottom: 25px;
+	width: 90%;
+	font-size: 15;
+	padding: 15 20;
+	margin-left: 20;
+}
+
+#felejt_jelszo
+{
+
+float: right;
+width: 13em;
+height: 2em;
+font-size: 10px;
+text-align: center;
+margin-right: 10px;
+margin-bottom: 0px;
+margin-top: 0px;
+padding: 0;
+}
+
+#loginBtn 
+{
+font-size: 25px;
+}
+
+#reg 
+{
+	margin-top: -20px;
+	float: right;
+}
