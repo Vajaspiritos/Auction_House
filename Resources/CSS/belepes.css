@@ -13,18 +13,21 @@
 	background-color: green;
 	text-align: center;
 	display: block;
-
+	transition: 1s;
+	opacity: 1;
 }
 
 
 .register 
 {
-		background-color: gray;
+	background-color: gray;
 	margin: auto;
-width: 50%;
-		margin-top: 100px;
-		display: block;
-		text-align: center;
+	width: 50%;
+	margin-top: 100px;
+	display: none;
+	opacity: 0;
+	text-align: center;
+	transition: 1s;
 }
 
 .register input 
@@ -34,6 +37,12 @@ padding: 15 20;
 margin-bottom: 15px;
 width: 90%;
 margin-top: 15px;
+}
+
+#regLable
+{
+	color:red;
+	margin-top: -200px;
 }
 
 .login input

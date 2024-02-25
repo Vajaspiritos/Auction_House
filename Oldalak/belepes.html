@@ -4,12 +4,13 @@
 	<meta charset="UTF-8">
 	<title>Belépés</title>
 	<link rel="stylesheet" href="../Resources/CSS/belepes.css">
+	<script src="../Resources/Scriptek/belepes.js"></script>
 </head>
 <body>
 <div id="fejlec">
 </div>
-<div class="login">
-	<button id="reg" >Regisztrálni akarok!</button>
+<div class="login" id="loginForm">
+	<button id="reg" onclick="regisztralok()" >Regisztrálni akarok!</button>
 <form action="login.php">
 	<input type="text" placeholder="Felhasznalonév">
 	<input type="text" placeholder="Jelszó">
@@ -18,7 +19,7 @@
 	<input type="submit" value="Belépés" id="loginBtn">
 </form>
 </div>
-<div class="register">
+<div id="registerId" class = "register">
 <form action="register.php">
 	<input type="text" placeholder="Email cím"><br>
 	<input type="text" placeholder="Felhasznalonév"><br>
