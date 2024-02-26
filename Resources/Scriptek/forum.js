@@ -7,20 +7,14 @@ function legordul()
 	{
 		megnyomva= true;
 		lista.style.height = "400px";
-		setTimeout(function() 
-			{
-				//tartalom.style.display = "block";
-			},200)
+
 	}
 	else 
 	{
 		megnyomva = false
 		lista.style.height = "31px";
 		var ido = tartalom.offsetHeight;
-		setTimeout(function() 
-			{	
-				//tartalom.style.display = "none";
-			},ido)
+
 
 	}
 
