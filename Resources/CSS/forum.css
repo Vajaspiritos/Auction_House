@@ -1,0 +1,65 @@
+.navbar
+{
+	height: 10%;
+	width: 96%;
+	margin-left: 20px;
+	margin-right: 20px;
+	position: fixed;
+	top: 10;
+	background-color: red;
+}
+
+#spacer 
+{
+	height:100px;
+}
+.chatbox 
+{
+	background-color: blue;
+	width: 50%;
+	height: 80%;
+	margin-right: -10%;
+}
+
+.inline
+{
+display: inline-block;
+}
+
+
+.Nagydoboz 
+{
+	text-align: center;
+}
+
+.publish
+{
+	background-color: green;
+	width: 25%;
+	float: right;
+	height: 1;
+	transition: all 0.5s ease-out;
+
+}
+
+
+.publish textarea 
+{
+width: 80%;
+height: 30%;
+font-size: 20;
+padding-top: 1em;
+padding-left: 1em;
+}
+
+#pTartalom 
+{
+	display: none;
+	opacity: 0;
+}
+
+#pTartalom button 
+{
+	font-size: 20;
+	padding: 10 5;
+}
