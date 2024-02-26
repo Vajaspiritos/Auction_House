@@ -10,15 +10,15 @@ function legordul()
 		setTimeout(function() 
 			{
 				tartalom.style.display = "block";
-			},1000)
-		tartalom.style.opacity = "0.3";
+				tartalom.style.opacity = "1";
+			},200)
 	}
 	else 
 	{
 		megnyomva = false
 		lista.style.height = "1px";
 		var ido = tartalom.offsetHeight;
-		setTimeout(function() {	tartalom.style.display = "none";  tartalom.style.opacity = "1";} ,ido)
+		setTimeout(function() {	tartalom.style.display = "none";},ido)
 
 	}
 
