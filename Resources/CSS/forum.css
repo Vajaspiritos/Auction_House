@@ -37,8 +37,9 @@ display: inline-block;
 	background-color: green;
 	width: 25%;
 	float: right;
-	height: 1;
+	height: 31;
 	transition: all 0.5s ease-out;
+	overflow: hidden;
 
 }
 
@@ -52,14 +53,17 @@ padding-top: 1em;
 padding-left: 1em;
 }
 
+.publish button
+{
+	overflow: visible;
+}
 #pTartalom 
 {
-	display: none;
-	opacity: 0;
 }
 
 #pTartalom button 
 {
 	font-size: 20;
 	padding: 10 5;
+	
 }
