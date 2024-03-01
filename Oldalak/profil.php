@@ -1,6 +1,9 @@
 <DOCTYPE! html>
 <html lang="hu">
 <head>
+	<?php
+	include '..\Resources\Scriptek\CheckForLoggedIn.php';
+	?>
 	<title>Profil</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="../Resources/CSS/profil.css">
