@@ -11,7 +11,7 @@
 
 #spacer 
 {
-	height:100px;
+	height:20%;
 }
 .chatbox 
 {
@@ -37,7 +37,7 @@ display: inline-block;
 	background-color: green;
 	width: 25%;
 	float: right;
-	height: 31;
+	height: 5.3%;
 	transition: all 0.5s ease-out;
 	overflow: hidden;
 
