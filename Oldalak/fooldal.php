@@ -1,5 +1,8 @@
 <html lang="hu">
 <head>
+	<?php
+	include '..\Resources\Scriptek\CheckForLoggedIn.php';
+	?>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="../Resources/CSS/fooldal.css">
 </head>
@@ -8,7 +11,7 @@
 	<div class="menusor">
 		<table>
 			<tr>
-				<td id="kep"><img src="logo.png" alt="Logo"></td>
+				<td id="kep"><img src="..\Resources\Images\Icons\logo.gif" alt="Logo"></td>
 				<td class="menu-gombok"> <button>Főoldal</button></td>
 				<td class="menu-gombok"> <button class="menu-gombok">Saját aukció</button></td>
 				<td class="menu-gombok"> <button class="menu-gombok">Egyenleg feltöltés</button></td>
