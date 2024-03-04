@@ -12,8 +12,7 @@ function legordul()
 	else 
 	{
 		megnyomva = false
-		lista.style.height = "31px";
-		var ido = tartalom.offsetHeight;
+		lista.style.height = "5.3%";
 
 
 	}

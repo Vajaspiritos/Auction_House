@@ -49,7 +49,6 @@
 	background-color: green;
 	margin-left: 20px;
 	margin-bottom: 30px;
-	display: flex;
 }
 
 
@@ -64,9 +63,13 @@
 {
 background-color: blue;
 height: inherit;
-width: 20%;
+width: 19%;
+float: right;
 }
-
+.inline 
+{
+	display: inline-block;
+}
 .naplo
 {
 	height: 70vh;

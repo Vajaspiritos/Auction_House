@@ -1,0 +1,2 @@
+Le kell fordítani a "javac point.java" paranccsal .ez után elég a terminálba beütni a "java point" parancsot. esetleg a gép engedélyt fog kérni hogy elindíthassa miután megnyit egy portot. (port=8080) innen a Szerver elindult 
+és a lehet rá csatlakozni a weboldallal.

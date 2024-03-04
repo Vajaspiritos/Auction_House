@@ -24,8 +24,8 @@
 #Pfp 
 {
 	background-color: green;
-	height: 200;
-	width: 200;
+	height: 35%;
+	width: 16%;
 	margin-top: 30;
 }
 
@@ -52,7 +52,7 @@
 {
 	margin-top: 30;
 	background-color: blue;
-	height: 200;
+	height: 34%;
 	width: 75%;
 }
 
@@ -61,7 +61,7 @@ table
 	border: 2px solid black;
 	border-collapse: collapse;
 	width: 100%;
-	height: 200;
+	height: 100%;
 }
 
 tr td
@@ -73,7 +73,7 @@ tr td
 #History 
 {
 	background-color: yellow;
-	height: 450;
-	width: 250;
+	height: 77%;
+	width: 20.5%;
 	float: right;
 }

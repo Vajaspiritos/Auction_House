@@ -24,10 +24,11 @@
 	<div class="menusor-spacer">
 	</div>
 	<div class="aukcios-felulet">
-	<div id="aukcio">
-
+	<div id="aukcio" class="inline">
 	</div>
-	<div id="chat-box">
+
+	<iframe src="Chat.php" title="Chat Box" id="chat-box" class="inline"></iframe>
+
 	</div>
 
 	</div>
