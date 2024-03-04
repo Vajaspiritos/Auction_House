@@ -27,7 +27,10 @@
 	<div id="aukcio" class="inline">
 	</div>
 
+
 	<iframe src="Chat.php" title="Chat Box" id="chat-box" class="inline"></iframe>
+
+
 
 	</div>
 
