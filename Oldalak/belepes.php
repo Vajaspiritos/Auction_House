@@ -2,8 +2,8 @@
 <html lang="hu">
 <head>
 	<?php
-	include '..\Resources\Scriptek\CheckForLoggedIn.php';
-	include '..\Resources\Scriptek\ErrorHandle.php';
+	include '../Resources/Scriptek/CheckForLoggedIn.php';
+	include '../Resources/Scriptek/ErrorHandle.php';
 	
 	?>
 	<meta charset="UTF-8">

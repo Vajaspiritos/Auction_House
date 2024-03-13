@@ -11,7 +11,7 @@ unset($_POST["username"]);													//miután lementetük egy lokális válto
 unset($_POST["password"]);
 
 
-include '..\Resources\Scriptek\ConnectToDB.php';							//csatlakozás az adatbázishoz.
+include '../Resources/Scriptek/ConnectToDB.php';							//csatlakozás az adatbázishoz.
 echo "<br>Csatlakozva az adatbázishoz.<br>";
 
 $result = $conn->query("SELECT * FROM `users` WHERE Username='".$UN."';");	//SQL-ek futtatása megkeressük a felhasználót az adott username-el és jelszóval
