@@ -2,7 +2,7 @@
 <html lang="hu">
 <head>
 	<?php
-	include '..\Resources\Scriptek\CheckForLoggedIn.php';
+	include '../Resources/Scriptek/CheckForLoggedIn.php';
 	?>
 	<title>Fórum</title>
 	<meta charset="UTF-8">

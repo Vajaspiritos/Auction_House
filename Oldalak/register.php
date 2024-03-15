@@ -15,7 +15,7 @@ unset($_POST["email"]);
 
 echo "Adatok elfogadva.";
 
-include '..\Resources\Scriptek\ConnectToDB.php';								//csatlakozás az adatbázishoz.
+include '../Resources/Scriptek/ConnectToDB.php';								//csatlakozás az adatbázishoz.
 echo "<br>Csatlakozva az adatbázishoz.<br>";
 
 $result=$conn -> query("SELECT users.Email FROM `users` WHERE users.Email='".$EM."'");

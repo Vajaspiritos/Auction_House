@@ -1,7 +1,7 @@
 <html lang="hu">
 <head>
 	<?php
-	include '..\Resources\Scriptek\CheckForLoggedIn.php';
+	include '../Resources/Scriptek/CheckForLoggedIn.php';
 	?>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="../Resources/CSS/fooldal.css">
@@ -25,6 +25,7 @@
 	</div>
 	<div class="aukcios-felulet">
 		<div id="aukcio" class="inline">
+		
 		</div>
 
 		<div class ="inline" id="chat-box">
