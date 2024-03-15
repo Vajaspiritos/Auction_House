@@ -136,7 +136,7 @@ public class Client{
 		System.out.println("Started Listening for "+this.Name+"'s messages");
 		while(true&&!this.Client.isClosed()) {
 			if(in.available() > 0) {
-				
+				try{
 				String msg =ReadMessage();					
 				System.out.println(this.Name+"@"+this.ID+": "+ msg );
 				if(msg.split(":")[0].equals("CheckupCode_for_DisconnectDetection")) {
@@ -144,7 +144,9 @@ public class Client{
 				}else {
 				Server.Broadcast(PrepareText(msg));
 				}
-			
+			}catch(Exception e){
+				System.out.println("Üzenetküldési hiba történt!");
+				}
 				
 			}
 	
