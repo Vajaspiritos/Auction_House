@@ -1,88 +1,47 @@
-.menusor
+body 
 {
-	height: 10%;
-	width: 96%;
-	margin-left: 20px;
-	margin-right: 20px;
-	position: fixed;
-	top: 10;
-
-
+	background-image: url("../Images/BG/fooldalBG.png");
+	background-repeat: round;
 }
 
-.menusor table 
-{
-	background-color: white;
-	border-bottom: 4px solid black;
-	width: 100%;
-}
-
-#kep img
-{
-	width: 40px;
-	margin-right: 100px;
-}
-
-
-.menu-gombok
-{
-	width: 10em;
-	height: 3em;
-	border-radius: 10px;
-	font-size: 15px;
-	overflow: hidden;
-	background-color: #FF0AA1;
-	border-style: solid;
-	border-color: transparent;
-	margin-left: -80px;
-	text-align: center;
-	vertical-align: middle;
-}
-a 
-{
-	text-decoration: none;
-	font-size: 20px;
-
-}
-
-a:visited
-{<!-- itt ezt majd megoldani --!>
-	font-style: italic;
-}
-.menusor-spacer 
-{
-	height: 100px;
-}
 .aukcios-felulet
 {
 	height: 70vh;
-	background-color: green;
 	margin-left: 20px;
 	margin-bottom: 30px;
+	opacity: 0.5;
 }
 
 
 #aukcio 
 {
-	background-color: red;
+	background-color: rgb(255,255,255,0.4);
+	border: 3px solid grey;
+	border-radius: 5px;
 	height: inherit;
-	width: 80%;
+	width: 75%;
+	margin-left: 2.5%;
 }
 
 #chat-box
 {
-	background-color: yellow;
+
 	height: inherit;
 	float: right;
 	width: 20%;
+	border-radius: 5px;
+	border: 3px solid rgb(43, 0, 48);
+
 }
+
 
 #chat-box iframe
 {
-	background-color: yellow;
+	background-color: rgb(82, 82, 82);
 	height: 99.1%;
 	float: right;
 	width: 100%;
+	font-size: 100px;
 }
 .inline 
 {
@@ -91,6 +50,8 @@ a:visited
 .naplo
 {
 	height: 70vh;
-	background-color: blue;
+	border: 3px solid rgb(43, 0, 48);
+	background-color: rgb(255,255,255,0.4);
+
 	margin-left: 20px;
 }
