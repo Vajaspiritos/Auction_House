@@ -45,8 +45,20 @@ echo "<script> const USER_INVENTORY=".GetInventory($conn).";</script>";
 	text-align:center;
 }
 #info-description{
+	overflow:auto;
+	height:40%;
+}
+table,td{
+	width:100%;
+	height:10%;
+	border:2px solid black;
+	text-align:center;
+	border-collapse: collapse;
+	font-size:20px;
 	
 }
+
+
 </style>
 </head>
 <body>
@@ -56,9 +68,18 @@ echo "<script> const USER_INVENTORY=".GetInventory($conn).";</script>";
 	<div id="info-container">
 	<img id="info_image" alt="Itt lenne a kép ha lenne"></img>
 	<h1 id="info-name"></h1>
-	<hr>
 	
-	<hr>
+		<table>
+			<tr>
+				<td>
+					<a id="info-OG_owner"></a>
+				</td>
+				<td >
+					<a id="info-rarity"></a>
+				</td>
+			</tr>
+		</table>
+	<a> Leírás:</a>
 	<div id="info-description"></div>
 	</div>
 	
