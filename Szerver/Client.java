@@ -70,7 +70,7 @@ public class Client{
 				}
 		
 				
-				Thread.sleep(1000);
+				Thread.sleep(100);
 			}
 		  String[] data = respond.split("\\|");
 		 
@@ -105,6 +105,7 @@ public class Client{
 		byte[] array = new byte[length];
 		int i =0;
 		while(in.available()>0) {
+			
 			array[i]=(byte)(in.read() ^ decode_key[i&0x3]); 
 		//System.out.println(array[i]);
 		i++;			
@@ -136,22 +137,25 @@ public class Client{
 		System.out.println("Started Listening for "+this.Name+"'s messages");
 		while(true&&!this.Client.isClosed()) {
 			if(in.available() > 0) {
-				try{
-				String msg =ReadMessage();					
+				try {
+				String msg =ReadMessage();	
+				
 				System.out.println(this.Name+"@"+this.ID+": "+ msg );
 				if(msg.split(":")[0].equals("CheckupCode_for_DisconnectDetection")) {
 				this.CheckupCode = 	Integer.parseInt(msg.split(":")[1]);
 				}else {
 				Server.Broadcast(PrepareText(msg));
 				}
-			}catch(Exception e){
-				System.out.println("Üzenetküldési hiba történt!");
+				
+				}catch(Exception e) {
+					System.out.println("Uzenetkuldesi hiba");
 				}
+			
 				
 			}
 	
 			
-			Thread.sleep(1000);
+			Thread.sleep(100);
 		}
 		System.out.println("Stopped Listening for "+this.Name+"'s messages");
 		
