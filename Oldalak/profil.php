@@ -40,30 +40,7 @@
 		</div>
 		<div id="History" class="inline"><span>Histroy</span></div>
 		<div class="Raktar">	
-		<table>
-			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-		</table>
+		<iframe src="Inventory.php" title="Raktár" style="width:100%; height:100%;"></iframe>
 		</div>
 		
 	</div>
