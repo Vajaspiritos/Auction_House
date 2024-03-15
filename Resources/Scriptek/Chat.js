@@ -1,16 +1,25 @@
+
 const socket = new WebSocket("ws://127.0.0.1:8080");
 
 socket.addEventListener("message", (event) => {
-			
+	
+		
 			if(event.data =="id"){
 				
 				socket.send(USERID+"|"+Name);
+				document.getElementById("Messenger").removeAttribute("disabled");
 			}else if(event.data.split(":")[0]=="CheckupCode_for_DisconnectDetection"){
 				
 				socket.send("CheckupCode_for_DisconnectDetection:"+event.data.split(":")[1]);
 				console.log(event.data.split(":")[1]);
-			}else newMSG(event.data);
+			}else{ 
+			
+			newMSG(event.data);
+			
+			
+			}
 });
+
 var textEncoder = new TextEncoder();
 document.getElementById("Messenger").addEventListener("keydown",(event)=>{
 	if(socket.readyState==3){
@@ -37,6 +46,8 @@ document.getElementById("Messenger").addEventListener("keydown",(event)=>{
 
 
 function newMSG(msg){
+	
+	
 	let BOX = document.getElementById("Chatbox");
 	let Text = document.createElement("div");
 	Text.id = "Message";
