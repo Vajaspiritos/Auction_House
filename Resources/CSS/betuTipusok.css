@@ -1,0 +1,10 @@
+@font-face {
+  font-family: title;
+  src: url("../Fonts/pixel.otf") format("opentype");
+}
+
+
+* 
+{
+  font-family: title;
+}

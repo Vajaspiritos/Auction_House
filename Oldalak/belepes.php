@@ -8,6 +8,7 @@
 	?>
 	<meta charset="UTF-8">
 	<title>Belépés</title>
+	<link rel="stylesheet" href="../Resources/CSS/navbar.css">
 	<link rel="stylesheet" href="../Resources/CSS/belepes.css">
 	<script src="../Resources/Scriptek/belepes.js"></script>
 </head>

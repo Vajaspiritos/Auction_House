@@ -6,17 +6,35 @@
 	?>
 	<title>Fórum</title>
 	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../Resources/CSS/betuTipusok.css">
+	<link rel="stylesheet" href="../Resources/CSS/navbar.css">
 	<link rel="stylesheet" href="../Resources/CSS/forum.css">
 	<script src="../Resources/Scriptek/forum.js"></script>
 </head>
 <body>
-	<div class="navbar"></div>
-	<div id="spacer"></div>
-	<div class="Nagydoboz">
+<div class="menusor">
+		<table class="kep inline">
+			<tr>
+			<td><img src="../Resources/Images/Icons/logo.gif" alt="Logo" ></td>
+		</tr>
+		</table>
+		<table class="gombok inline">
+		<tr>
+			<td class ="menu-gombok-containter"><a class ="menu-gombok" href="fooldal.php">Főoldal</a></td>
+			<td class ="menu-gombok-containter"><a class ="menu-gombok" href="sajat_aukcio.php" >Saját aukció</a></td>
+			<td class ="menu-gombok-containter"><a class ="menu-gombok"  href="egyenleg.php" >Egyenleg feltöltés</a></td>
+			<td class ="menu-gombok-containter"><a class ="menu-gombok" href="forum.php" >Fórum</a></td>
+			<td class ="menu-gombok-containter"><a class ="menu-gombok" href="profil.php" >Profil</a></td>
+			<td class ="menu-gombok-containter"><button class="menu-gombok" onclick="alert('Ez egy aukciós oldal ahol egy kezdő tőkéböl kiindulva kell meggazdagodnod. Különböző tételekre licitálsz és reméled, hogy nem licitálnak túl. A megszerzett tárgyakat felteheted újabb aukciókra és abból szerzed a profitot. Ha minden pénzed elfogyott ne aggódj, naponta egyszer mehetsz dolgozni. Nem minden aukcióra léphetsz be, komolyabb aukciók komolyabb tételeket rejtenek ahova jelvény kell, ezeket a profilodnál tudod megvenni.')">info</button></td>
+		</tr>
+	</table>
+	</div>
+	<div class="menusor-spacer">
+	</div>
 	<div class="chatbox inline">
 	</div>
 	<div class="publish inline" id="publish">
-		<button onclick="legordul()">POSZTOLOK!!!ÁÁÁÁÁÁÁÁÁHÚÚÚÚÚÚÚINTERAKCIÓÓÓÓÓÓ</button>
+		<button id="publish_button" onclick="legordul()">POSZTOLOK!!!ÁÁÁÁÁÁÁÁÁHÚÚÚÚÚÚÚINTERAKCIÓÓÓÓÓÓ</button>
 		<div id="pTartalom">
 		<textarea type="text" placeholder="ÚRISTEN MEGSZEREZTEM A PIZZAGÖMBÖT!!!"></textarea><br>
 		<input type="file" accept="image/png">
@@ -24,6 +42,6 @@
 		<button>SZÁBMIT</button>
 		</div>
 	</div>
-</dib>
+</dic>
 </body>
 </html>

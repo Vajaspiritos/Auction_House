@@ -59,7 +59,6 @@ function newMSG(msg){
 		Header.innerText = data[1];
 		let Header2 = document.createElement("a");
 		Header2.id="id"
-		Header2.style.color = "gray";
 		Header2.innerText = "#"+data[2]+": ";
 		let MSG = document.createElement("a");
 		MSG.id="textMessage"

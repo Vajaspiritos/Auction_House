@@ -15,11 +15,13 @@ const Tier =".$_SESSION["Tier"].";
 <title>
 Chat
 </title>
+	<link rel="stylesheet" href="../Resources/CSS/Chat.css">
+			<link rel="stylesheet" href="../Resources/CSS/betuTipusok.css">
 </head>
 <body>
 <div id="Chatbox">
 </div><br>
-<input id="Messenger" type="text" placeholder="Ide írhatod az üzeneted">
+<input id="Messenger" type="text" placeholder="Ide írhatod az üzeneted" disabled>
 </body>
 <script src="../Resources/Scriptek/Chat.js"></script>
 </html>
