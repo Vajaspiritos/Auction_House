@@ -7,62 +7,10 @@ include '../Resources/Scriptek/CheckForLoggedIn.php';
 echo "<script> const USER_INVENTORY=".GetInventory($conn).";</script>";
 
 ?>
-<style>
-#items-container{
-	
-	width:70%;
-	height:95%;
-	border: 4px solid black;
-	display: inline-block;
-	float:left;
-	overflow:auto;
-}
-
-#info-container{
-	float:right;
-	width:25%;
-	height:95%;
-	border: 4px solid black;
-	display: inline-block;
-}
-
-.Item{
-	display: inline-block;
-	
-}
-
-.Item_IMG{
-	width:150px;
-}
-#info_image{
-	
-	margin-left: auto;
-    margin-right: auto;
-    display: block;
-	height:30%;
-}
-#info-name{
-	text-align:center;
-}
-#info-description{
-	overflow:auto;
-	height:40%;
-}
-table,td{
-	width:100%;
-	height:10%;
-	border:2px solid black;
-	text-align:center;
-	border-collapse: collapse;
-	font-size:20px;
-	
-}
-
-
-</style>
+<link rel="stylesheet" href="../Resources/CSS/betuTipusok.css">
+<link rel="stylesheet" href="../Resources/CSS/inventory.css">
 </head>
 <body>
-
 	<div id="items-container">
 	</div>
 	<div id="info-container">

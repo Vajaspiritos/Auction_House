@@ -42,23 +42,28 @@
 	</div>
 	<div class="Nagydoboz">
 		<div id="Pfp" class="inline">
-			<img id="PP" alt="Profilképed :)" style="width:200px">
+			<img id="PP" alt="Profilképed :)">
 			<form action="UploadPfp.php" method="post" enctype="multipart/form-data">
-			<input type="file" name="PFP">
-			<button type="submit">Uj profilkep</button>
-			
+			<input id="browse" type="file" name="PFP" value="Kép kiválasztása">
+			<input id="upload" type="submit" value="Kép feltöltése">
 			</form>
 		</div>
 		<div id="adatok" class="inline">
-			<p>CASH: <span id="penz">PÉZ$$$$$$$$$$</span></p>
-			<p>Felhasznalo nev: <span id="fnev">A fiok neve</span></p>
-			<p>Email cim: <span id="email">Aző ímél cím</span></p>
+			<p><span id="label"class="feliratok">CASH:</span>
+			<span id="penz" class="feliratok">PÉZ$$$$$$$$$$</span></p>
+
+			<p><span id="label" class="feliratok">Felhasznalo nev:</span>
+			<span id="fnev" class="feliratok">A fiok neve</span></p>
+
+			<p><span id="label" class="feliratok">Email cim:</span>
+			<span id="email" class="feliratok">Aző ímél cím</span></p>
+
 			<button>Fiok torlese</button>
 			<a href="logout.php" style="color:cyan">Kijelentkezés</a>
 		</div>
 		<div id="History" class="inline"><span>Histroy</span></div>
 		<div class="Raktar">	
-		<iframe src="Inventory.php" title="Raktár" style="width:100%; height:100%;"></iframe>
+		<iframe src="Inventory.php" title="Raktár"></iframe>
 		</div>
 		
 	</div>
