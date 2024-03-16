@@ -22,7 +22,7 @@
 	<input type="text" placeholder="Jelszó" name="password">
 	<input type="submit" id="felejt_jelszo" value="Elfelejtettem a jelszavam">
 	</br>
-	<input type="submit" value="Belépés" id="loginBtn">
+	<input type="submit" value="Belépés" id="loginBtn" class="formGomb">
 </form>
 </div>
 <div id="registerId" class = "register">
@@ -38,7 +38,7 @@
 	<input type="text" placeholder="Első háziállatod neve"><br>
 	<input type="text" placeholder="Születési hely"><br>
 	<input type="text" placeholder="Gyerekkori becenév"><br>
-	<input type="submit" value="Regisztrálás" id="loginBtn">
+	<input type="submit" value="Regisztrálás" id="regBtn" class="formGomb">
 </form>
 </div>
 </body>
