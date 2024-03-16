@@ -1,4 +1,5 @@
 <?php
+
 if(session_status() !== PHP_SESSION_ACTIVE) session_start();				//session elindítása ha még nem történt meg.
 if(empty($_FILES['PFP'])||isset($_POST["submit"])) returnWithError("Didn'T recive username");	//Átjöt infók ellenörzése.
 $PP = $_FILES["PFP"];
@@ -25,7 +26,11 @@ foreach (glob("../Resources/Images/Users/".$_SESSION['UserID'].".*") as $file){
 
 
 $image = "../Resources/Images/Users/".$_SESSION['UserID'].".".$PP_Extension;
-move_uploaded_file($PP["tmp_name"],$image);
+
+if(!move_uploaded_file($PP["tmp_name"],$image)){
+
+	returnWithError("Nem sikerült a feltöltés");
+}
 returnWithError("sikeres feltöltés");
 
 

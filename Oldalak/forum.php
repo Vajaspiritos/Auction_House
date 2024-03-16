@@ -3,6 +3,8 @@
 <head>
 	<?php
 	include '../Resources/Scriptek/CheckForLoggedIn.php';
+	
+	include '../Resources/Scriptek/ErrorHandle.php';
 	?>
 	<title>Fórum</title>
 	<meta charset="UTF-8">
@@ -34,13 +36,16 @@
 	<div class="chatbox inline">
 	</div>
 	<div class="publish inline" id="publish">
+	
 		<button id="publish_button" onclick="legordul()">POSZTOLOK!!!ÁÁÁÁÁÁÁÁÁHÚÚÚÚÚÚÚINTERAKCIÓÓÓÓÓÓ</button>
+		<form action="Forum_post.php" method="post" enctype="multipart/form-data">
 		<div id="pTartalom">
-		<textarea type="text" placeholder="ÚRISTEN MEGSZEREZTEM A PIZZAGÖMBÖT!!!"></textarea><br>
-		<input type="file" accept="image/png">
+		<textarea type="text" name="MSG" placeholder="ÚRISTEN MEGSZEREZTEM A PIZZAGÖMBÖT!!!"></textarea><br>
+		<input type="file" name="kep">
 		<img src="kep.png" alt="a kép amit kiválasztottál"><br>
-		<button>SZÁBMIT</button>
+		<button type="submit">SZÁBMIT</button>	
 		</div>
+	</form>
 	</div>
 </dic>
 </body>
