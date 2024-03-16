@@ -16,7 +16,7 @@
 <div id="fejlec">
 </div>
 <div class="login" id="loginForm">
-	<button id="reg" onclick="regisztralok()" >Regisztrálni akarok!</button>
+	<button id="reg" class="valto" onclick="regisztralok()" >Regisztrálni akarok!</button>
 <form action="login.php" method="post">
 	<input type="text" placeholder="Felhasznalonév" name="username">
 	<input type="text" placeholder="Jelszó" name="password">
@@ -26,13 +26,15 @@
 </form>
 </div>
 <div id="registerId" class = "register">
+<button id="log" class="valto" onclick="loginolok()" >Vigyél viszza ÁÁÁÁÁÁÁÁÁ</button>
+	<p>Regisztrálni akarok</p>
 <form action="register.php" method="post">
 	<input type="text" placeholder="Email cím" name="email"><br>
-	<input type="text" placeholder="Felhasznalonév" name="username"><br>
+	<input type="text" placeholder="Felhasználónév" name="username"><br>
 	<input type="text" placeholder="Jelszó" name="password"><br>
-	<input type="text" placeholder="Jelszó ujra"><br>
+	<input type="text" placeholder="Jelszó újra"><br>
 	<input type="text" placeholder="Bankkártya adatok"><br>
-	<input type="text" placeholder="Anyád leánykori neve"><br>
+	<input type="text" placeholder="Édesanyád leánykori neve"><br>
 	<input type="text" placeholder="Első háziállatod neve"><br>
 	<input type="text" placeholder="Születési hely"><br>
 	<input type="text" placeholder="Gyerekkori becenév"><br>
