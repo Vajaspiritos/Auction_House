@@ -3,8 +3,28 @@
 <head>
 	<?php
 	include '../Resources/Scriptek/CheckForLoggedIn.php';
-	
 	include '../Resources/Scriptek/ErrorHandle.php';
+	include '../Resources/Scriptek/ConnectToDB.php';
+	$query = parse_url($_SERVER['REQUEST_URI'],PHP_URL_QUERY);
+	$Focused = "false";
+	if($query){
+		
+		if(str_contains($query,"Focus=")){
+			$Focused = explode("Focus=",$query)[1];
+			echo "<script> const POSTS=".FocusOnPost($conn,$Focused).";</script>";
+			echo "<script> const CurrentPage=-1;</script>";
+			
+		}else if(str_contains($query,"Page=")) {
+			$url_scraps = explode("-",explode("Page=",$query)[1]);
+			echo "<script> const POSTS=".ForumReceivePosts($conn, $url_scraps[0],$url_scraps[1]).";</script>";
+			echo "<script> const CurrentPage=".$url_scraps[1].";</script>";
+		}else header("Location: forum.php");
+		
+	}else{
+		echo "<script> const CurrentPage=10;</script>";
+		echo "<script> const POSTS=".ForumReceivePosts($conn, 0,10).";</script>";
+	}
+	echo "<script> const FocusOn=".$Focused.";</script>";
 	?>
 	<title>Fórum</title>
 	<meta charset="UTF-8">
@@ -33,12 +53,12 @@
 	</div>
 	<div class="menusor-spacer">
 	</div>
-	<div class="chatbox inline">
+	<div class="chatbox inline" id="post_container">
 	</div>
 	<div class="publish inline" id="publish">
 	
 		<button id="publish_button" onclick="legordul()">POSZTOLOK!!!ÁÁÁÁÁÁÁÁÁHÚÚÚÚÚÚÚINTERAKCIÓÓÓÓÓÓ</button>
-		<form action="Forum_post.php" method="post" enctype="multipart/form-data">
+		<form action="Forum_post.php" id="Message" method="post" enctype="multipart/form-data">
 		<div id="pTartalom">
 		<textarea type="text" name="MSG" placeholder="ÚRISTEN MEGSZEREZTEM A PIZZAGÖMBÖT!!!"></textarea><br>
 		<input type="file" name="kep">
@@ -49,4 +69,5 @@
 	</div>
 </dic>
 </body>
+<script src="../Resources/Scriptek/forum_load_in_data.js"></script>
 </html>

@@ -1,6 +1,6 @@
 <?php
 
-
+include '../Resources/Scriptek/CheckForLoggedIn.php';
 if(session_status() !== PHP_SESSION_ACTIVE) session_start();				//session elindítása ha még nem történt meg.
 include '../Resources/Scriptek/ConnectToDB.php';
 
@@ -40,10 +40,9 @@ while(true){ //generáljunk egy még nem létező ID-t
 
 
 
-
-
-
-$conn->query("INSERT INTO `forum` (`Likes`, `Text`, `Image_IDs`, `Comment_to`, `Date`) VALUES (0, '".$text."', '".$IMG_ID."',0,'".date("Y/m/d")."');") or die("oh oh!");
+$query = parse_url($_SERVER['REQUEST_URI'],PHP_URL_QUERY);
+$isComment = ($query)?$query:0;
+$conn->query("INSERT INTO `forum` (`Likes`, `Text`, `Image_IDs`, `Comment_to`, `Date`, `Owner_ID`) VALUES (0, '".$text."', '".$IMG_ID."',".$isComment.",'".date("Y-m-d H:i:s")."', ".$_SESSION["UserID"].");") or die("oh oh!");
 
 if($IMG_ID != "0"){
 	
@@ -61,7 +60,7 @@ function returnWithError($text){
 	
 	$_SESSION["Error"] = $text;
 	echo "return";
-	header("Location: forum.php");
+	header('Location: ' . $_SERVER['HTTP_REFERER']);
 	die();
 	
 }
