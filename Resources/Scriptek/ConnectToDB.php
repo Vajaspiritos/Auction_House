@@ -64,8 +64,128 @@ function GetInventory($conn){
 	
 }
 
+function ForumReceivePosts($conn,$from,$to){ //from és to: számban hogy hány postot akarunk betölteni a log-ból.0-tól indexelve
+	
+	$result = $conn->query("SELECT * FROM `forum` WHERE Comment_to=0 ORDER BY Date DESC LIMIT ".($to-$from)." OFFSET ".$from);
+	$posts = [];
+	while($row = $result->fetch_assoc()){
+		
+		$newassoc = [];
+		$newassoc['ID'] = $row['ID'];
+		$res=$conn->query("SELECT ID FROM `likes` WHERE Post_ID=".$row['ID']);
+		$newassoc['Likes'] = mysqli_num_rows($res);
+		$newassoc['Text'] = $row['Text'];
+		$newassoc['Date'] = $row['Date'];
+		$res=$conn->query("SELECT Username FROM `users` WHERE ID=".$row['Owner_ID']);
+		$newassoc['OP'] = $res->fetch_assoc()['Username'];
+		$res=$conn->query("SELECT ID FROM `forum` WHERE Comment_to=".$row['ID']);
+		$newassoc['Comments'] = mysqli_num_rows($res);
+		
+		if($row['Image_IDs'] != "0"){
+		$imgID = $row['Image_IDs'];
+		
+		$src = "../Resources/Images/Icons/Default_Item.png";
+		foreach (glob("../Resources/Images/Forum/".$imgID.".*") as $file){ 
+	
+			$src = $file;
+			}
+		
+		
+		
+		$newassoc['Image_src'] = $src;
+		
+		}else $newassoc['Image_src'] = null;
+		
+		
+		array_push($posts,$newassoc);
+		
+		
+		
+	}
 
+	return json_encode($posts);
+	
+	
+	
+}
 
+function FocusOnPost($conn,$postID){
+	$posts = [];
+	
+	//A poszt maga
+	$row = $conn->query("SELECT * FROM `forum` WHERE ID=".$postID)->fetch_assoc();
+		$newassoc = [];
+		$newassoc['ID'] = $row['ID'];
+		$res=$conn->query("SELECT ID FROM `likes` WHERE Post_ID=".$row['ID']);
+		$newassoc['Likes'] = mysqli_num_rows($res);
+		$newassoc['Text'] = $row['Text'];
+		$newassoc['Date'] = $row['Date'];
+		$res=$conn->query("SELECT Username FROM `users` WHERE ID=".$row['Owner_ID']);
+		$newassoc['OP'] = $res->fetch_assoc()['Username'];
+		$res=$conn->query("SELECT ID FROM `forum` WHERE Comment_to=".$row['ID']);
+		$newassoc['Comments'] = mysqli_num_rows($res);
+		if($row['Image_IDs'] != "0"){
+		$imgID = $row['Image_IDs'];
+		$src = "../Resources/Images/Icons/Default_Item.png";
+		foreach (glob("../Resources/Images/Forum/".$imgID.".*") as $file){ 
+			$src = $file;
+			}
+		$newassoc['Image_src'] = $src;		
+		}else $newassoc['Image_src'] = null;		
+		array_push($posts,$newassoc);
+		
+	
+	
+	//kommentek
+	$result = $conn->query("SELECT * FROM `forum` WHERE Comment_to=".$postID." ORDER BY Date DESC");
+	
+	while($row = $result->fetch_assoc()){
+		
+		$newassoc = [];
+		$newassoc['IsComment'] = "true";
+		$newassoc['ID'] = $row['ID'];
+		$res=$conn->query("SELECT ID FROM `likes` WHERE Post_ID=".$row['ID']);
+		$newassoc['Likes'] = mysqli_num_rows($res);
+		$newassoc['Text'] = $row['Text'];
+		$newassoc['Date'] = $row['Date'];
+		$res=$conn->query("SELECT Username FROM `users` WHERE ID=".$row['Owner_ID']);
+		$newassoc['OP'] = $res->fetch_assoc()['Username'];
+		$res=$conn->query("SELECT ID FROM `forum` WHERE Comment_to=".$row['ID']);
+		$newassoc['Comments'] = mysqli_num_rows($res);
+		
+		if($row['Image_IDs'] != "0"){
+		$imgID = $row['Image_IDs'];
+		
+		$src = "../Resources/Images/Icons/Default_Item.png";
+		foreach (glob("../Resources/Images/Forum/".$imgID.".*") as $file){ 
+	
+			$src = $file;
+			}
+		
+		
+		
+		$newassoc['Image_src'] = $src;
+		
+		}else $newassoc['Image_src'] = null;
+		
+		
+		array_push($posts,$newassoc);
+		
+		
+		
+	}
+	
 
+	return json_encode($posts);
+	
+	
+}
+
+function IsLikedAlready($conn,$postID,$user){
+	
+	return (mysqli_num_rows($conn->query("SELECT ID FROM `likes` WHERE Post_ID=".$postID." AND User_ID=".$user))>0?true:false);
+	
+	
+}
 
 ?>
