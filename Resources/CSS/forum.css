@@ -107,11 +107,13 @@ width: fit-content;
 
 }
 
-.post img
+.post img, .comment img
 {
-	width: 75%;
+	width: 50%;
 	margin-bottom: 5%;
+	height: 50%;
 }
+
 
 .post 
 {
@@ -121,7 +123,7 @@ width: fit-content;
 
 }
 
-.post button
+.post button, .comment button
 {
 	font-size: 1.4em;
 	margin-bottom: 2%;
@@ -130,12 +132,12 @@ width: fit-content;
 	margin-top: 5%;
 }
 
-.post button:hover 
+.post button:hover, .comment button:hover
 {
 	font-size: 1.45em;
 	background-color: rgb(255,255,255,0.9);
 }
-.post-likes 
+.post-likes
 {
 margin-left: 4%;
 }
