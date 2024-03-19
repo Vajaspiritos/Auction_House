@@ -107,18 +107,20 @@ width: fit-content;
 
 }
 
-.post img, .comment img
+.post-image
 {
-	width: 50%;
 	margin-bottom: 5%;
+	width: 60%;
+	max-width: 60%;
 	max-height: 80%;
 }
-
 
 .post 
 {
 	border: 2px solid black;
 	border-bottom-width: 5px;
+	height: 50%;
+	overflow: scroll;
 
 
 }
