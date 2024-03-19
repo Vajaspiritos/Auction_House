@@ -110,19 +110,13 @@ width: fit-content;
 .post-image
 {
 	margin-bottom: 5%;
-	width: 60%;
-	max-width: 60%;
-	max-height: 80%;
+	height: 40%;
 }
 
 .post 
 {
 	border: 2px solid black;
 	border-bottom-width: 5px;
-	height: 50%;
-	overflow: scroll;
-
-
 }
 
 .post button, .comment button
