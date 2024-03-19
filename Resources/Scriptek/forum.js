@@ -6,13 +6,13 @@ function legordul()
 	if(megnyomva==false) 
 	{
 		megnyomva= true;
-		lista.style.height = "400px";
+		lista.style.height = "30%";
 
 	}
 	else 
 	{
 		megnyomva = false
-		lista.style.height = "5.3%";
+		lista.style.height = "3.5em";
 
 
 	}
