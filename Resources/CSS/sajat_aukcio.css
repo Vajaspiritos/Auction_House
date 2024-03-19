@@ -1,0 +1,87 @@
+body 
+{
+	background-image: url("../Images/BG/profilBG.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	overflow: hidden;
+}
+
+.cellak td 
+{
+	width: 10%;
+	height: 5%;
+	border: 3px solid black;
+	background-color: rgb(201,201,201,0.4);
+}
+
+
+#valaszto p 
+{
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 2em;
+	color: white;
+	background-color: transparent;
+	margin-bottom: -1%;
+
+}
+
+#cim 
+{
+	height: 0%;
+}
+
+
+#oldal 
+{
+	float: right;
+}
+
+#kuldes 
+{
+	font-size: 1.5em;
+	background-color: transparent;
+	border: 2px solid black;
+	padding: 0.3em 2em;
+	margin-top: -2%;
+	background-color: grey;
+	
+}
+
+.also td 
+{
+	text-align: center;
+	border: none;
+	background-color: transparent;
+}
+
+#valaszto table
+{
+	margin-left: auto;
+	margin-right: auto;
+width: 65%;
+height: 95%;
+}
+
+.menusor-spacer 
+{
+	height: 10%;
+}
+
+#oldal 
+{
+	font-size: 1.5em;
+	margin-top: -5%;
+}
+
+#next 
+{
+	font-size: 0.7em;
+	background-color: rgb(180,220,180,0.4);
+	border: 2px solid black;
+}
+
+#inline 
+{
+	display: inline-block;
+}

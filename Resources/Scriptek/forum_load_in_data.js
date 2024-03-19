@@ -16,19 +16,23 @@ for(let i=0;i<POSTS.length;i++){
 		OP.innerHTML=POSTS[i]['OP']+":";
 		OP.setAttribute("class","post-op");
 		elem.appendChild(OP);
-	
+		
+		let div = document.createElement('div');
+		div.setAttribute("class","text-img");
 		let TEXT = document.createElement('p');
 		TEXT.innerHTML=POSTS[i]['Text'];
 		TEXT.setAttribute("class","post-text");
-		elem.appendChild(TEXT);
+		div.appendChild(TEXT);
 		
 		if(POSTS[i]['Image_src'] != null){
 			let IMG = document.createElement('img');
 			IMG.src=POSTS[i]['Image_src'];
 			IMG.setAttribute("class","post-image");
-			elem.appendChild(IMG);
+			div.appendChild(IMG);
+			let br = document.createElement("br");
+			div.appendChild(br);
 		}
-		
+		elem.appendChild(div);
 		let COMMENTS = document.createElement('button');
 		COMMENTS.innerHTML="Comments:"+POSTS[i]['Comments'];
 		COMMENTS.setAttribute("class","post-comments");
@@ -46,7 +50,8 @@ for(let i=0;i<POSTS.length;i++){
 			window.location.href="liking.php?for="+POSTS[i]['ID'];
 		}
 		elem.appendChild(LIKES);
-		
+				let br = document.createElement("br");
+			elem.appendChild(br);
 		let DATE = document.createElement('span');
 		DATE.innerHTML=POSTS[i]['Date'];
 		DATE.setAttribute("class","post-date");
