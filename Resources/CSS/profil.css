@@ -45,6 +45,32 @@ body
 	color: white;
 	border: 2px solid rgb(201, 201, 201,0.2);
 }
+
+#adatok button 
+{
+	font-size: 1.5em;
+	background-color: transparent;
+	border: none;
+	color:red;
+	float: right;
+}
+
+#adatok button:hover 
+{
+	font-weight: bold;
+	background-color: white;
+
+}
+#logout 
+{
+	font-size: 1.5em;
+	color: cyan;
+}
+
+#logout:hover
+{
+font-weight: bold;
+}
 .Raktar
 {
 	margin-left: 1%;

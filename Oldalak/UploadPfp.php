@@ -8,8 +8,8 @@ unset($_FILES["PFP"]);													//$_POST kiürítése
 $PP_Extension = pathinfo($PP['full_path'])['extension'];
 
 
-$ACCEPTABLE_EXTENSIONS = array("jpg","png");
-$MAX_FILE_SIZE         =1000*1000; //(bájtokban)
+$ACCEPTABLE_EXTENSIONS = array("jpg","png","jpeg");
+$MAX_FILE_SIZE         =1024*1024*1024; //(bájtokban)
 
 
 if(!in_array($PP_Extension,$ACCEPTABLE_EXTENSIONS))returnWithError("File Formátum nem megfelelő!");

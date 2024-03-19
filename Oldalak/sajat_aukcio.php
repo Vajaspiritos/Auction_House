@@ -6,6 +6,7 @@
 	<meta charset="UTF-8">
 			<link rel="stylesheet" href="../Resources/CSS/betuTipusok.css">
 	<link rel="stylesheet" href="../Resources/CSS/navbar.css">
+	<link rel="stylesheet" href="../Resources/CSS/sajat_aukcio.css">
 </head>
 <body>
 	<div class="menusor">
@@ -31,5 +32,62 @@
 	</div>
 	<div class="menusor-spacer">
 	</div>
+
+	<div id="valaszto">
+	<table>
+		<tr id="cim">
+			<td colspan="8"><p>Válaszd ki a kívánt tárgyat!</p></td>
+		</tr>
+		<tr class="cellak">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr class="cellak">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr class="cellak">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr class="cellak">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr class="cellak also">
+			<td colspan="8">
+				<button id="kuldes" class="inline">Küldés</button><span id="oldal"  class="inline">Oldal:<span id="hanyadik">1</span><span>/<span><span id="mennyibol">69</span></span>
+				<button id="next"  class="inline">Köveztekő oldal</button>
+			</td>
+		</tr>
+	</table>
+	</div>
+
+
+
 </body>
 </html>
