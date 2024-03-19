@@ -12,7 +12,7 @@ function legordul()
 	else 
 	{
 		megnyomva = false
-		lista.style.height = "3.5em";
+		lista.style.height = "8.5%";
 
 
 	}
