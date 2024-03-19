@@ -36,7 +36,7 @@ width: 80%;
 height: 30%;
 font-size: 20px;
 padding-top: 1em;
-padding-left: 1em;
+padding-left: 1em;1
 }
 
 .publish button
@@ -102,7 +102,7 @@ width: fit-content;
 	margin-right: auto;
 	width: 98%;
 	background-color: rgb(255,255,255,0.1);
-	overflow: scroll;
+	overflow: auto;
 	word-break: break-all;
 
 }
