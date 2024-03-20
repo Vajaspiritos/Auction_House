@@ -74,7 +74,7 @@ padding-left: 0.5em;
 #post_container p
 {
 text-align: left;
-max-height: 50%;
+
 height: fit-content;
 }
 .post-text 
