@@ -2,6 +2,12 @@
 <head>
 	<?php
 	include '../Resources/Scriptek/CheckForLoggedIn.php';
+	include '../Resources/Scriptek/ConnectToDB.php';
+	if(session_status() !== PHP_SESSION_ACTIVE) session_start();	
+	echo "<script> const USER_INVENTORY=".GetInventory($conn).";</script>";
+		
+	
+	
 	?>
 	<meta charset="UTF-8">
 			<link rel="stylesheet" href="../Resources/CSS/betuTipusok.css">
@@ -33,14 +39,15 @@
 	<div class="menusor-spacer">
 	</div>
 	<div id="aukcio-container">
-	<div class="aukcio">
-			<iframe></iframe><br>
-		<button>Aukcióra tétel</button>
+		<div class="aukcio auto">					
+			<button id="auto" onclick="replace(false)">Aukcióra tétel</button>
+		</div>
+		<div class="aukcio own">				
+			<button id="host" onclick="replace(true)">Aukcióra tétel</button>
+		</div>
 	</div>
-	<div class="aukcio">
-		<iframe></iframe><br>
-		<button>Aukcióra tétel</button>
-	</div>
-	</div>
+	<iframe id="raktar" style="visibility:hidden"></iframe>
+	
 </body>
+<script src="../Resources/Scriptek/sajat_aukcio_load_in_data.js"></script>
 </html>

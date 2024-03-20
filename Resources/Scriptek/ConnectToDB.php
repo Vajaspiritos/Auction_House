@@ -64,6 +64,11 @@ function GetInventory($conn){
 	
 }
 
+function GetNumOfItems($conn,$user){
+	
+	return mysqli_num_rows($conn->query("SELECT ID FROM `items` WHERE Current_owner=".$user));
+}
+
 function ForumReceivePosts($conn,$from,$to){ //from és to: számban hogy hány postot akarunk betölteni a log-ból.0-tól indexelve
 	
 	$result = $conn->query("SELECT * FROM `forum` WHERE Comment_to=0 ORDER BY Date DESC LIMIT ".($to-$from)." OFFSET ".$from);

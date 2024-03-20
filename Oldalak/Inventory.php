@@ -11,8 +11,12 @@ echo "<script> const USER_INVENTORY=".GetInventory($conn).";</script>";
 <link rel="stylesheet" href="../Resources/CSS/inventory.css">
 </head>
 <body>
+<form id="veglegesit" style="visibility:hidden">
+	<button type="submit">Katt ide</button>
+	</form>
 	<div id="items-container">
 		<span id="text"></spac>
+		
 	</div>
 	<div id="info-container">
 	<img id="info_image" alt="Itt lenne a kép ha lenne"></img><br>
