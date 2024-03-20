@@ -57,13 +57,12 @@
 	</div>
 	<div class="publish inline" id="publish">
 	
-		<button id="publish_button" onclick="legordul()">POSZTOLOK!!!ÁÁÁÁÁÁÁÁÁHÚÚÚÚÚÚÚINTERAKCIÓÓÓÓÓÓ</button>
+		<button id="publish_button" onclick="legordul()">Posztolok</button>
 		<form action="Forum_post.php" id="Message" method="post" enctype="multipart/form-data">
 		<div id="pTartalom">
-		<textarea type="text" name="MSG" placeholder="ÚRISTEN MEGSZEREZTEM A PIZZAGÖMBÖT!!!"></textarea><br>
-		<input type="file" name="kep">
-		<img src="kep.png" alt="a kép amit kiválasztottál"><br>
-		<button type="submit">SZÁBMIT</button>	
+		<textarea type="text" name="MSG" placeholder="ÚRISTEN MEGSZEREZTEM A PIZZAGÖMBÖT!!!" maxlength="1000"></textarea><br>
+		<input type="file" name="kep" id="browse"><br>
+		<button type="submit">Küldés</button>	
 		</div>
 	</form>
 	</div>
