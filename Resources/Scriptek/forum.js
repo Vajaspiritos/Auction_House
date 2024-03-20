@@ -5,14 +5,15 @@ function legordul()
 	var tartalom = document.getElementById("pTartalom")
 	if(megnyomva==false) 
 	{
+		//media query cuccok. ha a képernyő akkora mint a mac-en akkor 
 		megnyomva= true;
-		lista.style.height = "30%";
+		lista.style.height = "30%"; //35
 
 	}
 	else 
 	{
 		megnyomva = false
-		lista.style.height = "6.3%";
+		lista.style.height = "6.3%"; //8.5
 
 
 	}

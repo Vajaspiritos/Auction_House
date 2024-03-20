@@ -12,23 +12,28 @@ echo "<script> const USER_INVENTORY=".GetInventory($conn).";</script>";
 </head>
 <body>
 	<div id="items-container">
+		<span id="text"></spac>
 	</div>
 	<div id="info-container">
-	<img id="info_image" alt="Itt lenne a kép ha lenne"></img>
-	<h1 id="info-name"></h1>
-	
+	<img id="info_image" alt="Itt lenne a kép ha lenne"></img><br>
+	<a id="info-name"></a><br>
 		<table>
 			<tr>
-				<td>
-					<a id="info-OG_owner"></a>
+				<td id="owner-div">
+					<span>Eredeti tulajdonos:</span><br><a id="info-OG_owner"></a>
 				</td>
-				<td >
-					<a id="info-rarity"></a>
+				<td id="rarity-div">
+					<span>Ritkaság:</span><br><a id="info-rarity"></a>
 				</td>
 			</tr>
 		</table>
-	<a> Leírás:</a>
-	<div id="info-description"></div>
+	
+	<div id="info-description-containter">
+		<span id="leiras_title">Leírás:</span><br>
+		<div id="info-sorkizart">
+		<a id="info-description"></a>
+	</div>
+	</div>
 	</div>
 	
 </body>
