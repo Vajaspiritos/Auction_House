@@ -1,11 +1,10 @@
 .menusor
 {
 	background-color: rgb(255,255,255,0.9);
-	width: 99%;
-	border-bottom: 4px solid black;
+	width: 98.8%;
 	position: fixed;
 	z-index: 10;
-	box-shadow: 0px 3px 10px rgb(50,50,50);
+	top: 2;
 
 }
 

@@ -1,48 +1,102 @@
+body 
+{
+		overflow: hidden;
+}
+
 #items-container{
 	
-	width:70%;
-	height:95%;
+	width:50%;
 	display: inline-block;
 	float:left;
-	overflow:auto;
+	text-align: center;
 }
 
 #info-container{
 	float:right;
-	width:25%;
-	height:95%;
+	width:49%;
 	border: 4px solid black;
 	display: inline-block;
+	background-color: rgb(220,220,220,0.2);
+	text-align: center;
+	font-size: 1.5em;
+	word-break: break-all;
 }
 
-.Item{
-	display: inline-block;
-	
+#info-container span 
+{
+	font-size: 0.8em;
+	text-decoration: underline;
 }
 
 .Item_IMG{
-	width:150px;
+	width: 40%;
+	max-height: 50%;
+	margin-right: 5%;
+	border: 2px solid grey;
+	border-radius: 50px;
 }
 #info_image{
 	
-	margin-left: auto;
-    margin-right: auto;
-    display: block;
-	height:30%;
+    width: 40%;
 }
-#info-name{
-	text-align:center;
+
+#info-OG_owner
+{
+	font-size: 0.6em;
+	padding: 5px 10px;
+	color: white;
+	font-weight: bold;
 }
-#info-description{
+#info-description-containter{
 	overflow:auto;
-	height:40%;
+	text-align: center;
+	font-size: 0.7em;
+	padding: 5px 6px;
+
 }
-table,td{
+
+table{
 	width:100%;
-	height:10%;
+	font-size:1.5em;
 	border:2px solid black;
 	text-align:center;
 	border-collapse: collapse;
-	font-size:20px;
-	
+
+}
+
+
+
+
+#rarity-div
+{
+	width: 50%;
+	background-color: rgb(201,201,201,0.5);
+	font-size: 1em;
+}
+
+#owner-div 
+{
+	border-top: 2px solid black;
+	border-right: 2px solid black;
+	border-left: none;
+
+}
+
+#info-description-containter span 
+{
+	font-size: 1.5em;
+}
+
+#info-sorkizart
+{
+	margin-top: 2%;
+	text-align: justify;
+	color: rgb(255,255,255,0.9);
+	background-color: rgb(201,201,201,0.5);
+	padding: 10px;
+}
+
+#info-name 
+{
+	font-size: 2em;
 }
