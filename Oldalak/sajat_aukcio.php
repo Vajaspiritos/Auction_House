@@ -39,10 +39,14 @@
 	<div class="menusor-spacer">
 	</div>
 	<div id="aukcio-container">
-		<div class="aukcio auto">					
+		<div class="aukcio auto">
+		<p id="aukcio-cim">Automata aukció</p>	
+		<p id="aukcio-info">Itt kiválaszthat bármennyit a saját, már birtokolt tárgyai közül, hogy elküldje aukcióra. Ekkor a rendszer magától keres neki egy dátumot és hozzárendeli. Minden aukcióra küldés végleges!</p>		
 			<button id="auto" onclick="replace(false)">Aukcióra tétel</button>
 		</div>
-		<div class="aukcio own">				
+		<div class="aukcio own">	
+		<p id="aukcio-cim">Saját aukció</p>	
+		<p id="aukcio-info">Ennél legalább 5 tárgyat kell kivállasztania ahhoz, hogy egy saját aukciós eseményt tudjon indítani. Itt csak az ön által kiválasztott tárgyak kerülnek elárverezésre. A rendszer dátumot az események továbbra is automatikusan választ!</p>			
 			<button id="host" onclick="replace(true)">Aukcióra tétel</button>
 		</div>
 	</div>

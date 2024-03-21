@@ -1,3 +1,12 @@
+
+body 
+{
+  background-image: url("../Images/BG/fooldalBG.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 @font-face {
   font-family: title;
   src: url("../Fonts/pixel.otf") format("opentype");

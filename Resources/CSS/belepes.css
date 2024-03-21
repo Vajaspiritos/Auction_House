@@ -1,9 +1,3 @@
-body 
-{
-	background-image: url("../Images/BG/fooldalBG.png");
-	background-repeat: no-repeat;
-	background-size: cover;
-}
 .login 
 {
 	width:40%;
@@ -80,7 +74,7 @@ font-size: 2em;
 	transition: 0.1s;
 	border: 2px solid black;
 	outline: none;
-	background-color: white;
+	background-color: rgb(230,230,230);
 	
 }
 

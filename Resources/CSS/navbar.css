@@ -56,7 +56,11 @@ margin-top:-15%;
 {
 	scale: 110% 110%;
 }
-a {text-decoration: none; }
+a 
+{
+	text-decoration: none;
+	color: rgb(83,27,147);
+}
 .gombok button 
 {
 	background: none;
