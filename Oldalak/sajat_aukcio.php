@@ -1,5 +1,6 @@
 <html lang="hu">
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php
 	include '../Resources/Scriptek/CheckForLoggedIn.php';
 	include '../Resources/Scriptek/ConnectToDB.php';
@@ -15,7 +16,7 @@
 </head>
 <body>
 	<button id="drop-btn" onclick="lenyit()">↓</button>
-	<div class="menusor" id="drop-menusor">
+	<div class="menusor drop" id="drop-menusor">
 		<div class="kep inline">
 			<img src="../Resources/Images/Icons/logo.gif" alt="Logo" >
 		</div>
@@ -52,4 +53,11 @@
 	
 </body>
 <script src="../Resources/Scriptek/sajat_aukcio_load_in_data.js"></script>
+<script>
+	setInterval(function() 
+		{
+		
+			if(window.innerWidth > 995) {document.getElementById("drop-menusor").style.display = "block";}
+		}, 100)
+	</script>
 </html>
