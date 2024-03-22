@@ -12,10 +12,10 @@
 	<link rel="stylesheet" href="../Resources/CSS/betuTipusok.css">
 	<link rel="stylesheet" href="../Resources/CSS/navbar.css">
 	<link rel="stylesheet" href="../Resources/CSS/sajat_aukcio.css">
-	
+
 </head>
 <body>
-	<button id="drop-btn" onclick="lenyit()"></button>
+	<button id="drop-btn" onclick="lenyit()">↓</button>
 	<div class="menusor" id="drop-menusor">
 		<div class="kep inline">
 			<img src="../Resources/Images/Icons/logo.gif" alt="Logo" >
@@ -27,9 +27,11 @@
 		<a class ="menu-gombok" href="forum.php" >Fórum</a>
 		<a class ="menu-gombok" href="profil.php" >Profil</a>
 		<button onclick="alert('Ez egy aukciós oldal ahol egy kezdő tőkéböl kiindulva kell meggazdagodnod. Különböző tételekre licitálsz és reméled, hogy nem licitálnak túl. A megszerzett tárgyakat felteheted újabb aukciókra és abból szerzed a profitot. Ha minden pénzed elfogyott ne aggódj, naponta egyszer mehetsz dolgozni. Nem minden aukcióra léphetsz be, komolyabb aukciók komolyabb tételeket rejtenek ahova jelvény kell, ezeket a profilodnál tudod megvenni.')">info</button>
-	
+
+		
 		</div>
 	</div>
+
 	<div class="menusor-spacer">
 	</div>
 
@@ -52,5 +54,5 @@
 	
 </body>
 <script src="../Resources/Scriptek/sajat_aukcio_load_in_data.js"></script>
-<script src="../Resources/Scriptek/navbar.js"></script>
+	<script src="../Resources/Scriptek/navbar.js"></script>
 </html>

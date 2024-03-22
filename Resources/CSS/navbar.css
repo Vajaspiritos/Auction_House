@@ -8,7 +8,10 @@
 	display: block;
 
 }
-
+#drop-menusor
+{
+	display: block;
+}
 .inline 
 {
 	display: inline-block;
@@ -80,16 +83,12 @@ a
 {
 	height: 20%;
 }
-
-#drop-btn {display: none;}
-
-
-
+#drop-btn {display: none; font-size: 5em; position: fixed; z-index: 200; background-color: transparent; color: black; border: none;}
 @media screen and (max-width: 995px) 
 {
-	.drop
+	.menusor
 	{
-		display: none;
+		display: block;
 		height: 100%;
 		height: fit-content;
 		max-height: none;
@@ -113,7 +112,7 @@ a
 	.menu-gombok:hover {background-color: grey; box-shadow: none;}
 	.kep img{display: none;}
 
-	#drop-btn {display: block; font-size: 5em; position: fixed; z-index: 200; background-color: transparent; color: white; border: none;}
+	#drop-btn {display: block; font-size: 5em; position: fixed; z-index: 200; background-color: transparent; color: black; border: none;}
 
 	
 
