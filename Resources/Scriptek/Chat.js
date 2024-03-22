@@ -1,12 +1,12 @@
 
-const socket = new WebSocket("ws://127.0.0.1:8080");
+const socket = new WebSocket("ws://127.0.0.1:443");
 
 socket.addEventListener("message", (event) => {
 	
 		
 			if(event.data =="id"){
 				
-				socket.send(USERID+"|"+Name);
+				socket.send("ID|"+USERID+"|"+Name);
 				document.getElementById("Messenger").removeAttribute("disabled");
 			}else if(event.data.split(":")[0]=="CheckupCode_for_DisconnectDetection"){
 				

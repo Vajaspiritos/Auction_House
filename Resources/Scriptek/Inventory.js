@@ -6,7 +6,7 @@ if(USER_INVENTORY.length == 0){
 								//lambda my beloved
 	USER_INVENTORY.forEach( (Item) =>{
 	for(let i = 0; i < 1; i++){
-		console.log("csa");
+		
 	
 		let elem = document.createElement('div');
 		elem.id =Item['ID'];

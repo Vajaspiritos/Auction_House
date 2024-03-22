@@ -2,10 +2,10 @@
 
 
 
-if(USER_INVENTORY.length < -5){
+if(USER_INVENTORY.length <5){
 
-document.getElementsByClassName("own")[0].innerHTML ="Sajnos egész aukciós esemény rendezéséhez legalább 5 tárgyra van szüksége.";
-document.getElementsByClassName("own")[0].setAttribute("class","aukcio rejected");	
+document.getElementsByClassName("aukcio own")[0].innerHTML ="Sajnos egész aukciós esemény rendezéséhez legalább 5 tárgyra van szüksége.";
+document.getElementsByClassName("aukcio own")[0].setAttribute("class","aukcio rejected");	
 }
 
 
