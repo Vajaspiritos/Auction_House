@@ -5,8 +5,8 @@ if(USER_INVENTORY.length == 0){
 }else{
 								//lambda my beloved
 	USER_INVENTORY.forEach( (Item) =>{
-	
-
+	for(let i = 0; i < 1; i++){
+		console.log("csa");
 	
 		let elem = document.createElement('div');
 		elem.id =Item['ID'];
@@ -17,6 +17,7 @@ if(USER_INVENTORY.length == 0){
 		kep.src = Item["Image_src"];
 		
 		elem.appendChild(kep);
+
 		//elem.addEventListener("click",DisplayInfo(Item));
 		elem.onclick= function(){
 
@@ -26,12 +27,12 @@ if(USER_INVENTORY.length == 0){
 	document.getElementById("info-OG_owner").innerHTML = Item['Original_owner'];
 	document.getElementById("info-rarity").innerHTML = Item['Rarity'];
 	
-}
+								}
 		
 		document.getElementById("items-container").appendChild(elem);
 		
 		
-		
+		}
 	} )
 	
 	document.getElementById("items-container").children[1].click();

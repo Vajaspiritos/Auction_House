@@ -11,14 +11,15 @@ echo "<script> const USER_INVENTORY=".GetInventory($conn).";</script>";
 <link rel="stylesheet" href="../Resources/CSS/inventory.css">
 </head>
 <body>
+	<div id="veglegesit-div">
 <form id="veglegesit" style="visibility:hidden">
-	<button type="submit">Katt ide</button>
+	<label id="text" for="valami"></label><button name="valami" type="submit">Katt ide</button>
 	</form>
+</div>
 	<div id="items-container">
-		<span id="text"></spac>
-		
+		<span id="text"></span>
 	</div>
-	<div id="info-container">
+	<div id="info-container" class="inline">
 	<img id="info_image" alt="Itt lenne a kép ha lenne"></img><br>
 	<a id="info-name"></a><br>
 		<table>

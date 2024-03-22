@@ -50,7 +50,9 @@
 			<button id="host" onclick="replace(true)">Aukcióra tétel</button>
 		</div>
 	</div>
+	<div id="raktar-div">
 	<iframe id="raktar" style="visibility:hidden"></iframe>
+</div>
 	
 </body>
 <script src="../Resources/Scriptek/sajat_aukcio_load_in_data.js"></script>

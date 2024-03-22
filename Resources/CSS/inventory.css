@@ -1,6 +1,27 @@
 body 
 {
-		overflow: hidden;
+overflow: hidden;
+background-image: none;
+}
+
+#veglegesit-div
+{
+	width: 100%;
+} 
+#veglegesit button
+{
+	font-size: 2em;
+	border: 2px solid black;
+	background-color: white;
+	float: right;
+	width: 4em;
+}
+
+#veglegesit label 
+{
+		margin-left: 80%;
+		font-size: 2em;
+	border: 2px solid black;
 }
 
 .Item 
@@ -26,6 +47,7 @@ overflow:auto;
 height: 100%;
 text-align: center;
 width: 49%;
+padding-top: 1em;
 }
 
 #info-container{
@@ -113,6 +135,7 @@ table{
 #info-name 
 {
 	font-size: 2em;
+	color: white;
 }
 
 #info_image 

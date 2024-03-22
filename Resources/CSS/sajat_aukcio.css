@@ -70,11 +70,17 @@ overflow: hidden;
 	text-align: center;
 	height: 80%;
 }
-
-
-iframe 
+#raktar-div 
 {
-border: 2ps solid black;
+height: 100%;
+width: 80%;
+margin: 0 auto;
+} 
+
+#raktar 
+{
+	height: 100%;
+	width: 100%;
 }
 
 

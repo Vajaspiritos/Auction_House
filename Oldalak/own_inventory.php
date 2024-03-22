@@ -8,7 +8,9 @@ exit();
 }
 
 ?>
-
+<head>
+	<link rel="stylesheet" href="../Resources/CSS/own_inventory.css">
+	</head>
 <script>
 
 let array = document.getElementById("items-container").children;
