@@ -19,7 +19,7 @@ let selected = [];
 function update(){
 	
 	document.getElementById("text").innerHTML = selected.length+"/5";
-	if(selected >=-5){
+	if(selected.length >=-5){
 	document.getElementById("veglegesit").style.visibility = "visible";
 	}else document.getElementById("veglegesit").style.visibility = "hidden";
 }
