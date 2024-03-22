@@ -32,7 +32,9 @@
 	</div>
 	<div id="munka-container">
 		<div id="munka-rendszer" class="inline">
-			<p id="magyarazo-szoveg">Ide jönne egy nagy szöveg mint például: Ez egy olyan munka ahol egy katonai hatseregnek segítesz embereket toborozni. A munka egyszerű és sok pénz nem jár érte. Várnod kell a kiszemeltre és mikor jónak látod a helyzetet elé sétálsz és megkéred hogy csatlakozzon a hadsereghez.</p>
+			<p id="magyarazo-szoveg">Ide jönne egy nagy szöveg mint például: Ez egy olyan munka ahol egy katonai hatseregnek segítesz embereket toborozni. A munka egyszerű és sok pénz nem jár érte. Várnod kell a kiszemeltre és mikor jónak látod a helyzetet elé sétálsz és megkéred hogy csatlakozzon a hadsereghez.
+			Ide jönne egy nagy szöveg mint például: Ez egy olyan munka ahol egy katonai hatseregnek segítesz embereket toborozni. A munka egyszerű és sok pénz nem jár érte. Várnod kell a kiszemeltre és mikor jónak látod a helyzetet elé sétálsz és megkéred hogy csatlakozzon a hadsereghez.
+		Ide jönne egy nagy szöveg mint például: Ez egy olyan munka ahol egy katonai hatseregnek segítesz embereket toborozni. A munka egyszerű és sok pénz nem jár érte. Várnod kell a kiszemeltre és mikor jónak látod a helyzetet elé sétálsz és megkéred hogy csatlakozzon a hadsereghez.</p>
 		</div>
 
 	<div id="img-timer-container" class="inline">
@@ -48,11 +50,9 @@
 			</div>
 		</div>
 	</div>
-	<div id="tier-text">
-			<a>tier badge áruház</a>
-	</div>
+	<div id="kulso-tier-container">
+		<a id="tier-text">tier badge áruház</a>
 	<div id="tier-container">
-		
 		<div class="tier-img-container" id="very-low-tier">
 			<img src="../Resources/Images/Munka/munka.jpg" alt="tier kep">
 			<div class="penz-container">
@@ -91,5 +91,6 @@
 			</div>
 		</div>
 	</div>
+</div>
 </body>
 </html>
