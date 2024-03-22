@@ -4,6 +4,7 @@
 	<?php
 	include '../Resources/Scriptek/CheckForLoggedIn.php';
 	include '../Resources/Scriptek/ConnectToDB.php';
+	include '../Resources/Scriptek/ErrorHandle.php';
 	if(session_status() !== PHP_SESSION_ACTIVE) session_start();	
 	echo "<script> const USER_INVENTORY=".GetInventory($conn).";</script>";
 	

@@ -2,7 +2,7 @@
 include '../Resources/Scriptek/CheckForLoggedIn.php';
 include '../Oldalak/Inventory.php';
 
-if(GetNumOfItems($conn,$_SESSION['UserID'])<-5){ 
+if(GetNumOfItems($conn,$_SESSION['UserID'])<5){ 
 echo "<script>document.children[0].innerHTML='Nem szabadna itt lenned'</script>";
 exit();
 }
@@ -14,12 +14,13 @@ exit();
 <script>
 
 let array = document.getElementById("items-container").children;
-let selected = [];
+let selected = ["own"];
 
 function update(){
 	
-	document.getElementById("text").innerHTML = selected.length+"/5";
-	if(selected.length >=-5){
+	document.getElementById("text").innerHTML = (selected.length-1)+"/5";
+	document.getElementById("SELECTED").value = JSON.stringify(selected);
+	if(selected.length >=6){
 	document.getElementById("veglegesit").style.visibility = "visible";
 	}else document.getElementById("veglegesit").style.visibility = "hidden";
 }
