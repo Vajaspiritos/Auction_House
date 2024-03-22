@@ -1,24 +1,24 @@
-var megnyomva = false;
-setInterval(function() 
-		{
-			var bar = document.getElementById("drop-menusor");
-			var gomb = document.getElementById("drop-btn");
-			if(megnyomva == false && window.innerWidth <= 995) 
-			{
-				bar.style.display = "none";
-				gomb.style.color = "white";
-				gomb.innerHTML= "↑";
-			}else 
-			{
-				bar.style.display = "block";
-				gomb.style.color = "black";
-				gomb.innerHTML= "↓";
-			}
-		}, 1)
+
 
 function lenyit() 
 {
-	megnyomva = !megnyomva;
-	
 
+			if(document.getElementById("drop-menusor").style.display == "none" || document.getElementById("drop-menusor") == null)
+			{
+					document.getElementById("drop-menusor").style.display = "block";
+				document.getElementById("drop-btn").innerHTML= "↓";
+					document.getElementById("drop-btn").style.color = "black";	
+					
+
+			}else 
+			{
+				
+				document.getElementById("drop-menusor").style.display = "none";
+			
+						document.getElementById("drop-btn").innerHTML= "↑";
+				document.getElementById("drop-btn").style.color = "white";
+			}
+
+
+	
 }
