@@ -1,5 +1,15 @@
 <html>
 <head>
+		<?php
+		include '../Resources/Scriptek/CheckForLoggedIn.php';
+		include '../Resources/Scriptek/ConnectToDB.php';
+		$res =$conn->query("SELECT LastWork FROM `users` WHERE ID=".$_SESSION["UserID"])->fetch_assoc()["LastWork"];
+		if($res ==null){ $res = 3600;
+		}else $res = strtotime(date("Y-m-d H:i:s"))-strtotime($res);
+			
+		echo "<script>const LAST_WORK=$res</script>";
+		
+		?>
 	<title>Egyenleg feltöltés</title>
 			<link rel="stylesheet" href="../Resources/CSS/betuTipusok.css">
 	<link rel="stylesheet" href="../Resources/CSS/navbar.css">
@@ -44,7 +54,7 @@
 					<div id="timer-belso-div">
 						<span id="timer-text">Még:<span id="timer">0</span>perc van hátra</span>
 			</div>
-				<button>Munka kezdése</button><br>
+				<button id="work" onclick="work()" disabled>Munka kezdése</button><br>
 				
 			</div>
 		</div>
@@ -94,4 +104,5 @@
 </div>
 </div>
 </body>
+<script src="../Resources/Scriptek/Egyenleg.js"></script>
 </html>
