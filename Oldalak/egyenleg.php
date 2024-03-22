@@ -3,11 +3,13 @@
 		<?php
 		include '../Resources/Scriptek/CheckForLoggedIn.php';
 		include '../Resources/Scriptek/ConnectToDB.php';
+		UpdateGeneralInfos($conn);
 		$res =$conn->query("SELECT LastWork FROM `users` WHERE ID=".$_SESSION["UserID"])->fetch_assoc()["LastWork"];
 		if($res ==null){ $res = 3600;
 		}else $res = strtotime(date("Y-m-d H:i:s"))-strtotime($res);
 			
 		echo "<script>const LAST_WORK=$res</script>";
+		echo "<script>const MONEY=".$_SESSION["Money"]."</script>";
 		
 		?>
 	<title>Egyenleg feltöltés</title>
