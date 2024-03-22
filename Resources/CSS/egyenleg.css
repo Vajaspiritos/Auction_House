@@ -1,0 +1,170 @@
+#egyenleg-div
+{
+	margin-left: auto;
+	margin-right: auto;
+	width: fit-content;
+	margin-top: -2em;
+}
+
+#egyenleg-div, #egyenleg
+{
+
+	color: green;
+	font-size: 2em;
+}
+
+.penz {color: white; font-size: 2em;}
+.penz::after 
+{content: "¢";}
+.penz::before 
+{content: " ";}
+
+
+#munka-container 
+{
+	margin-left: 1.5em;
+	height: 50%;
+	border: 2px solid white;
+	width: 40%;
+	margin-top: 3%;
+	overflow: auto;
+	display: inline-block;
+		float: left;
+}
+
+#munka-rendszer 
+{
+	background-color: rgb(201,201,201,0.4);
+	height: 100%;
+	width: 45%;
+	float: left;
+	overflow: auto;
+	text-align: justify;
+	display: flex;
+}
+
+#munka-rendszer p
+{
+	font-size: 1.5em;
+	color: white;
+	margin: 0 0.45em;
+}
+#img-container
+{
+	height: 70%;
+	width: 183.5%;
+	display: flex;
+	background-color: red;
+
+}
+#img-container img 
+{
+	height: 100%;
+	width: 100%;
+}
+
+
+#timer-div {width: 183.5%;color: white; font-size: 2em;text-align: center;}
+#timer-belso-div {background-color: rgb(201,201,201,0.3);}
+
+#timer::before
+{
+content: " ";
+}
+#timer::after
+{
+content: " ";
+}
+
+#penz::before {content: " ";}
+#timer-div button 
+{
+	color: white; font-size: 1em;
+	padding: 0.3em 2em;
+	margin-top: 0.3em;
+	background-color: transparent;
+	border: none;
+	text-transform: uppercase;
+	text-decoration: underline;
+}
+
+#timer-div button:hover 
+{
+	cursor: pointer;
+	color: rgb(255,215,0);
+	scale: 110% 110%;
+}
+
+
+
+#img-timer-container {height: 100%; width: 30%;}
+
+
+
+#tier-container 
+{
+	margin-top: 5em;
+	width: 45%;
+	height: 55%;
+	border: 3px solid white;
+	float: right;
+		overflow: auto;
+		text-align: center;
+		margin-right: 3em;
+}
+
+.tier-img-container 
+{
+	height: fit-content;
+	width: fit-content;
+	text-align: center;
+	border: 3px solid black;
+	border-bottom: none;
+	margin:1em;
+	display: inline-block;
+	background-color: rgb(201,201,201,0.4);
+
+}
+
+.tier-img-container:hover 
+{
+	scale: 110% 110%;
+	cursor: pointer;
+}
+
+
+.tier-img-container img
+{
+	height: 9.8em;
+
+}
+.penz-container
+{
+	width: 100%;
+	margin-left: -0.2em;
+	border: 3px solid black;
+
+}
+.penz-container p
+{
+	margin: 0em;
+
+}
+
+#tier-text
+{
+	font-size: 2em;
+	width: fit-content;
+	display: inline-block;
+	position: relative;
+	left: 23.5%;
+	top: 2em;
+
+}
+
+#tier-text a
+{
+		color: white;
+		text-transform: uppercase;
+		font-size: 2em;
+}
