@@ -4,32 +4,31 @@
 			<link rel="stylesheet" href="../Resources/CSS/betuTipusok.css">
 	<link rel="stylesheet" href="../Resources/CSS/navbar.css">
 	<link rel="stylesheet" href="../Resources/CSS/egyenleg.css">
+		<script src="../Resources/Scriptek/navbar.js"></script>
 </head>
 <body>
-	<div class="menusor">
-		<table class="kep inline">
-			<tr>
-			<td><img src="../Resources/Images/Icons/logo.gif" alt="Logo" ></td>
-		</tr>
-		</table>
-		<table class="gombok inline">
-		<tr>
-			<td class ="menu-gombok-containter"><a class ="menu-gombok" href="fooldal.php">Főoldal</a></td>
-			<td class ="menu-gombok-containter"><a class ="menu-gombok" href="sajat_aukcio.php" >Saját aukció</a></td>
-			<td class ="menu-gombok-containter"><a class ="menu-gombok"  href="egyenleg.php" >Egyenleg feltöltés</a></td>
-			<td class ="menu-gombok-containter"><a class ="menu-gombok" href="forum.php" >Fórum</a></td>
-			<td class ="menu-gombok-containter"><a class ="menu-gombok" href="profil.php" >Profil</a></td>
-			<td class ="menu-gombok-containter"><button class="menu-gombok" onclick="alert('Ez egy aukciós oldal ahol egy kezdő tőkéböl kiindulva kell meggazdagodnod. Különböző tételekre licitálsz és reméled, hogy nem licitálnak túl. A megszerzett tárgyakat felteheted újabb aukciókra és abból szerzed a profitot. Ha minden pénzed elfogyott ne aggódj, naponta egyszer mehetsz dolgozni. Nem minden aukcióra léphetsz be, komolyabb aukciók komolyabb tételeket rejtenek ahova jelvény kell, ezeket a profilodnál tudod megvenni.')">info</button></td>
-		</tr>
-		
-		<div class="inline">
+	<button id="drop-btn" onclick="lenyit()">↓</button>
+	<div class="menusor" id="drop-menusor">
+		<div class="kep inline">
+			<img src="../Resources/Images/Icons/logo.gif" alt="Logo" >
 		</div>
-	</table>
+		<div class="gombok inline">
+		<a class ="menu-gombok" href="fooldal.php">Főoldal</a>
+		<a class ="menu-gombok" href="sajat_aukcio.php" >Saját aukció</a>
+		<a class ="menu-gombok" href="egyenleg.php" >Egyenleg feltöltés</a>
+		<a class ="menu-gombok" href="forum.php" >Fórum</a>
+		<a class ="menu-gombok" href="profil.php" >Profil</a>
+		<button onclick="alert('Ez egy aukciós oldal ahol egy kezdő tőkéböl kiindulva kell meggazdagodnod. Különböző tételekre licitálsz és reméled, hogy nem licitálnak túl. A megszerzett tárgyakat felteheted újabb aukciókra és abból szerzed a profitot. Ha minden pénzed elfogyott ne aggódj, naponta egyszer mehetsz dolgozni. Nem minden aukcióra léphetsz be, komolyabb aukciók komolyabb tételeket rejtenek ahova jelvény kell, ezeket a profilodnál tudod megvenni.')">info</button>
+
+		
+		</div>
 	</div>
-	<div class="menusor-spacer"></div>
+	<div class="menusor-spacer">
+	</div>
 	<div id="egyenleg-div">
 	<span id="egyenleg">Jelenlegi egyenleged:</span><span class="penz">1000</span>
 	</div>
+	<div id="giga-div">
 	<div id="munka-container">
 		<div id="munka-rendszer" class="inline">
 			<p id="magyarazo-szoveg">Ide jönne egy nagy szöveg mint például: Ez egy olyan munka ahol egy katonai hatseregnek segítesz embereket toborozni. A munka egyszerű és sok pénz nem jár érte. Várnod kell a kiszemeltre és mikor jónak látod a helyzetet elé sétálsz és megkéred hogy csatlakozzon a hadsereghez.
@@ -53,6 +52,7 @@
 	<div id="kulso-tier-container">
 		<a id="tier-text">tier badge áruház</a>
 	<div id="tier-container">
+		
 		<div class="tier-img-container" id="very-low-tier">
 			<img src="../Resources/Images/Munka/munka.jpg" alt="tier kep">
 			<div class="penz-container">
@@ -91,6 +91,7 @@
 			</div>
 		</div>
 	</div>
+</div>
 </div>
 </body>
 </html>
