@@ -1,6 +1,8 @@
 if(USER_INVENTORY.length == 0){
 	document.getElementById("info-container").style.visibility="hidden";
-	document.getElementById("text").innerHTML="Jellenleg csóró vagy, és SEMMID nincs.";
+	document.getElementById("veglegesit").innerHTML="Jellenleg csóró vagy, és SEMMID nincs.";
+	document.getElementById("veglegesit").style.visibility="visible";
+	
 	
 }else{
 								//lambda my beloved
