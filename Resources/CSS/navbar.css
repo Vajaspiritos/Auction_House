@@ -4,13 +4,12 @@
 	width: 98.8%;
 	position: fixed;
 	z-index: 10;
-	display: block;
 	top: 2;
 
 }
 
-.inactive {display: block;}
-
+.active{display: block;}
+.inactive{display: none;}
 .inline 
 {
 	display: inline-block;
@@ -87,10 +86,10 @@ a
 
 @media screen and (min-width: 995px) 
 {
-		.inactive, .menusor {display: block;}
+		.inactive, .active {display: block;}
 }
 
-.active {display: block;}
+
 @media screen and (max-width: 995px) 
 {
 	
