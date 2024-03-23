@@ -5,11 +5,10 @@
 	position: fixed;
 	z-index: 10;
 	top: 2;
-
 }
 
 .active{display: block;}
-.inactive{display: none;}
+.inactive {width: 0;}
 .inline 
 {
 	display: inline-block;
@@ -92,7 +91,16 @@ a
 
 @media screen and (max-width: 995px) 
 {
-	
+	@keyframes attones{
+  	from {width: 0%;}
+  	to {width: 100%;}
+  	}
+  	@keyframes eltunes{
+  	from {width: 100%;}
+  	to {width: 0%;}
+  	}
+
+
 	.menusor
 	{
 		height: 100%;
@@ -100,8 +108,12 @@ a
 		max-height: none;
 		margin: 0;
 		text-align: center;
+		animation-iteration-count:
+
 	}
 
+	.inactive {	overflow: hidden; white-space: nowrap;}
+	.active {	animation: attones 1s; white-space: nowrap;}
 
 	.menu-gombok
 	{
@@ -117,7 +129,6 @@ a
 	.gombok  {float: none; width: 100%; margin:0 0 0 0; padding: 0; }
 	.menu-gombok:hover {background-color: grey; box-shadow: none;}
 	.kep img{display: none;}
-	.inactive {display: none;}
 	#drop-btn {display: block; font-size: 5em; position: fixed; z-index: 200; background-color: transparent; color: white; border: none;}
 
 	
