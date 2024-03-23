@@ -44,6 +44,7 @@ body
 	float: right;
 	width: 100%;
 	font-size: 100px;
+	border: none;
 }
 .inline 
 {
@@ -51,9 +52,32 @@ body
 }
 .naplo
 {
-	height: 70vh;
+	height: 30vw;
 	border: 3px solid rgb(43, 0, 48);
 	background-color: rgb(255,255,255,0.4);
-
 	margin-left: 20px;
+}
+
+@media screen and (max-width: 995px) 
+{
+.inline,#chat-box,#aukcio {display: block; float: none;}
+#aukcio 
+{
+	margin-left: 10%;
+	margin-top: -10%;
+	margin-bottom: 5%;
+}
+
+#chat-box 
+{
+	width: 75%;
+	margin-left: 10%;
+}
+
+.naplo
+{
+	display: none;
+}
+
+
 }
