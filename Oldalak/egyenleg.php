@@ -16,11 +16,10 @@
 			<link rel="stylesheet" href="../Resources/CSS/betuTipusok.css">
 	<link rel="stylesheet" href="../Resources/CSS/navbar.css">
 	<link rel="stylesheet" href="../Resources/CSS/egyenleg.css">
-		<script src="../Resources/Scriptek/navbar.js"></script>
 </head>
 <body>
 	<button id="drop-btn" onclick="lenyit()">↓</button>
-	<div class="menusor" id="drop-menusor">
+	<div class="menusor inactive" id="drop-menusor">
 		<div class="kep inline">
 			<img src="../Resources/Images/Icons/logo.gif" alt="Logo" >
 		</div>
@@ -35,6 +34,7 @@
 		
 		</div>
 	</div>
+
 	<div class="menusor-spacer">
 	</div>
 	<div id="egyenleg-div">
@@ -107,4 +107,5 @@
 </div>
 </body>
 <script src="../Resources/Scriptek/Egyenleg.js"></script>
+<script src="../Resources/Scriptek/navbar.js"></script>
 </html>

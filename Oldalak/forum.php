@@ -32,11 +32,10 @@
 	<link rel="stylesheet" href="../Resources/CSS/navbar.css">
 	<link rel="stylesheet" href="../Resources/CSS/forum.css">
 	<script src="../Resources/Scriptek/forum.js"></script>
-		<script src="../Resources/Scriptek/navbar.js"></script>
 </head>
 <body>
 <button id="drop-btn" onclick="lenyit()">↓</button>
-	<div class="menusor" id="drop-menusor">
+	<div class="menusor inactive" id="drop-menusor">
 		<div class="kep inline">
 			<img src="../Resources/Images/Icons/logo.gif" alt="Logo" >
 		</div>
@@ -70,4 +69,5 @@
 </dic>
 </body>
 <script src="../Resources/Scriptek/forum_load_in_data.js"></script>
+<script src="../Resources/Scriptek/navbar.js"></script>
 </html>
