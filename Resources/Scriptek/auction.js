@@ -38,8 +38,9 @@ function  UPDATE(data){
 			
 			Text = document.createElement("p");
 			Text.setAttribute("class","clock");
+			if(AUCTIONS.length >0){
 			let goal_date = new Date(AUCTIONS[0].Date).getTime();
-			
+
 			let timer = setInterval(function(){
 				//milisecs, másodpercek, percek, órák, napok
 				var distance = Math.max(0,goal_date - (new Date().getTime()));
@@ -53,7 +54,7 @@ function  UPDATE(data){
 				Text.innerHTML = hours+":"+minutes+":"+seconds;
 				if(distance == 0) location.reload();
 			},1000);
-			
+			}else Text.innerHTML = "∞";
 				screen.appendChild(Text);	
 			
 		

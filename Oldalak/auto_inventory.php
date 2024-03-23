@@ -17,6 +17,7 @@ function update(){
 	document.getElementById("SELECTED").value = JSON.stringify(selected);
 	if(selected.length >1){
 	document.getElementById("veglegesit").style.visibility = "visible";
+	document.getElementById("sendit").style.visibility = "visible";
 	}else document.getElementById("veglegesit").style.visibility = "hidden";
 }
 

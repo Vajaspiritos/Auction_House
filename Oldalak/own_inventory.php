@@ -20,9 +20,14 @@ function update(){
 	
 	document.getElementById("text").innerHTML = (selected.length-1)+"/5";
 	document.getElementById("SELECTED").value = JSON.stringify(selected);
-	if(selected.length >=6){
+	if(selected.length >1){
 	document.getElementById("veglegesit").style.visibility = "visible";
 	}else document.getElementById("veglegesit").style.visibility = "hidden";
+	if(selected.length >=6){
+		
+		document.getElementById("sendit").style.visibility = "visible";
+	}else document.getElementById("sendit").style.visibility = "hidden";
+	
 }
 
 for(let i=1;i<array.length;i++){ //első a span
