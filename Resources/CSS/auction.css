@@ -7,7 +7,7 @@ body{
 .curtain_closed{
 	background-image: url(../Images/BG/curtain_closed.jpg);
 	background-repeat:no-repeat;
-	background-size: contain;
+	background-size: cover;
 }
 
 .screen img{
@@ -23,8 +23,8 @@ body{
 
 .screen p{
 	color:red;
-	width:80vw;
-	height:20vw;
+	width:80%;
+	height:20%;
 	margin:50% auto 0% auto;
 	text-align:center;
 	font-size:5vw;
@@ -35,8 +35,8 @@ body{
 	background-repeat:no-repeat;
 	background-size: contain;
 	
-	width:40%;
-	height:63%;
+	width:40vw;
+	height:63vw;
 	margin: -15% auto auto auto;
 	padding-top: 1px;
 }
