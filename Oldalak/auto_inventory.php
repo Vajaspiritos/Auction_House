@@ -14,7 +14,7 @@ let selected = ["auto"];
 function update(){
 	
 	document.getElementById("text").innerHTML = (selected.length-1)+" tárgy kiválasztva";
-	document.getElementById("SELECTED").value = JSON.stringify(selected);
+	document.getElementById("SELECTED").innerHTML = JSON.stringify(selected);
 	if(selected.length >1){
 	document.getElementById("veglegesit").style.visibility = "visible";
 	document.getElementById("sendit").style.visibility = "visible";

@@ -86,6 +86,7 @@ function returnWithError($text){
 	
 	$_SESSION["Error"] = $text;
 	echo "return";
+	//echo $text;
 	echo "<script>window.top.location.href='sajat_aukcio.php'</script>";
 	
 	die();

@@ -12,8 +12,10 @@ echo "<script> const USER_INVENTORY=".GetInventory($conn).";</script>";
 </head>
 <body>
 	<div id="veglegesit-div">
-<form id="veglegesit" style="visibility:hidden">
-	<label id="text" for="valami"></label><button name="valami" type="submit">Katt ide</button>
+<form id="veglegesit" style="visibility:hidden" method="post" action="post_auction.php">
+		<input type="text" id="SELECTED" name="selected_items_container" style="display:none" >
+		<label id="text" for="valami" ></label>
+		<button name="valami" type="submit" id="sendit">Katt ide</button>
 	</form>
 </div>
 	<div id="items-container">
