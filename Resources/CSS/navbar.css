@@ -6,9 +6,7 @@
 	z-index: 10;
 	top: 2;
 }
-
 .active{display: block;}
-.inactive {width: 0;}
 .inline 
 {
 	display: inline-block;
@@ -112,7 +110,7 @@ a
 
 	}
 
-	.inactive {	overflow: hidden; white-space: nowrap;}
+	.inactive {	overflow: hidden; white-space: nowrap; width:0;}
 	.active {	animation: attones 1s; white-space: nowrap;}
 
 	.menu-gombok
