@@ -6,6 +6,7 @@
 	z-index: 10;
 	top: 2;
 }
+#drop-btn {transition: 0.4s;}
 .active{display: block;}
 .inline 
 {
