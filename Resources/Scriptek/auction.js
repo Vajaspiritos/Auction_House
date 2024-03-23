@@ -2,10 +2,18 @@ const socket = new WebSocket("ws://127.0.0.1:443");
 
 socket.addEventListener("message", (event) => {
 	
-		
+		console.log(event.data);
 			if(event.data =="id"){
 				
 				socket.send("AuctionClientID|"+USERID);
+				
+			}else if(event.data =="retry"){
+				
+				let tmp = setInterval(function(){
+					socket.send("AuctionClientID|"+USERID);
+					clearInterval(tmp);
+				},100);
+				
 				
 			}else{ 
 			
@@ -25,12 +33,7 @@ function  UPDATE(data){
 		document.body.setAttribute("class","curtain_closed");
 		
 		let screen = document.createElement("div");
-			
-			/* img = document.createElement("img");
-				img.src ="../Resources/Images/BG/screen.png";		
-				screen.appendChild(img);
-
-*/				
+						
 			screen.setAttribute("class","screen");
 			
 			Text = document.createElement("p");
@@ -39,7 +42,7 @@ function  UPDATE(data){
 			
 			let timer = setInterval(function(){
 				//milisecs, másodpercek, percek, órák, napok
-				var distance = goal_date - (new Date().getTime());
+				var distance = Math.max(0,goal_date - (new Date().getTime()));
 				var days = Math.floor(distance / (1000 * 60 * 60 * 24));
 				var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 				var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
@@ -48,7 +51,7 @@ function  UPDATE(data){
 				if(minutes < 10) minutes = "0"+minutes;
 				if(seconds < 10) seconds = "0"+seconds;
 				Text.innerHTML = hours+":"+minutes+":"+seconds;
-				
+				if(distance == 0) location.reload();
 			},1000);
 			
 				screen.appendChild(Text);	
@@ -56,10 +59,21 @@ function  UPDATE(data){
 		
 		document.body.appendChild(screen);
 		
+	}else{
+		
+		
+		
 	}
 	
 	
 }
+
+let tmp = setInterval(function(){
+	
+	
+	UPDATE("wait");
+	clearInterval(tmp);
+},1000);
 
 socket.onclose= function(){
 	
