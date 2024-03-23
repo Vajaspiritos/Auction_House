@@ -2,6 +2,10 @@
 <head>
 	<?php
 	include '../Resources/Scriptek/CheckForLoggedIn.php';
+	include '../Resources/Scriptek/ConnectToDB.php';
+	
+	echo "<script>const AUCTIONS=".GetAuctions($conn)."</script>";
+	
 	?>
 	<meta charset="UTF-8">
 		<link rel="stylesheet" href="../Resources/CSS/betuTipusok.css">
@@ -42,6 +46,7 @@
 		</table>
 	<div class="naplo">
 		<table id="filters" style="width: 100%">
+		<tbody id="aukcio-container">
 			<tr>
 				<td>
 				<button>Filter1</button>
@@ -49,8 +54,10 @@
 				<button>Filter3</button>	
 				</td>
 			</tr>
+		</tbody>
 		</table>
 	</div>
 </body>
+<script src="../Resources/Scriptek/fooldal.js"></script>
 <script src="../Resources/Scriptek/navbar.js"></script>
 </html>

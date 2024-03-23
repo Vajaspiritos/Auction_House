@@ -193,6 +193,27 @@ function IsLikedAlready($conn,$postID,$user){
 	
 }
 
-
+function GetAuctions($conn){
+	$result = $conn->query("SELECT * FROM `auction` WHERE Date > '".date("Y-m-d H:i:s")."' ORDER BY Date;");
+	$items = [];
+	
+	while($row = $result->fetch_assoc()){
+		
+		$newassoc = [];
+		$newassoc['ID'] = $row['ID'];
+		$newassoc['Tier'] = $row['Tier'];
+		$newassoc['Manager'] = $row['Manager'];
+		$newassoc['Date'] = $row['Date'];
+		
+		array_push($items,$newassoc);
+		
+		
+		
+	}
+	
+	return json_encode($items);
+	
+	
+}
 
 ?>
