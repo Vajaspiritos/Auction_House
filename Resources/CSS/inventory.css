@@ -142,3 +142,14 @@ table{
 {
 	width: 30%;
 }
+
+.selected{
+	
+	transition: 0.03s;
+	background-color: rgb(250,250,250,0.7) !important;
+	scale: 110% 110%;
+	
+}
+
+
+

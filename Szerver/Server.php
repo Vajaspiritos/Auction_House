@@ -1,5 +1,7 @@
 <?php
 //a program váza ez alapján készült: https://medium.com/@cn007b/super-simple-php-websocket-example-ea2cd5893575
+include '../Resources/Scriptek/ConnectToDB.php';
+$NextAuction = null;
 
 function C($text){
 	
@@ -63,7 +65,7 @@ $SERVER = socket_create(AF_INET,SOCK_STREAM,SOL_TCP) or die("Server couldn't be 
 socket_set_option($SERVER, SOL_SOCKET, SO_REUSEADDR, 1) or die("Server couldn't set option\n"); //Ez arra kell, hogy ha cask úgy bezáom pl a szervert, akkor a rendszer hajlandó legyen újra használni a porott, úgy is hogy már használva van. (azért hiszi hogy még használva van mert nem volt rendesen lezárva)
 socket_bind($SERVER, $address, $port) or die("Server couldn't bind to address or port\n"); 
 socket_listen($SERVER) or die("Server is deaf\n"); //mert hogy can'T listen
-
+socket_set_nonblock($SERVER);
 echo "Server started and is listening for users...\n";
 
 $CLIENTS = [$SERVER];
@@ -72,16 +74,19 @@ $Server_user = new Client("0","gray","SZERVER",null);
 
 
 while(true){
+	ServerAction();
+	
 	$read=$CLIENTS;
 	$write=null;
 	$exception=null;
 	
-	$r = socket_select($read,$write,$exception,null);
-	
+	$r = socket_select($read,$write,$exception,0);
+
 	if($r<=0) continue;
 	
 	//ha a readben most bennevan a server socket, akkor azt azt jelenti új user a láthatáron;
 	if(in_array($SERVER,$read)){
+		socket_set_block($SERVER);
 		C("new user trying to connet...");
 		$client= socket_accept($SERVER);
 		$CLIENTS[] = $client;
@@ -111,10 +116,10 @@ while(true){
 		WRITE($client,"id");
 		
         unset($read[array_search($SERVER, $read)]);
-		
+		socket_set_nonblock($SERVER);
 	}
 	if($r<=0) continue;
-	
+
 	foreach($read as $client){
 		
 		
@@ -162,9 +167,29 @@ while(true){
 				BROADCAST(FORMAT($message,$user));
 		}
 	}
-
+	sleep(100);
 }
 
+function ServerAction(){
+	
+	CheckForAuction();
+	
+}
+function CheckForAuction(){
+	global $NextAuction,$conn;
+	if($NextAuction!=null && $NextAuction < strtotime(date("Y-m-d H:i:s"))){
+		//on auction
+		
+	}else if($NextAuction==null){
+		//on startup
+		$auction_list = json_decode(GetAuctions($conn),TRUE);
+		if(count($auction_list) == 0) return false;
+		$NextAuction = strtotime($auction_list[0]["Date"]);
+		C($NextAuction);
+		return true;
+	}
+	
+}
 function Format($text,$client){
 	
 	return $client->Color()."|".$client->Name()."|".$client->ID()."|".$text;
