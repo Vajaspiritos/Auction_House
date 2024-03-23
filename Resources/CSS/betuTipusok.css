@@ -12,8 +12,18 @@ body
   src: url("../Fonts/pixel.otf") format("opentype");
 }
 
+@font-face {
+  font-family: clock;
+  src: url("../Fonts/E1234.ttf") format("truetype");
+}
+
 
 * 
 {
   font-family: title;
+}
+
+.clock{
+	
+	font-family: clock;
 }

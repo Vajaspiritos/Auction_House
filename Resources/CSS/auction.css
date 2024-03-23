@@ -1,0 +1,42 @@
+body{
+	
+	overflow:hidden;
+	width:100%;
+}
+
+.curtain_closed{
+	background-image: url(../Images/BG/curtain_closed.jpg);
+	background-repeat:no-repeat;
+	background-size: contain;
+}
+
+.screen img{
+	
+	
+	width:100%;
+	height:auto;
+	
+
+	
+	
+}
+
+.screen p{
+	color:red;
+	width:80%;
+	height:20%;
+	margin:50% auto 0% auto;
+	text-align:center;
+	font-size:5vw;
+}
+
+.screen{
+	background-image: url(../Images/BG/screen.png);
+	background-repeat:no-repeat;
+	background-size: contain;
+	
+	width:40%;
+	height:63%;
+	margin: -15% auto auto auto;
+	padding-top: 1px;
+}

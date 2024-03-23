@@ -35,7 +35,7 @@
 	
 	<div class="aukcios-felulet">
 		<div id="aukcio" class="inline">
-		
+		<iframe src="auction.php"  id="auction" style="width:100%; height:100%"></iframe>
 		</div>
 
 		<div class ="inline" id="chat-box">
