@@ -40,7 +40,7 @@
 	<div id="egyenleg-div">
 	<span id="egyenleg">Jelenlegi egyenleged:</span><span class="penz">1000</span>
 	</div>
-	<div id="giga-div">
+<div id="giga-div">
 	<div id="munka-container">
 		<div id="munka-rendszer" class="inline">
 			<p id="magyarazo-szoveg">Ide jönne egy nagy szöveg mint például: Ez egy olyan munka ahol egy katonai hatseregnek segítesz embereket toborozni. A munka egyszerű és sok pénz nem jár érte. Várnod kell a kiszemeltre és mikor jónak látod a helyzetet elé sétálsz és megkéred hogy csatlakozzon a hadsereghez.
@@ -61,10 +61,13 @@
 			</div>
 		</div>
 	</div>
-	<div id="kulso-tier-container">
-		<a id="tier-text">tier badge áruház</a>
+
 	<div id="tier-container">
-		
+		<div id="kulso-tier-container">
+		<a id="tier-text">tier badge áruház</a>
+		</div>
+		<div id="timig-container">
+
 		<div class="tier-img-container" id="very-low-tier">
 			<img src="../Resources/Images/Munka/munka.jpg" alt="tier kep">
 			<div class="penz-container">
@@ -104,6 +107,7 @@
 		</div>
 	</div>
 </div>
+
 </div>
 </body>
 <script src="../Resources/Scriptek/Egyenleg.js"></script>
