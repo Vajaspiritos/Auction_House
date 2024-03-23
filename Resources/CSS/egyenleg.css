@@ -28,7 +28,7 @@
 {
 	height: 27vw;
 	border: 2px solid white;
-	width: 50vw;
+	width: 48vw;
 	margin-top: 3.6vw;
 	display: inline-block;
 	float: left;
@@ -109,7 +109,7 @@ content: " ";
 #tier-container 
 {
 	margin-top: 3%;
-	width: 45vw;
+	width: 44vw;
 	max-height: 40vw;
 	border: 3px solid white;
 	float: right;
@@ -172,7 +172,11 @@ content: " ";
 	text-transform: uppercase;
 }
 
-@media screen and (max-width: 1480px) 
+
+
+
+
+@media screen and (max-width: 1020px) 
 {
 
 .menusor-spacer 
