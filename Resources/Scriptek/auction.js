@@ -1,5 +1,5 @@
 const socket = new WebSocket("ws://127.0.0.1:443");
-
+let waiting = true;
 socket.addEventListener("message", (event) => {
 	
 		console.log(event.data);
@@ -25,8 +25,8 @@ socket.addEventListener("message", (event) => {
 
 
 function  UPDATE(data){
-	
-	if(socket.readyState==3||data=="wait"){
+
+	if(socket.readyState==3||data=="wait"&&waiting){
 		console.log("Waiting mode");
 		document.body.innerHTML="";
 	
@@ -75,6 +75,10 @@ let tmp = setInterval(function(){
 	clearInterval(tmp);
 },1000);
 
+socket.onopen= function(){
+	waiting = false;
+	clearInterval(tmp);
+}
 socket.onclose= function(){
 	
 	UPDATE("");

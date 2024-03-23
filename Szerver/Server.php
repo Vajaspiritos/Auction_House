@@ -18,7 +18,13 @@ function READ($client){
 	
 	$byte_array = unpack('C*',socket_read($client,1024) );
 
-	if($byte_array[1] != 129){ C($byte_array[1]);return "error|1";}
+	if($byte_array[1] != 129){
+				if($byte_array[1]==136){
+					DeleteUser($client);
+				}else{
+					C($byte_array[1]);return "error|1";
+				}
+		}
 	
 	$length = $byte_array[2] -128;
 	if($length>125) return "error|2";
@@ -117,7 +123,7 @@ while(true){
 		C("A client's message is not readable :".$message); 
 		unset($CLIENTS[array_search($client, $CLIENTS)]);
 		unset($INFOS[array_search(FindUser($client), $INFOS)]);
-		
+		if(FindUser($client)->Auction() != null)unset($CLIENTS[array_search(FindUser($client)->Auction(), $CLIENTS)]);
 		continue;
 		} 
 		$parts = explode("|",$message);
@@ -131,8 +137,27 @@ while(true){
 			$INFOS[] = $newUser;
 			BROADCAST(FORMAT("Új felhasználó csatlakozott: ".$parts[2],$Server_user));
 			
+		}else if($parts[0]=="AuctionClientID"){
+			$found = false;
+			foreach($INFOS as $C){
+				
+				if($C->ID() == $parts[1]){
+					C($C->Name()." becsatlakozott az aukcioba");
+					$C->SetAuction($client);
+					$found = true;
+				}
+				
+				
+			}
+			if(!$found){
+				
+				WRITE($client,"retry");
+				
+			}
+			
 		}else{
 			$user = FindUser($client);
+			if($user == null) continue;
 				C($user->Name().": ".$message);
 				BROADCAST(FORMAT($message,$user));
 		}
@@ -150,14 +175,23 @@ function FindUser($conn){
 	global $INFOS;
 	foreach($INFOS as $client){
 		
-		if($conn == $client->Connection()){
+		if($conn == $client->Connection()||$conn == $client->Auction()){
 			
 			return $client;
 		}
 	}
 }
 
-
+function DeleteUser($client){
+	global $CLIENTS,$INFOS;
+	
+	unset($CLIENTS[array_search($client, $CLIENTS)]);
+	
+	$user = FindUser($client);
+	
+	if($user != null){unset($INFOS[array_search(FindUser($client), $INFOS)]);
+	C("User disconnected");}
+}
 
 function BROADCAST($text){
 	global $INFOS;
@@ -175,6 +209,7 @@ class Client{
 	public $Color;
 	public $Name;
 	public $Conn;
+	public $Auction=null;
 	
 	function __construct($ID,$Color,$Name,$conn){
 		$this->ID = $ID;
@@ -183,9 +218,11 @@ class Client{
 		$this->Conn = $conn;
 	}
 	
-	function ID(){ return $this->ID;}
-	function Color(){ return $this->Color;}
-	function Name(){ return $this->Name;}
-	function Connection(){ return $this->Conn;}
+	function ID()				{ return $this->ID;}
+	function Color()			{ return $this->Color;}
+	function Name()				{ return $this->Name;}
+	function Connection()		{ return $this->Conn;}
+	function Auction()			{ return $this->Auction;}
+	function SetAuction($conn)	{ $this->Auction =$conn;}
 }
 ?>
