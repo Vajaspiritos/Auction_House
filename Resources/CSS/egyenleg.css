@@ -5,7 +5,11 @@
 	width: fit-content;
 	margin-top: -6vw;
 }
-
+.menusor-spacer 
+{
+	max-height: 15vw;
+	min-height: 15vw;
+}
 #egyenleg-div, #egyenleg
 {
 
@@ -19,7 +23,7 @@
 .penz::before 
 {content: " ";}
 
-
+#work {	white-space: nowrap;}
 #munka-container 
 {
 	margin-left: 1.5em;
@@ -168,9 +172,16 @@ content: " ";
 	text-transform: uppercase;
 }
 
-@media screen and (max-width: 1000px) 
+@media screen and (max-width: 1020px) 
 {
-	
+
+.menusor-spacer 
+{
+	max-height: 20vw;
+	height: 20vw;
+}
+
+
 #munka-container, #tier-container
 {
 	display: block; float: none;
@@ -220,5 +231,5 @@ content: " ";
 }
 
 
-
 }
+
