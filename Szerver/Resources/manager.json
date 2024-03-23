@@ -1,0 +1,95 @@
+{
+"stage":[{
+	"welcome":[{
+		"greet":[{
+			"0": "Üdvözlet minden kedves vásárlónknak. a nevem $manager és én leszek a maguk árverésvezetőjük.",
+			"1": "Köszöntök minden kedves Licitálót. $manager vagyok. Köszönöm hogy eljöttek."
+		}],
+		"Rules":[{
+			"0":"Mindenek elött tisztázzuk az aukció menetét. Tárgyakat fogok prezentálni, amikre adott időn belül Liciteket tehetnek a felkiáltójel, bet és a kivánt össze beírásával. Ezután. pedig ha senki más nem ajánl többet, azesetben szívből gratulálunk a vásárláshoz.",
+			"1":"Az aukció így fog zajlani: Maguk elé tesszük az egyik tárgyat, és elmondunk róla pár információt. Ez idő alatt, már megtehetik licitjeiket. ezt a Felkiáltójel, Bé, E, Té, Szóköz és az összeggel tehetik meg. további információkért tekintsék meg az Információs fülünket. Amennyiben senki nem licitált nagyobb értékben, Ön kapja az aktuális tárgyat."
+		}],
+		"Goodbye":[{
+			"0":"Nem is húznám a drága idejüket. Lássunk is hozzá az árverésnek.",
+			"1":"Remélem érthető volt a magyarázat. Amennyiben olyan kérdésük van amit az információs fül nem tisztáz, kérdéseiket feltehetik a forúmon is. Mindannyiuknak sok sikert kívánok."
+			}]
+	}],
+	"auction":[{
+		"first":[{
+			"bring":[{
+				"0":"Íme az első tárgyunk!",
+				"1":"Első de nem útolsó sorban bemutatjuk eme remek darabot!" 
+				}],
+			"sold":[{
+				"0":"Első tárgyunk elkelt! Köszönjük a vásárlást.",
+				"1":"A ház Gratulál az aukció első vásárlásához.",
+				"2":"Ezzel elkelt az esemény legelső darabja."
+				}]
+			}],				
+		"n":[{
+			"bring":[{
+				"0":"A következő tárgyunk már itt is van.",
+				"1":"Büszkén mutatom be az alábbi relikviát.",
+				"2":"De ne menjenek sehova, mert itt van máris a következő tárgyunk.",
+				"3":"Bemutatjuk a licit $i.tárgyát."
+				}],
+			"name":[{
+				"0":"$name ként ismerhetik.",
+				"1":"Becses neve $name.",
+				"2":"Úgy hívják, hogy $name.",
+				"3":"A $name nevet viseli."
+				}],
+			"description":[{
+				"0":"Az alábbi információkat lehet róla tudni: $description.",
+				"1":"Tudni illik róla, hogy $description.",
+				"2":"$description."
+				}],
+			"Original_owner":[{
+				"yes_OG":[{
+					"0":"Az eredeti tulajdonosa $OG volt.",
+					"1":"$name eredetileg $OG tulajdonában volt.",
+					"2":"Egyszer $OG volt a birtokosa."
+					}],
+				"no_OG":[{
+					"0":"Az eredeti tulajdonosa nem ismert.",
+					"1":"Csak teóriák szólnak róla, ki lehetett az eredeti tulajdonosa.",
+					"2":"Ismeretlen erdetű."
+					}]
+				}],
+			"Rarity":[{
+				"n":[{
+					"0":"A minősítés alatt a $tier kategóriába soroltuk.",
+					"1":"Ennek a tárgynak a minősége, és ritkasága elnyerte neki a $tier besorolást."
+					}]
+				}],
+			
+			"sold":[{
+				"0":"ÉSSS ELKELT!!!",
+				"1":"Elkelt! Gratulálunk a vásárláshoz.",
+				"2":"Elkelt! $name a elkelt $price ért.",
+				"3":"Elkelt eme remek ereklye, de ne menjen messze mert jön a következő.",
+				"4":"Köszönjük a vásárlást. Használja egészséggel.",
+				"5":"Sajnálattal közlöm minden lelkes licitelőnek, hogy $name elkelt!"
+				}]
+		}],
+		"last":[{
+			"bring":[{
+				"0":"Reméljük nem költötték el még az összes pénzüket, úgyanis itt jön az utolsó tárgy.",
+				"1":"Párakat szomorúan érhet a hír, hogy ez az utolsó darab amit maguk elé állítunk.",
+				"2":"Vessék pillantásukat a licit utolsó darabjára.",
+				"3":"Bemutatom az utolsó darabot."
+				}],
+			"sold":[{
+				"0":"és $name , az aukciónk utolsó darabja elkelt!",
+				"1":"Ezzel pedig, elkelt árverésünk, utolsó megmaradt darabja is.",
+				"2":"Az utolsó tárgyat pedig $buyer_ID -es licitelőnk vitte, $price értékben. Gratulálunk."
+				}]
+			}]
+		}],
+	"Goodbye":[{
+		"0":"Ezzel pedig az árverés végéhez értünk. köszönöm, hogy velem tartottak, a licitek nyerteseinek pedig a ház Gratulál és mihamarabbi viszont látást kiván.",
+		"1":"Utolsó darabunk elkelésével, viszont elérkeztünk az esemény lezárásához. Köszönjük mindannyiuk részvételét. És szívesen várjuk a legközelebbi közvetítésen.",
+		"2":"Lezárult tehát ez a közvetítés is. Hálásak vagyunk hogy itt voltak, és extra gratuláció $best_buyer_ID -es számú licitelőnknek, aki az egész esemény alatt a legnagyobb összeget ajánlota fel, $best_price értékben. Viszont látásra."
+		}]
+	}]
+}
