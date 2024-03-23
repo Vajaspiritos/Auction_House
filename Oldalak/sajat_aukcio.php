@@ -17,7 +17,7 @@
 </head>
 <body>
 	<button id="drop-btn" onclick="lenyit()">↓</button>
-	<div class="menusor" id="drop-menusor">
+	<div class="menusor inactive" id="drop-menusor">
 		<div class="kep inline">
 			<img src="../Resources/Images/Icons/logo.gif" alt="Logo" >
 		</div>

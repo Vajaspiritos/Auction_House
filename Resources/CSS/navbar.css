@@ -4,14 +4,13 @@
 	width: 98.8%;
 	position: fixed;
 	z-index: 10;
-	top: 2;
 	display: block;
+	top: 2;
 
 }
-#drop-menusor
-{
-	display: block;
-}
+
+.inactive {display: block;}
+
 .inline 
 {
 	display: inline-block;
@@ -83,19 +82,27 @@ a
 {
 	height: 20%;
 }
+
 #drop-btn {display: none; font-size: 5em; position: fixed; z-index: 200; background-color: transparent; color: black; border: none;}
+
+@media screen and (min-width: 995px) 
+{
+		.inactive, .menusor {display: block;}
+}
+
+.active {display: block;}
 @media screen and (max-width: 995px) 
 {
+	
 	.menusor
 	{
-		display: block;
 		height: 100%;
 		height: fit-content;
 		max-height: none;
 		margin: 0;
 		text-align: center;
-
 	}
+
 
 	.menu-gombok
 	{
@@ -111,8 +118,8 @@ a
 	.gombok  {float: none; width: 100%; margin:0 0 0 0; padding: 0; }
 	.menu-gombok:hover {background-color: grey; box-shadow: none;}
 	.kep img{display: none;}
-
-	#drop-btn {display: block; font-size: 5em; position: fixed; z-index: 200; background-color: transparent; color: black; border: none;}
+	.inactive {display: none;}
+	#drop-btn {display: block; font-size: 5em; position: fixed; z-index: 200; background-color: transparent; color: white; border: none;}
 
 	
 
