@@ -1,4 +1,13 @@
 const socket = new WebSocket("ws://127.0.0.1:443");
+socket.addEventListener("error", (event)=>{
+	if(event.target.readyState==3){
+	console.log("Az Aukcio kliens hibába ütközött. Ha nincs elindítva a Szerver ez normális. ");
+	}
+	
+})
+
+
+
 let waiting = true;
 socket.addEventListener("message", (event) => {
 	

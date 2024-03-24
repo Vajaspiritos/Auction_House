@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="hu">
 <head>
 		<?php
 		include '../Resources/Scriptek/CheckForLoggedIn.php';
@@ -47,7 +48,7 @@
 
 	<div id="img-timer-container" class="inline">
 			<div id="img-container">
-					<img src="../Resources/Images/Munka/work_0.gif"alt="kép a munkáról">
+					<img src="../Resources/Images/Munka/work_0.gif" alt="kép a munkáról">
 				</div>
 			<div id="timer-div">
 					<div id="timer-belso-div">
@@ -106,7 +107,7 @@
 </div>
 
 </div>
-</body>
 <script src="../Resources/Scriptek/Egyenleg.js"></script>
 <script src="../Resources/Scriptek/navbar.js"></script>
+</body>
 </html>

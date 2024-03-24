@@ -1,6 +1,13 @@
 
 const socket = new WebSocket("ws://127.0.0.1:443");
 
+socket.addEventListener("error", (event)=>{
+	if(event.target.readyState==3){
+	console.log("A Chat kliens hibába ütközött. Ha nincs elindítva a Szerver ez normális. ");
+	}
+	
+})
+
 socket.addEventListener("message", (event) => {
 	
 		

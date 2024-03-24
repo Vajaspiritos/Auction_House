@@ -51,7 +51,7 @@ tr{
     margin-left: 2.5%;
 }
 
-#chat-box
+#chatBox
 {
 
 	    height: 30vw;
@@ -65,7 +65,7 @@ tr{
 }
 
 
-#chat-box iframe
+#chatBox iframe
 {
 	background-color: rgb(82, 82, 82);
 	height: 100%;
@@ -98,7 +98,7 @@ tr{
 
 @media screen and (max-width: 995px) 
 {
-.inline,#chat-box,#aukcio {display: block; float: none;}
+.inline,#chatBox,#aukcio {display: block; float: none;}
 #aukcio 
 {
 	
@@ -109,7 +109,7 @@ tr{
     height: 46vw;
 }
 
-#chat-box 
+#chatBox 
 {
 	
 	height: 61vh;

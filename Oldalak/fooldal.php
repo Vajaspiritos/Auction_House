@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="hu">
 <head>
 	<?php
@@ -39,7 +40,7 @@
 		<iframe src="auction.php"  id="auction" style="width:100%; height:100%"></iframe>
 		</div>
 
-		<div class ="inline" id="chat-box">
+		<div class ="inline" id="chatBox">
 			<iframe src="Chat.php" title="Chat Box" id="chat-box" class="inline"></iframe>
 		</div>
 	</div>
@@ -61,7 +62,8 @@
 		</tbody>
 		</table>
 	</div>
-</body>
 <script src="../Resources/Scriptek/fooldal.js"></script>
 <script src="../Resources/Scriptek/navbar.js"></script>
+</body>
+
 </html>

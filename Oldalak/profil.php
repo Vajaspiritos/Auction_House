@@ -1,4 +1,4 @@
-<DOCTYPE! html>
+<!DOCTYPE html>
 <html lang="hu">
 <head>
 	<?php
@@ -42,9 +42,9 @@
 	</div>
 	<div class="Nagydoboz">
 		<div id="Pfp" class="inline">
-			<img id="PP" alt="Profilképed :)">
+			<img id="PP" src="../Resources/Images/icons/Default_User.png" alt="Profilképed :)">
 			<form action="UploadPfp.php" method="post" enctype="multipart/form-data">
-			<input id="browse" type="file" name="PFP" value="Kép kiválasztása">
+			<input id="browse" type="file" name="PFP">
 			<input id="upload" type="submit" value="Kép feltöltése">
 			</form>
 		</div>

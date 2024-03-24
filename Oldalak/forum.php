@@ -1,4 +1,4 @@
-<DOCTYPE! html>
+<!DOCTYPE html>
 <html lang="hu">
 <head>
 	<?php
@@ -60,14 +60,13 @@
 		<button id="publish_button" onclick="legordul()">Posztolok</button>
 		<form action="Forum_post.php" id="Message" method="post" enctype="multipart/form-data">
 		<div id="pTartalom">
-		<textarea type="text" name="MSG" placeholder="Ide írva oszthatja meg gondolatait, vagy dicsekedhet el újonnan megszerzett darabjairól..." maxlength="1000"></textarea><br>
+		<textarea name="MSG" placeholder="Ide írva oszthatja meg gondolatait, vagy dicsekedhet el újonnan megszerzett darabjairól..." maxlength="1000"></textarea><br>
 		<input type="file" name="kep" id="browse"><br>
 		<button type="submit">Küldés</button>	
 		</div>
 	</form>
 	</div>
-</dic>
-</body>
 <script src="../Resources/Scriptek/forum_load_in_data.js"></script>
 <script src="../Resources/Scriptek/navbar.js"></script>
+</body>
 </html>

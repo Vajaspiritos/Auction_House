@@ -6,11 +6,21 @@ $servername = "localhost";
 $username = "root";				//A DB-ben lére van hozva egy user, Szelektált jogokkal.
 $password = "";
 $db="auction_house";
-
+$conn;
+try{
 $conn = mysqli_connect($servername, $username, $password,$db);
+}catch(Exception $err){
+	unset($_SESSION['UserID']);
+	header("Location: belepes.php");
+}
 if ($conn->connect_error) {
   die("Csatlakozás az adatbázishoz sikertelen" . $conn->connect_error);
 }
+
+	
+	
+
+
 
 function UpdateGeneralInfos($conn){
 	
