@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="hu">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,21 +41,21 @@
 
 	<div id="aukcio-container">
 		<div class="aukcio auto">
-		<p id="aukcio-cim">Automata aukció</p>	
-		<p id="aukcio-info">Itt kiválaszthat bármennyit a saját, már birtokolt tárgyai közül, hogy elküldje aukcióra. Ekkor a rendszer magától keres neki egy dátumot és hozzárendeli. Minden aukcióra küldés végleges!</p>		
-			<button id="auto" onclick="replace(false)" nowrap>Aukcióra tétel</button>
+		<p class="aukcio-cim">Automata aukció</p>	
+		<p class="aukcio-info">Itt kiválaszthat bármennyit a saját, már birtokolt tárgyai közül, hogy elküldje aukcióra. Ekkor a rendszer magától keres neki egy dátumot és hozzárendeli. Minden aukcióra küldés végleges!</p>		
+			<button id="auto" onclick="replace(false)" >Aukcióra tétel</button>
 		</div>
 		<div class="aukcio own">	
-		<p id="aukcio-cim">Saját aukció</p>	
-		<p id="aukcio-info">Ennél legalább 5 tárgyat kell kivállasztania ahhoz, hogy egy saját aukciós eseményt tudjon indítani. Itt csak az ön által kiválasztott tárgyak kerülnek elárverezésre. A rendszer dátumot az események továbbra is automatikusan választ!</p>			
-			<button id="host" onclick="replace(true)" nowrap>Aukcióra tétel</button>
+		<p class="aukcio-cim">Saját aukció</p>	
+		<p class="aukcio-info">Ennél legalább 5 tárgyat kell kivállasztania ahhoz, hogy egy saját aukciós eseményt tudjon indítani. Itt csak az ön által kiválasztott tárgyak kerülnek elárverezésre. A rendszer dátumot az események továbbra is automatikusan választ!</p>			
+			<button id="host" onclick="replace(true)" >Aukcióra tétel</button>
 		</div>
 	</div>
 	<div id="raktar-div">
 	<iframe id="raktar" style="visibility:hidden"></iframe>
 </div>
-	
-</body>
 <script src="../Resources/Scriptek/sajat_aukcio_load_in_data.js"></script>
-	<script src="../Resources/Scriptek/navbar.js"></script>
+	<script src="../Resources/Scriptek/navbar.js"></script>	
+</body>
+
 </html>

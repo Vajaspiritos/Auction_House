@@ -49,13 +49,13 @@
 			</form>
 		</div>
 		<div id="adatok" class="inline">
-			<p><span id="label"class="feliratok">CASH:</span>
+			<p><span  class="feliratok label">CASH:</span>
 			<span id="penz" class="feliratok">PÉZ$$$$$$$$$$</span></p>
 
-			<p><span id="label" class="feliratok">Felhasznalo nev:</span>
+			<p><span class="feliratok label">Felhasznalo nev:</span>
 			<span id="fnev" class="feliratok">A fiok neve</span></p>
 
-			<p><span id="label" class="feliratok">Email cim:</span>
+			<p><span  class="feliratok label">Email cim:</span>
 			<span id="email" class="feliratok">Aző ímél cím</span></p>
 
 			<button>Fiok torlese</button>
@@ -67,7 +67,7 @@
 		</div>
 		
 	</div>
-</body>
-<script src="../Resources/Scriptek/profil_load_in_data.js"></script>
+	<script src="../Resources/Scriptek/profil_load_in_data.js"></script>
 <script src="../Resources/Scriptek/navbar.js"></script>
+</body>
 </html>

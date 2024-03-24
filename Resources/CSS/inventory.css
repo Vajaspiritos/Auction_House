@@ -185,13 +185,13 @@ table{
     width: 100vw;
     padding-top: 1em;
     position: absolute;
-    margin-top: 67vh;
+    margin-top: 70vh;
 	
 	}
 #info-container {
     width: 95vw;
     margin-left: -2vh;
-    margin-top: -10vw;
+    margin-top: 0vw;
     height: auto;
     border: 0.2vw solid black;
     display: inline-block;

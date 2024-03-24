@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang = "hu">
 <head>
 <?php
 include '../Resources/Scriptek/CheckForLoggedIn.php';
@@ -12,12 +13,12 @@ const Tier =".$_SESSION["Tier"].";
 echo "<script>const AUCTIONS=".GetAuctions($conn)."</script>";
 
 ?>
+<title>Auction</title>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="../Resources/CSS/betuTipusok.css">
 <link rel="stylesheet" href="../Resources/CSS/auction.css">
 </head>
 <body>
-
-</body>
 <script src="../Resources/Scriptek/auction.js"></script>
+</body>
 </html>

@@ -3,26 +3,24 @@ body
 overflow: hidden;
 }
 
-.menusor-spacer {
-    height: 15%;
-}
+
 .aukcio
 {
 	display: inline-block;
 	background-color: rgb(201,201,201,0.3);
-	width: 40%;
+	width: 40vw;
 	
 }
 
 
 
-#aukcio-info
+.aukcio-info
 {
 	font-size: 1.5em;
 	overflow: auto;
 	text-align: justify;
 	padding: 0.6em 1em;
-	height: 30%;
+	height: 16vh;
 	color: white;;
 	border: 2px solid rgb(0,0,0);
 	border-top-width: 3px;
@@ -54,11 +52,11 @@ overflow: hidden;
 
 }
 
-#aukcio-cim
+.aukcio-cim
 {
 	margin-left: 0.1em;
 	margin-right: 0.1em;
-	font-size: 2.5em;
+	font-size: 1.5vw;
 	border-bottom: 2px solid white;
 	color: white;
 	padding: 0.1em 0em;
@@ -94,7 +92,7 @@ margin: 1% auto;
 @media screen and (max-width: 995px) 
 {
 	#raktar-div{
-    height: 100%;
+    height: 100vh;
     width: 100%;
 	}
 	
@@ -103,11 +101,20 @@ margin: 1% auto;
 		overflow:auto;
 	}
 	
+	.aukcio-info{
+		
+		height: 30vh;
+	}
+	
 	.aukcio {
     display: inline-block;
     background-color: rgb(201,201,201,0.3);
     width: 100%;
 	margin-bottom: 3vh;
+	height:auto;
+	}
+	.aukcio-cim {
+		font-size:5.5vh;
 	}
 	
 	.aukcio button {

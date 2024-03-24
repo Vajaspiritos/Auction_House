@@ -113,7 +113,7 @@ font-weight: bold;
     margin-left: 0.5vw;
 }
 
-#label {
+.label {
     text-transform: uppercase;
     font-size: 3.5vw;
     font-weight: bold;
@@ -182,7 +182,7 @@ float: none;
 #adatok button, #logout {font-size: 3vw;margin-left: 4vw;}
 #adatok button {margin-right: 10vw;}
 
-#label {
+.label {
     text-transform: uppercase;
     font-size: 6.5vw;
     font-weight: bold;
