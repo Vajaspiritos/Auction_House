@@ -72,6 +72,7 @@ font-weight: bold;
 }
 .Raktar
 {
+	
 	margin-left: 1%;
 	background-color: rgb(201,201,201,0.2);
     height: 32vw;
@@ -120,6 +121,13 @@ font-weight: bold;
 
 @media screen and (max-width: 1000px) 
 {
+
+.Raktar
+{
+	display:inline;
+	
+}
+	
 	html{
 		
 		overflow-x:hidden;
@@ -207,7 +215,7 @@ float: none;
 }
 .Raktar iframe {
     width: 100vw;
-    height: 100vw;
+    height: 58vh;
     border: none;
 }
 
