@@ -43,7 +43,7 @@
 <div id="giga-div">
 	<div id="munka-container">
 		<div id="munka-rendszer" class="inline">
-			<p id="magyarazo-szoveg">Az aukciósháznak naponta több ezer portékát kezel. Az épületben mindenki mindig siet dolgára, és sose vagyunk időben kész. Jelenleg Rengeteg doboz van, amibe a tárgyakat tartjuk, ezeket mind a helyére kéne tenni. Örömmel várjuk jelentkezését!</div>
+			<p id="magyarazo-szoveg">Az aukciósház naponta több ezer portékát kezel. Az épületben mindenki mindig siet dolgára és sose vagyunk időben kész a pakolással. Jelenleg rengeteg doboz van amibe a tárgyakat tartjuk és ezeket mind a helyére kéne pakolni. Örömmel várjuk jelentkezését!</div>
 
 	<div id="img-timer-container" class="inline">
 			<div id="img-container">

@@ -7,6 +7,7 @@
 	echo "<script>const AUCTIONS=".GetAuctions($conn)."</script>";
 	
 	?>
+	<title>Főoldal</title>
 	<meta charset="UTF-8">
 		<link rel="stylesheet" href="../Resources/CSS/betuTipusok.css">
 	<link rel="stylesheet" href="../Resources/CSS/navbar.css">

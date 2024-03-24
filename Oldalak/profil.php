@@ -59,7 +59,7 @@
 			<span id="email" class="feliratok">Aző ímél cím</span></p>
 
 			<button>Fiok torlese</button>
-			<a href="logout.php" style="color:cyan">Kijelentkezés</a>
+			<a href="logout.php" style="color:cyan" id="logout">Kijelentkezés</a>
 		</div>
 		<div id="History" class="inline"><span>Histroy</span></div>
 		<div class="Raktar">	

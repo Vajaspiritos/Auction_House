@@ -9,6 +9,7 @@
 	echo "<script> const USER_INVENTORY=".GetInventory($conn).";</script>";
 	
 	?>
+	<title>Saját aukció</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="../Resources/CSS/betuTipusok.css">
 	<link rel="stylesheet" href="../Resources/CSS/navbar.css">
