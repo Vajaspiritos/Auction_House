@@ -55,7 +55,7 @@
 	</div>
 	<div class="chatbox inline" id="post_container">
 	</div>
-	<div class="publish inline" id="publish">
+	<div class="inline eltunt" id="publish">
 	
 		<button id="publish_button" onclick="legordul()">Posztolok</button>
 		<form action="Forum_post.php" id="Message" method="post" enctype="multipart/form-data">

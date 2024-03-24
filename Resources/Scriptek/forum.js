@@ -1,22 +1,20 @@
 var megnyomva = false;
 function legordul() 
 {
-	var lista = document.getElementById("publish");
-	var tartalom = document.getElementById("pTartalom")
 	if(megnyomva==false) 
 	{
 		//media query cuccok. ha a képernyő akkora mint a mac-en akkor 
-		megnyomva= true;
-		lista.style.height = "45%"; //35
-
+		document.getElementById("publish").classList.remove("eltunt");
+		document.getElementById("publish").classList.add("megjelent");
+			document.getElementsByClassName("megjelent")[0].style.animation = "attunesDoboz 1s";
 	}
 	else 
 	{
-		megnyomva = false
-		lista.style.height = "4%"; //8.5
-
+		document.getElementById("publish").classList.add("eltunt");
+		document.getElementById("publish").classList.remove("megjelent");
+			document.getElementsByClassName("eltunt")[0].style.animation = "eltunesDoboz 1s";
 
 	}
-
+		megnyomva = !megnyomva;
 
 }

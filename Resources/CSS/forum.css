@@ -1,54 +1,68 @@
 
+	
+@keyframes attunesDoboz{
+  	from {height: 3.5vw; width: 10vw; left: 87vw;}
+  	to {height: 23vw; width: 25vw; left: 75vw;}
+  	}
+
+@keyframes eltunesDoboz{
+  	from {height:23vw; width: 25vw; left: 75vw;}
+  	to {height: 3.5vw; width: 10vw; left: 87vw;}
+
+  	}
+
+
 .Nagydoboz 
 {
 	text-align: center;
 }
 
-.publish
+
+.megjelent {height:23vw; width: 25vw; left: 75vw;}
+.eltunt {height:3.5vw; width: 10vw; left: 87vw;}
+
+#publish
 {
 	background-color: rgb(83,27,147,0.5);
-	width: 16.5%;
-	height: 6.3%;
-	transition: all 0.5s ease-out;
 	overflow: hidden;
 	position: fixed;
 	top: 25%;
-	float: right;
-	left: 80%;
 	border: 2px solid rgb(83,27,147,1);
 	text-align: center;
 
 }
+
 #browse 
 {
 margin: 5%;
 font-family: title;
 font-size: 1em;
 }
-.publish textarea 
+#publish textarea 
 {
-width: 80%;
-height: 30%;
-font-size: 1em;
-padding-top: 0.5em;
-padding-left: 0.5em;
+width: 25vw;
+height: 10vw;
+font-size: 1.5vw;
+padding-top: 0.5vw;
+padding-left: 0.5vw;
 }
 
 #publish_button
 {
-	font-size: 1.5em;
+	font-size: 1.5vw;
 	padding: 5px 10px;
-	margin-top: 2%;
-	margin-bottom: 2%;
+	margin-top: 0.3vw;
+	margin-bottom: 2vw;
 	background-color: white;
-	margin-left: 3.5%;
+
 	border: 2px solid black;
 }
 
 #pTartalom button 
 {
-	font-size: 1.5em;
-	padding: 5px 10px;
+	font-size: 1.5vw;
+	padding: 1vw 3vw;
+	color: red;
 	border: 2px solid black;
 	
 }
@@ -57,7 +71,7 @@ padding-left: 0.5em;
 	background-color: rgb(201,201,201,0.3);
 	margin-left: auto;
 	margin-right: auto;
-	width: 50%;
+	width: 70vw;
 	display: block;
 	text-align: center;
 	border: 2px solid black;
@@ -142,15 +156,33 @@ color:grey;
 font-size: 1.4em;
 }
 
-@media screen and (max-width: 995px) 
+@media screen and (max-width: 1000px) 
 {
 	
+@keyframes attunesDoboz{
+  	from {height: 8.5vw; width: 19vw; left: 80vw;}
+  	to {height: 100vw; width: 100vw; left: 0vw;}}
+  	}
+
+@keyframes eltunesDoboz{
+  	from {height:100vw; width: 100vw; left: 0vw;}
+  	to {height: 8.5vw; width: 19vw; left: 80vw;}
+
+  	}
+
+.megjelent {height:100vw; width: 100vw; left: 0vw;}
+.eltunt {height:8.5vw; width: 19vw; left: 80vw;}
+
+#publish {
+    top: 0;
+
+}
 	.menusor-spacer {
     height: 8vw !important;
-}
+	}
 
 #pTartalom button {
-    font-size: 2.5vh;
+    font-size: 5vh;
     padding: 5px 10px;
     border: 2px solid black;
 }
@@ -160,7 +192,7 @@ font-size: 1.4em;
     font-family: title;
     font-size: 2vh;
 }
-	.publish textarea {
+	#publish textarea {
     width: 80%;
     height: 62%;
     font-size: 5vw;
@@ -169,37 +201,13 @@ font-size: 1.4em;
 }
 	
 	#publish_button {
-    font-size: 2.5vh;
-    padding: 5px 10px;
-    margin-top: 2%;
-    margin-bottom: 2%;
-    background-color: white;
-    margin-left: 3.5%;
-    border: 2px solid black;
+    font-size: 5vh;
 }
 	
 	#post_container {
-    background-color: rgb(201,201,201,0.3);
-    margin-left: auto;
-    margin-right: auto;
     width: 100%;
-    display: block;
-    text-align: center;
-    border: 2px solid black;
 		}
-	.publish {
-    background-color: rgb(83,27,147,0.95);
-    width: 100%;
-    height: 7vw;
-    transition: all 0.5s ease-out;
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    float: right;
-    left: 0;
-    border: 2px solid rgb(83,27,147,1);
-    text-align: center;
-}
+	
 	
 }
 
