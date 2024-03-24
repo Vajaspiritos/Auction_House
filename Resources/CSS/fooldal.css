@@ -12,27 +12,55 @@ body
 	margin-bottom: 30px;
 	opacity: 0.5;
 }
+th{
+	text-align:left;
+	background-color:rgb(245,245,245,0.7);
+}
+th button{
+	
+	float:right;
+	background-color:transparent;
+	border: none;
+	font-size: 4vw;
+	
+}
+
+tr{
+	font-size: 3vw;
+	background-color:rgb(255,255,255,0.7);
+	
+}
+.row:hover{
+	background-color:rgb(255,255,255,1);
+	
+}
+#menetred_text{
+	text-align:center;
+	font-size:4vw;
+	background-color: rgb(235,215,215,0.7);
+}
 
 
 #aukcio 
 {
 	background-color: rgb(255,255,255,0.4);
-	border: 3px solid grey;
-	border-radius: 5px;
-	height: inherit;
-	width: 75%;
-	margin-left: 2.5%;
+    border: 3px solid grey;
+    border-radius: 5px;
+    height: 30vw;
+    width: 65%;
+    margin-left: 2.5%;
 }
 
 #chat-box
 {
 
-	height: inherit;
+	    height: 30vw;
 	float: right;
-	width: 20%;
+	width: 30%;
+	
 	border-radius: 5px;
 	border: 3px solid rgb(43, 0, 48);
-	overflow: scroll;
+	overflow: auto;
 
 }
 
@@ -40,7 +68,7 @@ body
 #chat-box iframe
 {
 	background-color: rgb(82, 82, 82);
-	height: 99.1%;
+	height: 100%;
 	float: right;
 	width: 100%;
 	font-size: 100px;
@@ -52,10 +80,20 @@ body
 }
 .naplo
 {
+	opacity: 0.6;
 	height: 30vw;
-	border: 3px solid rgb(43, 0, 48);
-	background-color: rgb(255,255,255,0.4);
-	margin-left: 20px;
+    border: 3px solid rgb(43, 0, 48);
+    background-color: rgb(255,255,255,0.4);
+    margin-left: 5%;
+    width: 90%;
+	overflow:auto;
+	-ms-overflow-style: none;  
+		scrollbar-width: none; 
+}
+
+
+.naplo::-webkit-scrollbar {
+  display: none;
 }
 
 @media screen and (max-width: 995px) 
@@ -63,20 +101,31 @@ body
 .inline,#chat-box,#aukcio {display: block; float: none;}
 #aukcio 
 {
-	margin-left: 10%;
+	
 	margin-top: -10%;
-	margin-bottom: 5%;
+    margin-bottom: 5%;
+    width: 100%;
+    margin-left: -1vw;
+    height: 46vw;
 }
 
 #chat-box 
 {
-	width: 75%;
-	margin-left: 10%;
+	
+	height: 61vh;
+	width:100%;
+    margin-left: -1vw;
+	
 }
 
 .naplo
 {
-	display: none;
+	display: block;
+    margin-top: 45%;
+    width: 96%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 62vh;
 }
 
 

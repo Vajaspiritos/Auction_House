@@ -27,10 +27,11 @@ document.getElementById("Messenger").addEventListener("keydown",(event)=>{
 	}
 	if(socket.readyState==1&&event.keyCode===13){
 	let Element = document.getElementById("Messenger");
-	if(Element.value.length >0&& textEncoder.encode(Element.value).length < 100){
+	if(Element.value.length >0&& textEncoder.encode(Element.value).length < 90){
 		
 		//let text = "Purple|"+Name+"|"+USERID+"|"+Element.value;
 		//newMSG(text);
+		console.log(textEncoder.encode(Element.value))
 		socket.send(Element.value);
 		Element.value = "";
 		

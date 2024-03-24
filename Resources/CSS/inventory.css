@@ -6,11 +6,11 @@ background-image: none;
 
 #veglegesit-div
 {
-	width: 100%;
+	width: 100vw;
 } 
 #veglegesit button
 {
-	font-size: 2em;
+	font-size: 7vh;
 	border: 2px solid black;
 	background-color: white;
 	float: right;
@@ -19,9 +19,9 @@ background-image: none;
 
 #veglegesit label 
 {
-		margin-left: 80%;
-		font-size: 2em;
-	border: 2px solid black;
+	margin-left: 1%;
+    font-size: 7vh;
+    border: 2px solid black;
 }
 
 .Item 
@@ -44,17 +44,18 @@ background-image: none;
 #items-container{
 display: inline-block;
 overflow:auto;
-height: 100%;
+height: 100vh;
 text-align: center;
-width: 49%;
+width: 48vw;
 padding-top: 1em;
 }
 
+
 #info-container{
 	float:right;
-	width:49%;
-	height: 100%;
-	border: 4px solid black;
+	width: 49vw;
+    height: 100vh;
+	border: 0.2vw solid black;
 	display: inline-block;
 	background-color: rgb(220,220,220,0.2);
 	text-align: center;
@@ -64,7 +65,7 @@ padding-top: 1em;
 
 #info-container span 
 {
-	font-size: 0.8em;
+	font-size: 4.8vh;
 	text-decoration: underline;
 }
 
@@ -75,7 +76,7 @@ padding-top: 1em;
 
 #info-OG_owner
 {
-	font-size: 0.6em;
+	font-size: 4.5vh;
 	padding: 5px 10px;
 	color: white;
 	font-weight: bold;
@@ -118,7 +119,7 @@ table{
 
 #info-description-containter span 
 {
-	font-size: 1.5em;
+	font-size: 5vh;
 }
 
 #info-sorkizart
@@ -130,11 +131,12 @@ table{
 	height: 20%;
 	background-color: rgb(201,201,201,0.5);
 	overflow: auto;
+	font-size: 2vw;
 }
 
 #info-name 
 {
-	font-size: 2em;
+	font-size: 7vh;
 	color: white;
 }
 
@@ -151,5 +153,82 @@ table{
 	
 }
 
+@media screen and (max-width: 995px) 
+{
+	
+	body{
+		
+		overflow: auto;
+		overflow-x:hidden;
+	}
+	
+	#info-OG_owner {
+    font-size: 4.5vw;
+    padding: 5px 10px;
+    color: white;
+    font-weight: bold;
+}
+
+
+
+#info-container span {
+    font-size: 3.8vh;
+    text-decoration: underline;
+}
+	
+	#items-container {
+    display: inline-block;
+    overflow: hidden;
+    height: 67vh;
+    text-align: center;
+    width: 96vw;
+    padding-top: 1em;
+    float: left;
+    
+    position: absolute;
+    margin-top: 67vh;
+	}
+#info-container {
+    width: 95vw;
+    margin-left: -2vh;
+    margin-top: -1vh;
+    height: auto;
+    border: 0.2vw solid black;
+    display: inline-block;
+    background-color: rgb(220,220,220,0.2);
+    text-align: center;
+    font-size: 1.5em;
+    word-break: break-all;
+}
+#veglegesit label {
+    margin-left: 1%;
+    font-size: 7vw;
+    border: 2px solid black;
+}
+
+#info_image {
+    width: 20vh;
+}
+
+#veglegesit button {
+    font-size: 7vw;
+    border: 2px solid black;
+    background-color: white;
+    float: right;
+    width: 4em;
+}
+
+	#info-sorkizart {
+    margin-top: 1vh;
+    text-align: justify;
+    color: rgb(255,255,255,0.9);
+    padding: 10px;
+    height: 13vh;
+    background-color: rgb(201,201,201,0.5);
+    overflow: auto;
+    font-size: 3vh;
+}
+	
+}
 
 

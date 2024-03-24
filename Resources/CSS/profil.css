@@ -6,44 +6,40 @@ body
 	background-size: cover;
 }
 
-#Pfp 
-{
-	border-radius: 20px;
-	height: 35%;
-	width: 16%;
-	margin-top: -3%;
-	margin-left: 2%;
-	margin-bottom: 5%;
-	text-align: center;
-}
-
 #Pfp img {
-
-	width: 100%;
-	height: 100%;
-	border-radius: 50px;
-	border: 2px solid rgb(255, 255, 255,0.6);
-	border-top-width: 3px;
-	border-bottom-width: 3px;
-	background-color: rgb(255,255,255,0.1);
-	margin-bottom: 5%;
-
+    width: auto;
+    height: 31vh;
+    border-radius: 50px;
+    border: 2px solid rgb(255, 255, 255,0.6);
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    background-color: rgb(255,255,255,0.1);
+    margin-bottom: 5%;
 }
+
+
 
 .inline 
 {
 	display: inline-block;
+	text-align: center;
 }
 
-#adatok 
-{
-	background-color: rgb(210,210,210,0.5);
-	width: 50%;
-	padding: 0px 20px;
-	padding-bottom: 20px;
-	margin-left: 2%;
-	color: white;
-	border: 2px solid rgb(201, 201, 201,0.2);
+.inline form input{
+	
+	font-size:2vh;
+}
+
+#adatok {
+    background-color: rgb(210,210,210,0.5);
+    width: 98vh;
+    padding: 0px 2vh;
+    padding-top: 2vh;
+    margin-left: 4vh;
+    color: white;
+    border: 2px solid rgb(201, 201, 201,0.2);
+    text-align: left;
+	font-size: 2vh;
 }
 
 #adatok button 
@@ -99,12 +95,12 @@ font-weight: bold;
 }
 #upload 
 {
-	float: right;
+	float: left;
 }
 #browse 
 {
 	float: left;
-	width: 30%;
+	width: 100%;
 }
 
 .feliratok
@@ -113,9 +109,111 @@ font-weight: bold;
 	margin-right: 2%;
 }
 
-#label
-{
-	text-transform: uppercase;
-	font-size: 2.5em;
-	font-weight: bold;
+#label {
+    text-transform: uppercase;
+    font-size: 6.5vh;
+    font-weight: bold;
 }
+
+@media screen and (max-width: 995px) 
+{
+	body{
+		
+		overflow-x:hidden;
+	}
+	
+	
+	
+	#Pfp img {
+		
+	width: 116vw;
+    height: auto;
+    border-radius: 50px;
+    border: 2px solid rgb(255, 255, 255,0.6);
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    background-color: rgb(255,255,255,0.1);
+    margin-bottom: 5%;
+}
+
+#Pfp{
+	width:100%;
+	
+}
+
+#upload {
+    float: right;
+}
+
+.inline form input {
+    font-size: 7vw;
+}
+
+#adatok {
+    background-color: rgb(210,210,210,0.5);
+    width: 101%;
+    
+    padding-top: 2vh ;
+
+    margin-left: -2vw;
+    color: white;
+    border: 2px solid rgb(201, 201, 201,0.2);
+    text-align: left;
+    font-size: 4vw;
+}
+#label {
+    text-transform: uppercase;
+    font-size: 6.5vw;
+    font-weight: bold;
+}
+#History {
+    background-color: rgb(221, 255, 0,0.3);
+    color: white;
+    font-size: 2em;
+    border: 2px solid rgb(255,255,255,0.3);
+    height: auto;
+    width: 153vw;
+    float: right;
+}
+
+
+
+.Raktar {
+    margin-left: -1vw;
+    background-color: rgb(201,201,201,0.2);
+    height: 100%;
+    border: 1px solid white;
+    width: 154vw;
+    overflow: auto;
+}
+.Raktar iframe {
+    margin-right: auto;
+    width: 101vw;
+    height: 100%;
+    margin-left: 24vw;
+    display: block;
+    border: none;
+    transform-origin: 50% 0%;
+    scale: 161% 161%;
+}
+
+
+
+#browse {
+    float: left;
+    width: 116vw;
+}
+
+.Nagydoboz{
+	width:152vw;
+	
+}
+
+
+
+}
+
+
+	
+
+

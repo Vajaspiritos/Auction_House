@@ -193,8 +193,8 @@ function IsLikedAlready($conn,$postID,$user){
 	
 }
 
-function GetAuctions($conn){
-	$result = $conn->query("SELECT * FROM `auction` WHERE Date > '".date("Y-m-d H:i:s")."' ORDER BY Date;");
+function GetAuctions($conn,$Limit=null){
+	$result = $conn->query("SELECT * FROM `auction` WHERE Date > '".date("Y-m-d H:i:s")."' ORDER BY Date ".($Limit?"Limit ".$Limit:"").";");
 	$items = [];
 	
 	while($row = $result->fetch_assoc()){
@@ -216,4 +216,38 @@ function GetAuctions($conn){
 	
 }
 
+function GetItemsOfAuction($conn,$AuctionID,$pure=false){
+	
+	$result = $conn->query("SELECT * FROM `items` WHERE Auction_ID=".$AuctionID.";");
+	$items = [];
+	
+	while($row = $result->fetch_assoc()){
+		
+		$newassoc = [];
+		$newassoc['ID'] = $row['ID'];
+		$newassoc['Name'] = $row['Name'];
+		$newassoc['Description'] = $row['Description'];
+		$newassoc['Original_owner'] = $row['Original_owner'];
+		$newassoc['Rarity'] = $row['Rarity'];
+		
+		$imgID = $row['Image_ID'];
+		
+		$src = "../Resources/Images/Icons/Default_Item.png";
+		foreach (glob("../Resources/Images/Items/".$imgID.".*") as $file){ 
+	
+			$src = $file;
+			}
+		
+		
+		
+		$newassoc['Image_src'] = $src;
+		array_push($items,$newassoc);
+		
+		
+		
+	}
+	//var_dump($items);
+	return $pure? $items:json_encode($items);
+	
+}
 ?>

@@ -21,7 +21,7 @@
 	<button id="drop-btn" onclick="lenyit()">↓</button>
 	<div class="menusor inactive" id="drop-menusor">
 		<div class="kep inline">
-			<img src="../Resources/Images/Icons/logo.gif" alt="Logo" >
+			<img src="../Resources/Images/Icons/logo.png" alt="Logo" >
 		</div>
 		<div class="gombok inline">
 		<a class ="menu-gombok" href="fooldal.php">Főoldal</a>
@@ -43,14 +43,11 @@
 <div id="giga-div">
 	<div id="munka-container">
 		<div id="munka-rendszer" class="inline">
-			<p id="magyarazo-szoveg">Ide jönne egy nagy szöveg mint például: Ez egy olyan munka ahol egy katonai hatseregnek segítesz embereket toborozni. A munka egyszerű és sok pénz nem jár érte. Várnod kell a kiszemeltre és mikor jónak látod a helyzetet elé sétálsz és megkéred hogy csatlakozzon a hadsereghez.
-			Ide jönne egy nagy szöveg mint például: Ez egy olyan munka ahol egy katonai hatseregnek segítesz embereket toborozni. A munka egyszerű és sok pénz nem jár érte. Várnod kell a kiszemeltre és mikor jónak látod a helyzetet elé sétálsz és megkéred hogy csatlakozzon a hadsereghez.
-		Ide jönne egy nagy szöveg mint például: Ez egy olyan munka ahol egy katonai hatseregnek segítesz embereket toborozni. A munka egyszerű és sok pénz nem jár érte. Várnod kell a kiszemeltre és mikor jónak látod a helyzetet elé sétálsz és megkéred hogy csatlakozzon a hadsereghez.</p>
-		</div>
+			<p id="magyarazo-szoveg">Az aukciósháznak naponta több ezer portékát kezel. Az épületben mindenki mindig siet dolgára, és sose vagyunk időben kész. Jelenleg Rengeteg doboz van, amibe a tárgyakat tartjuk, ezeket mind a helyére kéne tenni. Örömmel várjuk jelentkezését!</div>
 
 	<div id="img-timer-container" class="inline">
 			<div id="img-container">
-					<img src="../Resources/Images/Munka/munka.jpg"alt="kép a munkáról">
+					<img src="../Resources/Images/Munka/work_0.gif"alt="kép a munkáról">
 				</div>
 			<div id="timer-div">
 					<div id="timer-belso-div">
@@ -69,40 +66,40 @@
 		<div id="timig-container">
 
 		<div class="tier-img-container" id="very-low-tier">
-			<img src="../Resources/Images/Munka/munka.jpg" alt="tier kep">
+			<img src="../Resources/Images/Icons/Default_Tier.png" alt="tier kep">
 			<div class="penz-container">
-			<p class="penz" id="very-low">100</p>
+			<p class="penz" id="very-low">99</p>
 			</div>
 		</div>
 
 		<div class="tier-img-container" id="low-tier">
-			<img src="../Resources/Images/Munka/munka.jpg" alt="tier kep">
+			<img src="../Resources/Images/Icons/Default_Tier.png" alt="tier kep">
 			<div class="penz-container">
-			<p class="penz" id="low">100</p>
+			<p class="penz" id="low">999</p>
 			</div>
 		</div>
 		<div class="tier-img-container" id="medium-tier">
-			<img src="../Resources/Images/Munka/munka.jpg" alt="tier kep">
+			<img src="../Resources/Images/Icons/Default_Tier.png" alt="tier kep">
 			<div class="penz-container">
-			<p class="penz" id="medium">100</p>
+			<p class="penz" id="medium">9999</p>
 			</div>
 		</div>
 		<div class="tier-img-container" id="high-tier">
-			<img src="../Resources/Images/Munka/munka.jpg" alt="tier kep">
+			<img src="../Resources/Images/Icons/Default_Tier.png" alt="tier kep">
 			<div class="penz-container">
-			<p class="penz" id="high">100</p>
+			<p class="penz" id="high">99999</p>
 			</div>
 		</div>
 		<div class="tier-img-container" id="very-high-tier">
-			<img src="../Resources/Images/Munka/munka.jpg" alt="tier kep">
+			<img src="../Resources/Images/Icons/Default_Tier.png" alt="tier kep">
 			<div class="penz-container">
-			<p class="penz" id="very-high">100</p>
+			<p class="penz" id="very-high">999999</p>
 			</div>
 		</div>
 		<div class="tier-img-container" id="ultra-high-tier">
-			<img src="../Resources/Images/Munka/munka.jpg" alt="tier kep">
+			<img src="../Resources/Images/Icons/Default_Tier.png" alt="tier kep">
 			<div class="penz-container">
-			<p class="penz" id="ultra-high">100</p>
+			<p class="penz" id="ultra-high">9999999</p>
 			</div>
 		</div>
 	</div>

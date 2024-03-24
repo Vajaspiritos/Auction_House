@@ -7,13 +7,13 @@ function legordul()
 	{
 		//media query cuccok. ha a képernyő akkora mint a mac-en akkor 
 		megnyomva= true;
-		lista.style.height = "30%"; //35
+		lista.style.height = "45%"; //35
 
 	}
 	else 
 	{
 		megnyomva = false
-		lista.style.height = "6.3%"; //8.5
+		lista.style.height = "4%"; //8.5
 
 
 	}

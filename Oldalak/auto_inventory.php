@@ -18,7 +18,9 @@ function update(){
 	if(selected.length >1){
 	document.getElementById("veglegesit").style.visibility = "visible";
 	document.getElementById("sendit").style.visibility = "visible";
-	}else document.getElementById("veglegesit").style.visibility = "hidden";
+	}else{ document.getElementById("veglegesit").style.visibility = "hidden";
+	document.getElementById("sendit").style.visibility = "hidden";
+	}
 }
 
 for(let i=1;i<array.length;i++){ //első a span

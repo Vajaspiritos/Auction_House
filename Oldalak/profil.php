@@ -24,7 +24,7 @@
 <button id="drop-btn" onclick="lenyit()">↓</button>
 	<div class="menusor inactive" id="drop-menusor">
 		<div class="kep inline">
-			<img src="../Resources/Images/Icons/logo.gif" alt="Logo" >
+			<img src="../Resources/Images/Icons/logo.png" alt="Logo" >
 		</div>
 		<div class="gombok inline">
 		<a class ="menu-gombok" href="fooldal.php">Főoldal</a>

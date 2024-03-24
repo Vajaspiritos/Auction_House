@@ -5,6 +5,8 @@ const parentElement = document.getElementById("aukcio-container");
 AUCTIONS.forEach( auction => {
 	
 	let elem = document.createElement("tr");
+		elem.setAttribute("class","row");
+	
 		let elem2 = document.createElement("td");
 			let elem2_1 = document.createElement("span");
 				elem2_1.innerHTML = auction["Date"];

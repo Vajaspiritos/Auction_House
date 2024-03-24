@@ -84,12 +84,13 @@ while(true){
 		
 		
 		$message=  READ($client);
-		if($message == "error|1"|| $message == "error|2"){ 
-		C("A client's message is not readable :".$message); 
-		unset($CLIENTS[array_search($client, $CLIENTS)]);
-		unset($INFOS[array_search(FindUser($client), $INFOS)]);
-		if(FindUser($client)->Auction() != null)unset($CLIENTS[array_search(FindUser($client)->Auction(), $CLIENTS)]);
-		continue;
+		if($message == "error|1"|| $message == "error|2"){
+			
+			C("A client's message is not readable :".$message); 
+			unset($CLIENTS[array_search($client, $CLIENTS)]);
+			unset($INFOS[array_search(FindUser($client), $INFOS)]);
+			if(FindUser($client)->Auction() != null)unset($CLIENTS[array_search(FindUser($client)->Auction(), $CLIENTS)]);
+			continue;
 		} 
 		$parts = explode("|",$message);
 		if($parts[0]=="ID"){

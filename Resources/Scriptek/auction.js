@@ -15,6 +15,10 @@ socket.addEventListener("message", (event) => {
 				},100);
 				
 				
+			}else if(event.data =="wait"){
+				
+				wait();
+				
 			}else{ 
 			
 			UPDATE(event.data);
@@ -23,11 +27,8 @@ socket.addEventListener("message", (event) => {
 			}
 });
 
-
-function  UPDATE(data){
-
-	if(socket.readyState==3||data=="wait"&&waiting){
-		console.log("Waiting mode");
+function wait(){
+	console.log("Waiting mode");
 		document.body.innerHTML="";
 	
 		document.body.setAttribute("class","curtain_closed");
@@ -59,6 +60,11 @@ function  UPDATE(data){
 			
 		
 		document.body.appendChild(screen);
+}
+function  UPDATE(data){
+
+	if(socket.readyState==3||data=="wait"&&waiting){
+		wait();
 		
 	}else{
 		

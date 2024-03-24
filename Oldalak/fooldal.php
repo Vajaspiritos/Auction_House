@@ -16,7 +16,7 @@
 	<button id="drop-btn" onclick="lenyit()">↓</button>
 	<div class="menusor inactive" id="drop-menusor">
 		<div class="kep inline">
-			<img src="../Resources/Images/Icons/logo.gif" alt="Logo" >
+			<img src="../Resources/Images/Icons/logo.png" alt="Logo" >
 		</div>
 		<div class="gombok inline">
 		<a class ="menu-gombok" href="fooldal.php">Főoldal</a>
@@ -47,12 +47,15 @@
 	<div class="naplo">
 		<table id="filters" style="width: 100%">
 		<tbody id="aukcio-container">
-			<tr>
-				<td>
-				<button>Filter1</button>
-				<button>Filter2</button>
-				<button>Filter3</button>	
+			<tr >
+				<td colspan=3 id="menetred_text">
+							Menetrend
 				</td>
+			</tr>
+			<tr>
+				<th>Dátum <button id="date">↑</button></th>
+				<th>Tier <button id="tier">↑</button></th>
+				<th>Árverés vezető <button id="manager">↑</button></th>
 			</tr>
 		</tbody>
 		</table>

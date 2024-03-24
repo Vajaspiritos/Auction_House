@@ -99,6 +99,10 @@ a
   	to {width: 0%;}
   	}
 
+.menusor-spacer 
+{
+	height: 20vw;
+}
 
 	.menusor
 	{
@@ -128,7 +132,7 @@ a
 	.gombok  {float: none; width: 100%; margin:0 0 0 0; padding: 0; }
 	.menu-gombok:hover {background-color: grey; box-shadow: none;}
 	.kep img{display: none;}
-	#drop-btn {display: block; font-size: 5em; position: fixed; z-index: 200; background-color: transparent; color: white; border: none;}
+	#drop-btn {display: block; font-size: 8vh; position: fixed; z-index: 200; background-color: transparent; color: white; border: none;}
 
 	
 

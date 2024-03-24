@@ -15,7 +15,7 @@ echo "<script> const USER_INVENTORY=".GetInventory($conn).";</script>";
 <form id="veglegesit" style="visibility:hidden" method="post" action="post_auction.php">
 		<input type="text" id="SELECTED" name="selected_items_container" style="display:none" >
 		<label id="text" for="valami" ></label>
-		<button name="valami" type="submit" id="sendit">Katt ide</button>
+		<button name="valami" type="submit" id="sendit">Küldés</button>
 	</form>
 </div>
 	<div id="items-container">
@@ -36,7 +36,7 @@ echo "<script> const USER_INVENTORY=".GetInventory($conn).";</script>";
 		</table>
 	
 	<div id="info-description-containter">
-		<span id="leiras_title">Leírás:</span><br>
+		<span id="leiras_title">Leírás</span><br>
 		<div id="info-sorkizart">
 		<a id="info-description"></a>
 	</div>

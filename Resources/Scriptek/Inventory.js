@@ -47,7 +47,4 @@ if(document.getElementById("text").innerHTML=="Jellenleg csóró vagy, és SEMMI
 document.getElementById("items-container").style.textAlign = "left";
 document.getElementById("items-container").style.color = "white";
 
-}else 
-{
-	document.body.style.overflow = "scroll";
 }
