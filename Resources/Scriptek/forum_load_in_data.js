@@ -39,7 +39,7 @@ if(testmode){
 				let br = document.createElement("br");
 			elem.appendChild(br);
 		let DATE = document.createElement('span');
-		DATE.innerHTML=new Date();
+		DATE.innerHTML="2024-03-24  23:59";
 		DATE.setAttribute("class","post-date");
 		elem.appendChild(DATE);
 		

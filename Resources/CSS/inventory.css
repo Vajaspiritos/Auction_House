@@ -68,7 +68,10 @@ padding-top: 1em;
 {
 	font-size: 4.8vh;
 	text-decoration: underline;
+	
 }
+
+
 
 .Item_IMG{
 	width: 100%;
@@ -185,7 +188,7 @@ table{
     width: 100vw;
     padding-top: 1em;
     position: absolute;
-    margin-top: 70vh;
+    margin-top: 65vh;
 	
 	}
 #info-container {

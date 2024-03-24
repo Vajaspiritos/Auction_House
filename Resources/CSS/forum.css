@@ -18,7 +18,7 @@
 }
 
 
-.megjelent {height:23vw; width: 25vw; left: 75vw;}
+.megjelent { width: 25vw; left: 75vw;}
 .eltunt {height:3.5vw; width: 10vw; left: 87vw;}
 
 #publish
@@ -176,7 +176,7 @@ font-size: 1.4em;
 
   	}
 
-.megjelent {height:65vw; width: 100vw; left: 0;  }
+.megjelent { width: 100vw; left: 0;  }
 
 .eltunt {height:8vw; width: 16vw; left: 84vw; }
 
