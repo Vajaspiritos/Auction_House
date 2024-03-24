@@ -54,7 +54,6 @@ padding-left: 0.5vw;
 	margin-top: 0.3vw;
 	margin-bottom: 2vw;
 	background-color: white;
-
 	border: 2px solid black;
 }
 
@@ -62,7 +61,9 @@ padding-left: 0.5vw;
 {
 	font-size: 1.5vw;
 	padding: 1vw 3vw;
-	color: red;
+	color: black;
+	text-transform: uppercase;
+	font-weight: bold;
 	border: 2px solid black;
 	
 }
@@ -160,53 +161,42 @@ font-size: 1.4em;
 {
 	
 @keyframes attunesDoboz{
-  	from {height: 8.5vw; width: 19vw; left: 80vw;}
-  	to {height: 100vw; width: 100vw; left: 0vw;}
+
+  	from {height: 8vw; width: 16vw; left: 84vw; }
+  	to {height:65vw; width: 100vw; left: 0; }
   	}
 
 @keyframes eltunesDoboz{
-  	from {height:100vw; width: 100vw; left: 0vw;}
-  	to {height: 8.5vw; width: 19vw; left: 80vw;}
+  	from {height: 65vw; width: 100vw; left: 0; }
+  	to {height:8vw; width: 16vw;  left: 84vw; }
 
   	}
 
-.megjelent {height:100vw; width: 100vw; left: 0vw;}
-.eltunt {height:8.5vw; width: 19vw; left: 80vw;}
+.megjelent {height:65vw; width: 100vw; left: 0;  }
 
-#publish {
-    top: 0;
-}
-	.menusor-spacer {
-    height: 8vw !important;
-	}
+.eltunt {height:8vw; width: 16vw; left: 84vw; }
 
-#pTartalom button {
-    font-size: 5vh;
-    padding: 5px 10px;
-    border: 2px solid black;
+#publish_button {
+	font-size: 3vw; margin: 1vw; padding: 1vw 2vw;
 }
 
-	#browse {
-    margin: 5%;
-    font-family: title;
-    font-size: 2vh;
+#publish {top:0; min-height: 3vw;}
+#pTartalom textarea 
+{
+	width: 80vw;
+	height: 30vw;
+	font-size: 3.5vw;
+	padding: 1vw;
 }
-	#publish textarea {
-    width: 80%;
-    height: 62%;
-    font-size: 5vw;
-    padding-top: 0.5em;
-    padding-left: 0.5em;
+
+#pTartalom input 
+{
+		font-size: 3.5vw;
 }
-	
-	#publish_button {
-    font-size: 5vh;
+#pTartalom button 
+{
+	font-size: 5vw;
+	padding:1vw 5vw;
 }
-	
-	#post_container {
-    width: 100%;
-		}
-	
-	
 }
 
