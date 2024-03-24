@@ -74,6 +74,7 @@ font-weight: bold;
 {
 	margin-left: 1%;
 	background-color: rgb(201,201,201,0.2);
+    height: 32vw;
     max-height: 32vw;
 	border: 1px solid white;
 	width: 75%;
