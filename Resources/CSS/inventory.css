@@ -153,7 +153,7 @@ table{
 	
 }
 
-@media screen and (max-width: 995px) 
+@media screen and (max-width:1000px) 
 {
 	
 	body{
@@ -177,21 +177,19 @@ table{
 }
 	
 	#items-container {
-    display: inline-block;
+    display: block;
     overflow: hidden;
     height: 67vh;
     text-align: center;
-    width: 96vw;
+    width: 70vw;
     padding-top: 1em;
-    float: left;
-    
     position: absolute;
     margin-top: 67vh;
 	}
 #info-container {
     width: 95vw;
     margin-left: -2vh;
-    margin-top: -1vh;
+    margin-top: -10vw;
     height: auto;
     border: 0.2vw solid black;
     display: inline-block;

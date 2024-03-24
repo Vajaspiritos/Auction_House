@@ -93,7 +93,6 @@ font-weight: bold;
 	color: white;
 	font-size: 2em;
 	border: 2px solid rgb(255,255,255,0.3);
-    height: 58vw;
     max-height: 58vw;
 	width: 20.5%;
 	float: right;
@@ -172,8 +171,8 @@ float: none;
 }
 
 
-#adatok button, #logout {font-size: 3vw;}
-#adatok button {margin-left: 0;}
+#adatok button, #logout {font-size: 3vw;margin-left: 4vw;}
+#adatok button {margin-right: 10vw;}
 
 #label {
     text-transform: uppercase;
@@ -190,7 +189,7 @@ float: none;
     color: white;
     font-size: 2em;
     border: 2px solid rgb(255,255,255,0.3);
-    height: 45vw;
+    height: fit-content;
     float:left;
     width: 101vw;
     margin-left:-2vw;
@@ -224,7 +223,7 @@ float: none;
 	
 }
 
-
+#items-container {background-color: red;}
 
 }
 
