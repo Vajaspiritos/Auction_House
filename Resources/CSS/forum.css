@@ -116,10 +116,9 @@ width: fit-content;
 
 }
 
-.post-image
-{
-	margin-bottom: 5vw;
-	height: 30vw;
+.post-image {
+    margin-bottom: 5vw;
+    height: 16vw;
 }
 
 .post 
@@ -159,6 +158,11 @@ font-size: 1.4em;
 
 @media screen and (max-width: 1000px) 
 {
+	
+	.post-image {
+    
+    height: 30vw;
+}
 	
 @keyframes attunesDoboz{
 

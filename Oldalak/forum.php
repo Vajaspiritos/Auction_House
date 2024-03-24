@@ -60,7 +60,7 @@
 		<button id="publish_button" onclick="legordul()">Posztolok</button>
 		<form action="Forum_post.php" id="Message" method="post" enctype="multipart/form-data">
 		<div id="pTartalom">
-		<textarea type="text" name="MSG" placeholder="ÚRISTEN MEGSZEREZTEM A PIZZAGÖMBÖT!!!" maxlength="1000"></textarea><br>
+		<textarea type="text" name="MSG" placeholder="Ide írva oszthatja meg gondolatait, vagy dicsekedhet el újonnan megszerzett darabjairól..." maxlength="1000"></textarea><br>
 		<input type="file" name="kep" id="browse"><br>
 		<button type="submit">Küldés</button>	
 		</div>
