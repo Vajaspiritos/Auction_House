@@ -120,6 +120,10 @@ font-weight: bold;
 
 @media screen and (max-width: 1000px) 
 {
+	html{
+		
+		overflow-x:hidden;
+	}
 	body{
 		
 		overflow-x:hidden;
