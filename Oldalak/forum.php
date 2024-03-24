@@ -3,6 +3,7 @@
 <head>
 	<?php
 	include '../Resources/Scriptek/CheckForLoggedIn.php';
+	if(!$Test_mode){
 	include '../Resources/Scriptek/ErrorHandle.php';
 	include '../Resources/Scriptek/ConnectToDB.php';
 	$query = parse_url($_SERVER['REQUEST_URI'],PHP_URL_QUERY);
@@ -25,6 +26,8 @@
 		echo "<script> const POSTS=".ForumReceivePosts($conn, 0,10).";</script>";
 	}
 	echo "<script> const FocusOn=".$Focused.";</script>";
+	echo "<script> const testmode=false;</script>";
+	}else echo "<script> var testmode=true;</script>";
 	?>
 	<title>Fórum</title>
 	<meta charset="UTF-8">

@@ -11,7 +11,7 @@ try{
 $conn = mysqli_connect($servername, $username, $password,$db);
 }catch(Exception $err){
 	unset($_SESSION['UserID']);
-	header("Location: belepes.php");
+	echo "<script>window.top.location='belepes.php'</script>";
 }
 if ($conn->connect_error) {
   die("Csatlakozás az adatbázishoz sikertelen" . $conn->connect_error);

@@ -3,9 +3,10 @@
 <?php
 
 include '../Resources/Scriptek/CheckForLoggedIn.php';
+if(!$Test_mode){
 	include '../Resources/Scriptek/ConnectToDB.php';
 echo "<script> const USER_INVENTORY=".GetInventory($conn).";</script>";
-
+}else echo "<script> const USER_INVENTORY='test';</script>";
 ?>
 <link rel="stylesheet" href="../Resources/CSS/betuTipusok.css">
 <link rel="stylesheet" href="../Resources/CSS/inventory.css">

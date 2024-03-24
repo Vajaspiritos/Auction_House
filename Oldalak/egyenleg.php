@@ -3,6 +3,7 @@
 <head>
 		<?php
 		include '../Resources/Scriptek/CheckForLoggedIn.php';
+		if(!$Test_mode){
 		include '../Resources/Scriptek/ConnectToDB.php';
 		UpdateGeneralInfos($conn);
 		$res =$conn->query("SELECT LastWork FROM `users` WHERE ID=".$_SESSION["UserID"])->fetch_assoc()["LastWork"];
@@ -11,7 +12,11 @@
 			
 		echo "<script>const LAST_WORK=$res</script>";
 		echo "<script>const MONEY=".$_SESSION["Money"]."</script>";
-		
+		}else{
+			echo "<script>const LAST_WORK='0'</script>";
+		echo "<script>const MONEY=120000</script>";
+			
+		}
 		?>
 	<title>Egyenleg feltöltés</title>
 			<link rel="stylesheet" href="../Resources/CSS/betuTipusok.css">

@@ -1,3 +1,55 @@
+if(testmode){
+	for(let i=0;i<10;i++){
+	let elem = document.createElement('div');
+	elem.setAttribute("class","post");
+	elem.id =0;
+	if(false)elem.setAttribute("class","comment");
+		let OP = document.createElement('div');
+		OP.innerHTML="Posztoló ember felhasználóneve"+":";
+		OP.setAttribute("class","post-op");
+		elem.appendChild(OP);
+		
+		let div = document.createElement('div');
+		div.setAttribute("class","text-img");
+		let TEXT = document.createElement('p');
+		TEXT.innerHTML="Ilyen egy átlagos komment, persze ez rövid, és még csak képek sincsenek, ahhoz el kell indítani az adatbázist.";
+		TEXT.setAttribute("class","post-text");
+		div.appendChild(TEXT);
+		
+		if(false){
+			let IMG = document.createElement('img');
+			IMG.src=POSTS[i]['Image_src'];
+			IMG.setAttribute("class","post-image");
+			div.appendChild(IMG);
+			let br = document.createElement("br");
+			div.appendChild(br);
+		}
+		elem.appendChild(div);
+		let COMMENTS = document.createElement('button');
+		COMMENTS.innerHTML="Comments:"+Math.floor(Math.random()*100);
+		COMMENTS.setAttribute("class","post-comments");
+		
+		elem.appendChild(COMMENTS);
+		
+		let LIKES = document.createElement('button');
+		LIKES.innerHTML="Likes:"+Math.floor(Math.random()*100);
+		LIKES.setAttribute("class","post-likes");
+		
+		elem.appendChild(LIKES);
+				let br = document.createElement("br");
+			elem.appendChild(br);
+		let DATE = document.createElement('span');
+		DATE.innerHTML=new Date();
+		DATE.setAttribute("class","post-date");
+		elem.appendChild(DATE);
+		
+		
+	
+	const Parent = document.getElementById("post_container");
+	Parent.appendChild(elem);
+	}
+}else{
+
 if(FocusOn){
 	
 	document.getElementById("Message").action = "Forum_post.php?"+FocusOn;
@@ -83,7 +135,7 @@ try{
 }
 
 
-
+}
 
 
 

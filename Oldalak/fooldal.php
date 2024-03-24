@@ -3,10 +3,11 @@
 <head>
 	<?php
 	include '../Resources/Scriptek/CheckForLoggedIn.php';
+	if(!$Test_mode){
 	include '../Resources/Scriptek/ConnectToDB.php';
 	
 	echo "<script>const AUCTIONS=".GetAuctions($conn)."</script>";
-	
+	}else echo "<script>const AUCTIONS='test'</script>";
 	?>
 	<title>Főoldal</title>
 	<meta charset="UTF-8">
@@ -32,7 +33,7 @@
 		</div>
 	</div>
 
-	<div class="menusor-spacer">
+	<div class="menusor-spacer-fooldal">
 	</div>
 	
 	<div class="aukcios-felulet">

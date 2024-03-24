@@ -35,7 +35,7 @@ socket.addEventListener("message", (event) => {
 			
 			}
 });
-
+let test = false;
 function wait(){
 	console.log("Waiting mode");
 		document.body.innerHTML="";
@@ -48,8 +48,8 @@ function wait(){
 			
 			Text = document.createElement("p");
 			Text.setAttribute("class","clock");
-			if(AUCTIONS.length >0){
-			let goal_date = new Date(AUCTIONS[0].Date).getTime();
+			if(test!=false||AUCTIONS.length >0){
+			let goal_date = new Date(test!=false?test.getTime():AUCTIONS[0].Date).getTime();
 
 			let timer = setInterval(function(){
 				//milisecs, másodpercek, percek, órák, napok
@@ -90,6 +90,15 @@ let tmp = setInterval(function(){
 	UPDATE("wait");
 	clearInterval(tmp);
 },1000);
+
+if(AUCTIONS == 'test'){
+	
+	
+
+
+test  = new Date(new Date().getTime()+3600000);
+wait();	
+}
 
 socket.onopen= function(){
 	waiting = false;

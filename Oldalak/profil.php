@@ -3,6 +3,7 @@
 <head>
 	<?php
 	include '../Resources/Scriptek/CheckForLoggedIn.php';
+	if(!$Test_mode){
 	include '../Resources/Scriptek/ConnectToDB.php';
 	include '../Resources/Scriptek/LoadInProfilePicture.php';
 	include '../Resources/Scriptek/ErrorHandle.php';	
@@ -10,7 +11,14 @@
 	echo "<script> const USER_MONEY=".$_SESSION["Money"].";</script>";
 	echo "<script> const USER_NAME='".$_SESSION["Name"]."';</script>";
 	echo "<script> const USER_EMAIL='".$_SESSION["Email"]."';</script>";
+	}else{
+		echo "<script> const USER_MONEY=120000;</script>";
+	echo "<script> const USER_NAME='Anonymus';</script>";
+	echo "<script> const USER_EMAIL='30perc@ahatáridőig.jaj';</script>";
+	echo "<script> const USER_PFP_SRC='../Resources/Images/icons/Default_User.png';</script>";
 	
+		
+	}
 	
 	
 	?>

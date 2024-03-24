@@ -4,11 +4,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php
 	include '../Resources/Scriptek/CheckForLoggedIn.php';
+	if(!$Test_mode){
 	include '../Resources/Scriptek/ConnectToDB.php';
 	include '../Resources/Scriptek/ErrorHandle.php';
 	if(session_status() !== PHP_SESSION_ACTIVE) session_start();	
 	echo "<script> const USER_INVENTORY=".GetInventory($conn).";</script>";
-	
+	}else echo "<script> const USER_INVENTORY='test';</script>";
 	?>
 	<title>Saját aukció</title>
 	<meta charset="UTF-8">

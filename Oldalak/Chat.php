@@ -3,6 +3,7 @@
 <?php
 
 include '../Resources/Scriptek/CheckForLoggedIn.php';
+if(!$Test_mode){
 if(session_status() !== PHP_SESSION_ACTIVE) session_start(); 				 // ha a session még nincs elindítva elindítja.
 include '../Resources/Scriptek/ConnectToDB.php';	
 UpdateGeneralInfos($conn);
@@ -11,6 +12,7 @@ const USERID = ".$_SESSION["UserID"].";
 const Name ='".$_SESSION["Name"]."';
 const Tier =".$_SESSION["Tier"].";
 </script>";
+}
 ?>
 <title>
 Chat

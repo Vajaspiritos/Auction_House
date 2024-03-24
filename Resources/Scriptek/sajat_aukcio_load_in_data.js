@@ -1,7 +1,14 @@
 
 
 
-
+if(USER_INVENTORY=="test"){
+document.getElementById("host").innerHTML ="tárgy nélkül nem lehetseges";
+document.getElementById("host").setAttribute("class","rejected");	
+document.getElementById("auto").innerHTML ="tárgy nélkül nem lehetseges";
+document.getElementById("auto").setAttribute("class","rejected");	
+document.getElementById("host").disabled = true;
+document.getElementById("auto").disabled = true;	
+}else
 if(USER_INVENTORY.length <5){
 
 document.getElementById("host").innerHTML ="Sajnos legalább 5 tárgyra van szüksége.";
