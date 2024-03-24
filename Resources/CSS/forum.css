@@ -161,7 +161,7 @@ font-size: 1.4em;
 	
 @keyframes attunesDoboz{
   	from {height: 8.5vw; width: 19vw; left: 80vw;}
-  	to {height: 100vw; width: 100vw; left: 0vw;}}
+  	to {height: 100vw; width: 100vw; left: 0vw;}
   	}
 
 @keyframes eltunesDoboz{
@@ -175,7 +175,6 @@ font-size: 1.4em;
 
 #publish {
     top: 0;
-
 }
 	.menusor-spacer {
     height: 8vw !important;
