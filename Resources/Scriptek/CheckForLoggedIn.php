@@ -3,7 +3,7 @@
 
 //Ennek célja hogy le ellenörízze hogy be vagyunk e lépve. ha igen, nem csinál semmit. kivéve ha a belépés oldalon vagyunk, mert akkor egyből átirányít a főoldalra.
 // Ellenkező esetben átirányít a belépésre, a hibaüzenettel, hogy be kell lépni.
-$Test_mode = true;
+$Test_mode = false;
 
 if(!$Test_mode){
 if(session_status() !== PHP_SESSION_ACTIVE) session_start();

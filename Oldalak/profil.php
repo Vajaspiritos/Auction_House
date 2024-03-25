@@ -15,7 +15,7 @@
 		echo "<script> const USER_MONEY=120000;</script>";
 	echo "<script> const USER_NAME='Anonymus';</script>";
 	echo "<script> const USER_EMAIL='30perc@ahatáridőig.jaj';</script>";
-	echo "<script> const USER_PFP_SRC='../Resources/Images/icons/Default_User.png';</script>";
+	echo "<script> const USER_PFP_SRC='../Resources/Images/Icons/Default_User.png';</script>";
 	
 		
 	}
@@ -50,7 +50,7 @@
 	</div>
 	<div class="Nagydoboz">
 		<div id="Pfp" class="inline">
-			<img id="PP" src="../Resources/Images/icons/Default_User.png" alt="Profilképed :)">
+			<img id="PP" src="../Resources/Images/Icons/Default_User.png" alt="Profilképed :)">
 			<form action="UploadPfp.php" method="post" enctype="multipart/form-data">
 			<input id="browse" type="file" name="PFP">
 			<input id="upload" type="submit" value="Kép feltöltése">
