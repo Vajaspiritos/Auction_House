@@ -16,8 +16,17 @@
 .kep img
 {
 height: 5em;
-margin-top:-15%;
+
 }
+
+
+#musicbtn{
+	height: 3em;
+  margin-bottom: 1em;
+  margin-left: 1em;
+	
+}
+
 
 .gombok 
 {

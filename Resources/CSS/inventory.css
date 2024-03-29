@@ -44,7 +44,7 @@ background-image: none;
 #items-container{
 display: inline-block;
 overflow:auto;
-height: 100vh;
+height: 88vh;
 text-align: center;
 width: 48vw;
 padding-top: 1em;

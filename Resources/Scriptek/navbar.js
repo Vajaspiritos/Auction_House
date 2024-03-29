@@ -1,6 +1,8 @@
 
 var megnyomva = false;
 document.getElementById("drop-btn").innerHTML= "→";
+
+
 function lenyit() 
 {
 	document.getElementById("drop-btn").style.transition= "0.4s";
@@ -25,5 +27,23 @@ function lenyit()
 				document.getElementById("drop-btn").style.color = "black";
 			}
 megnyomva = !megnyomva;
+	
+}
+
+function toggleSound(){
+	
+	let elem = document.getElementById("musicbtn");
+	let audio = document.getElementById("music");
+	let filename = elem.src.split("/").slice(-1)[0];
+	console.log("file:"+filename)
+	if(filename == "sound-off.png"){
+		if(audio.paused) audio.play();
+		if(audio.volume == 1) audio.volume = 0.7;
+		audio.muted = false;
+		elem.src = "../Resources/Images/Icons/sound-on.png"
+	}else{
+		audio.muted = true;
+		elem.src = "../Resources/Images/Icons/sound-off.png";
+	}
 	
 }

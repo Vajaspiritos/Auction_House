@@ -17,9 +17,13 @@
 </head>
 <body>
 	<button id="drop-btn" onclick="lenyit()">↓</button>
+	<audio id="music" autoplay muted loop>
+		<source src="../Resources/Music/wait.mp3" type="audio/mpeg">	
+	</audio>
 	<div class="menusor inactive" id="drop-menusor">
 		<div class="kep inline">
 			<img src="../Resources/Images/Icons/logo.png" alt="Logo" >
+			<img id="musicbtn" src="../Resources/Images/Icons/sound-off.png" onclick="toggleSound()">
 		</div>
 		<div class="gombok inline">
 		<a class ="menu-gombok" href="fooldal.php">Főoldal</a>

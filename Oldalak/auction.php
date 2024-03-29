@@ -18,6 +18,7 @@ echo "<script>const AUCTIONS=".GetAuctions($conn)."</script>";
 <meta charset="UTF-8">
 <link rel="stylesheet" href="../Resources/CSS/betuTipusok.css">
 <link rel="stylesheet" href="../Resources/CSS/auction.css">
+
 </head>
 <body>
 <script src="../Resources/Scriptek/auction.js"></script>

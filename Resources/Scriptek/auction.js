@@ -2,23 +2,28 @@ const socket = new WebSocket("ws://127.0.0.1:443");
 socket.addEventListener("error", (event)=>{
 	if(event.target.readyState==3){
 	console.log("Az Aukcio kliens hibába ütközött. Ha nincs elindítva a Szerver ez normális. ");
+	}else{
+		
+		console.log(event.data);
 	}
 	
 })
 
 
 
+
 let waiting = true;
 socket.addEventListener("message", (event) => {
 	
-		console.log(event.data);
+		console.log("Auction got message: "+event.data);
 			if(event.data =="id"){
-				
+					console.log("Auction trying to connect with user id: "+USERID);
 				socket.send("AuctionClientID|"+USERID);
 				
 			}else if(event.data =="retry"){
 				
 				let tmp = setInterval(function(){
+					console.log("Auction trying to connect with user id: "+USERID);
 					socket.send("AuctionClientID|"+USERID);
 					clearInterval(tmp);
 				},100);
@@ -62,7 +67,7 @@ function wait(){
 				if(minutes < 10) minutes = "0"+minutes;
 				if(seconds < 10) seconds = "0"+seconds;
 				Text.innerHTML = hours+":"+minutes+":"+seconds;
-				if(distance == 0) location.reload();
+				if(distance <= 0) location.reload();
 			},1000);
 			}else Text.innerHTML = "∞";
 				screen.appendChild(Text);	
@@ -76,6 +81,19 @@ function  UPDATE(data){
 		wait();
 		
 	}else{
+		//console.log(data);
+		let parts = data.split("|");
+		let stage = parts[0];
+		let pitch = parts[1];
+		let speed = parts[2];
+		let msg = parts[3];
+		
+		let utterance = new SpeechSynthesisUtterance();
+			utterance.pitch =pitch;
+			utterance.rate =speed;
+			utterance.text =msg;
+		window.speechSynthesis.speak(utterance)
+		
 		
 		
 		

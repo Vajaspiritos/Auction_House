@@ -12,7 +12,7 @@ socket.addEventListener("message", (event) => {
 	
 		
 			if(event.data =="id"){
-				
+				console.log("Chat trying to connect with user id: "+USERID);
 				socket.send("ID|"+USERID+"|"+Name);
 				document.getElementById("Messenger").removeAttribute("disabled");
 			}else if(event.data.split(":")[0]=="CheckupCode_for_DisconnectDetection"){

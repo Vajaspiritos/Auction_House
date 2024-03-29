@@ -32,17 +32,80 @@ $CLIENTS = [$SERVER];
 $INFOS = [];
 $Server_user = new Client("0","gray","SZERVER",null);
 
-
+$timer_start_clients = round(microtime(true));
+$timer_start_auction = round(microtime(true));
+//$client_limit = 0;
+$auction_limit = 1; //millisec különbség 1 = minden 1. másodpercben meghívja
+$sleep_time = 100;
+$stage_counter = 0;
 while(true){
-	ServerAction();
+	//$timer_end_clients = (microtime(true));
+	$timer_end_auction = round(microtime(true));
 	
+	//if($timer_end_clients-$timer_start_clients>= $client_limit){Client_handle(); $timer_start_clients = $timer_end_clients;}
+	if($timer_end_auction-$timer_start_auction>= $auction_limit){ServerAction(); $timer_start_auction = $timer_end_auction; }
+	
+	try{
+	Client_handle();
+	}catch(Exception $err){
+		
+		C("Hiba történt a Clientek kezelésekor: ".$err);
+	}
+	
+	
+	usleep($sleep_time*1000);
+}
+function ServerAction(){
+	global $Auction_ongoing;
+	if(!$Auction_ongoing){CheckForAuction();}else{		
+		
+		progressAuction();			
+	}
+	
+}
+function progressAuction(){
+	global $current_AUCTION,$stage_counter;
+	$wait_times = [0,40,40,30]; //[0]= Aukció elkezdése [1]=köszönés, szabályok, stb [2]= idő / item [3] elköszönés
+	
+	if($wait_times[$current_AUCTION->stage()] <= $stage_counter ){
+		$stage_counter = 0;
+		$STAGE = ($current_AUCTION->stage != 2)?++$current_AUCTION->stage:2;
+		C("Advancing to next stage :".$STAGE);
+		
+		if($STAGE==1){
+			$current_AUCTION->data ="1|".($current_AUCTION->pitch)."|".($current_AUCTION->speed)."|".($current_AUCTION->speak[0]); //stage| speaker pitch | speaker speed | text
+			
+			UpdateAuctions($current_AUCTION->data);
+		}else if($STAGE==2){
+		
+			$current_AUCTION->data = "2|".($current_AUCTION->pitch)."|".($current_AUCTION->speed)."|".$current_AUCTION->speak[1][0][0];
+			UpdateAuctions($current_AUCTION->data);
+			array_shift($current_AUCTION->speak[1]);
+			$current_AUCTION->item_cusor++;
+			if(count($current_AUCTION->speak[1])==0) ++$current_AUCTION->stage;
+			
+		}
+		
+		
+		
+	}else $stage_counter++;
+	C("time: ".$stage_counter);
+}
+function importTexts(){
+	global $managerSpeak;
+	$managerSpeak = json_decode(file_get_contents("./Resources/manager.json"),true);
+	
+}
+function Client_handle(){
+	global $CLIENTS, $SERVER, $INFOS, $Server_user,$Auction_ongoing,$current_AUCTION;
+		
 	$read=$CLIENTS;
 	$write=null;
 	$exception=null;
 	
 	$r = socket_select($read,$write,$exception,0);
 
-	if($r<=0) continue;
+	if($r<=0) return;
 	
 	//ha a readben most bennevan a server socket, akkor azt azt jelenti új user a láthatáron;
 	if(in_array($SERVER,$read)){
@@ -53,7 +116,7 @@ while(true){
 		$request = socket_read($client, 5000);
 		
 		$key =  explode("\r\n",explode("Sec-WebSocket-Key: ",$request)[1])[0];
-		C("Key obtained:".$key);
+		//C("Key obtained:".$key);
 		
 		$magic = base64_encode(pack(
 				'H*',
@@ -68,7 +131,7 @@ while(true){
 		
 		
 		if(socket_write($client,$response, strlen($response))!==false){
-			C("Sucessfully sent back handshake response");
+			//C("Sucessfully sent back handshake response");
 			C("new user gained");
 		}else C("Handshake couldn't be sent");
 		
@@ -78,21 +141,25 @@ while(true){
         unset($read[array_search($SERVER, $read)]);
 		socket_set_nonblock($SERVER);
 	}
-	if($r<=0) continue;
+	if($r<=0) return;
 
 	foreach($read as $client){
 		
 		
 		$message=  READ($client);
-		if($message == "error|1"|| $message == "error|2"){
+		$parts = explode("|",$message);
+		if($parts[0] == "error"){
 			
 			C("A client's message is not readable :".$message); 
+			/*
 			unset($CLIENTS[array_search($client, $CLIENTS)]);
 			unset($INFOS[array_search(FindUser($client), $INFOS)]);
-			if(FindUser($client)->Auction() != null)unset($CLIENTS[array_search(FindUser($client)->Auction(), $CLIENTS)]);
-			continue;
+			if(FindUser($client)->Auction() != null) unset($CLIENTS[array_search(FindUser($client)->Auction(), $CLIENTS)]);
+			*/
+			DeleteUser($client);
+			return;
 		} 
-		$parts = explode("|",$message);
+		
 		if($parts[0]=="ID"){
 			C($message);
 				$red = mt_rand(120, 255);
@@ -104,6 +171,7 @@ while(true){
 			BROADCAST(FORMAT("Új felhasználó csatlakozott: ".$parts[2],$Server_user));
 			
 		}else if($parts[0]=="AuctionClientID"){
+			C("Auction client trying to find profile");
 			$found = false;
 			foreach($INFOS as $C){
 				
@@ -112,14 +180,20 @@ while(true){
 					$C->SetAuction($client);
 					$found = true;
 					if(!$Auction_ongoing){ 
-					C("Made user wait");
-					WRITE($client,"wait");}
+						C("Made user wait");
+						WRITE($client,"wait");
+					}else{						
+						WRITE($client,$current_AUCTION->data);
+					}
+				}else{
+					C($C->ID()."!=".$parts[1]);
+					
 				}
 				
 				
 			}
 			if(!$found){
-				
+				C("but failed");
 				WRITE($client,"retry");
 				
 			}
@@ -133,21 +207,11 @@ while(true){
 			
 		}else{
 			$user = FindUser($client);
-			if($user == null) continue;
+			if($user == null) return;
 				C($user->Name().": ".$message);
 				BROADCAST(FORMAT($message,$user));
 		}
 	}
-	
-}
-function ServerAction(){
-	
-	CheckForAuction();
-	
-}
-function importTexts(){
-	global $managerSpeak;
-	$managerSpeak = json_decode(file_get_contents("./Resources/manager.json"),true);
 	
 }
 function C($text){
@@ -155,19 +219,33 @@ function C($text){
 	echo $text."\n";
 	
 }
-function WRITE($client,$text){
-	$msg = chr(129) . chr(strlen($text)) . $text;
-	socket_write($client, $msg);
+function WRITE($client, $text){
+    $length = strlen($text);
+    $header = chr(129); // 0x1 for text frame
+    if ($length <= 125) {
+        $header .= chr($length);
+    } elseif ($length <= 65535) {
+        $header .= chr(126) . pack('n', $length); // 16-bit length
+    } else {
+        $header .= chr(127) . pack('NN', 0, $length); // 64-bit length (ignoring the most significant 32 bits)
+    }
+    $msg = $header . $text;
+    socket_write($client, $msg);
+	
 }
 function READ($client){
 	
 	$byte_array = unpack('C*',socket_read($client,1024) );
-
+	if(count($byte_array)<1) return "error|weird message";
 	if($byte_array[1] != 129){
 				if($byte_array[1]==136){
+					if(IsAuction($client)){
+						FindUser($client)->Auction = null;
+					}else{
 					DeleteUser($client);
+					}
 				}else{
-					C($byte_array[1]);return "error|1";
+					C($byte_array[1]);return "error|wrong opcode|".$byte_array[1];
 				}
 		}
 	
@@ -194,7 +272,7 @@ function READ($client){
 	return $decodedString;
 	}
 function CheckForAuction(){
-	global $NextAuction,$conn,$Auction_ongoing,$current_AUCTION_infos;
+	global $NextAuction,$conn,$Auction_ongoing,$current_AUCTION_infos,$current_AUCTION;
 	
 	
 	if(!$Auction_ongoing&&$NextAuction!=null && $NextAuction < strtotime(date("Y-m-d H:i:s"))){
@@ -206,14 +284,18 @@ function CheckForAuction(){
 		$items = $conn->query("SELECT * FROM `items` WHERE Auction_ID=".$current_AUCTION_infos["ID"])->fetch_assoc();
 		
 		$current_AUCTION = new Auction($current_AUCTION_infos["ID"],$current_AUCTION_infos["Manager"],$current_AUCTION_infos["Tier"],GetItemsOfAuction($conn,$current_AUCTION_infos["ID"],true));
+	//	C("AUCTION:");
+		//var_dump($current_AUCTION);
 		$Auction_ongoing = true;
+		$NextAuction = null;
+		C("Starting auction");
 	}else if($NextAuction==null){
 		//on startup
 		$auction_list = json_decode(GetAuctions($conn,1),TRUE);
 		if(count($auction_list) == 0) return false;
 		$NextAuction = strtotime($auction_list[0]["Date"]);
 		$current_AUCTION_infos = $auction_list[0];
-		C($NextAuction);
+		C("Next auction detected: ".$NextAuction);
 		return true;
 	}
 	
@@ -243,6 +325,18 @@ function DeleteUser($client){
 	if($user != null){unset($INFOS[array_search(FindUser($client), $INFOS)]);
 	C("User disconnected");}
 }
+function IsAuction($conn){
+	global $INFOS;
+	
+	foreach($INFOS as $client){
+		
+		if($conn == $client->Auction()){
+			
+			return true;
+		}
+	}
+	return false;
+}
 function BROADCAST($text){
 	global $INFOS;
 	foreach($INFOS as $client){
@@ -250,6 +344,32 @@ function BROADCAST($text){
 		WRITE($client->Connection(),$text);
 		
 	}
+	
+}
+function UpdateAuctions($data){
+	global $INFOS;
+	ProcessManagerSpeech($data);
+	foreach($INFOS as $client){
+		
+		WRITE($client->Auction(),$data);
+		
+	}
+	
+}
+function ProcessManagerSpeech(&$data){
+	global $current_AUCTION;
+	
+	$data = str_replace("@manager",$current_AUCTION->manager,$data);
+	$data = str_replace("@i",($current_AUCTION->item_cusor)+1,$data);
+	$data = str_replace("@name",$current_AUCTION->items[$current_AUCTION->item_cusor]["Name"],$data);
+	$data = str_replace("@description",$current_AUCTION->items[$current_AUCTION->item_cusor]["Description"],$data);
+	$data = str_replace("@tier",$current_AUCTION->items[$current_AUCTION->item_cusor]["Rarity"],$data);
+	$data = str_replace("@OG",$current_AUCTION->items[$current_AUCTION->item_cusor]["Original_owner"],$data);
+	//$data = str_replace("@price",,$data);
+	//$data = str_replace("@buyer_ID",,$data);
+	//$data = str_replace("@best_buyer_ID",,$data);
+	//$data = str_replace("@best_price",,$data);
+	
 	
 }
 class Client{
@@ -274,16 +394,19 @@ class Client{
 	function Auction()			{ return $this->Auction;}
 	function SetAuction($conn)	{ $this->Auction =$conn;}
 }
-
 class Auction{
 	
 	
 	public $ID;
 	public $stage;
 	public $manager;
+	public $pitch = 1;
+	public $speed = 1;
 	public $tier;
 	public $items;
 	public $speak = [];
+	public $data="";
+	public $item_cusor = 0;
 	
 	function GetRandomLine($array){
 	
@@ -333,14 +456,15 @@ class Auction{
 			}else $sold = $this->GetRandomLine($managerSpeak["stage"][0]["auction"][0]["n"][0]["sold"][0]);
 			$tmp = [$name,$desc,$OG,$Rarity];
 			shuffle($tmp);
-			$for_items[] = [$bring,$tmp[0]."\n".$tmp[1]."\n".$tmp[2]."\n".$tmp[3],$sold];
+			$for_items[] = [$bring."\n".$tmp[0]."\n".$tmp[1]."\n".$tmp[2]."\n".$tmp[3],$sold];
 		}
 		
 		$bye =$this->GetRandomLine($managerSpeak["stage"][0]["Goodbye"][0]);
-		$this->speak = [$greet.$rule.$goodbye, $for_items, $bye];
-		var_dump($this->speak);
+		$this->speak = [$greet." ".$rule." ".$goodbye, $for_items, $bye];
+		//var_dump($this->speak);
 	}
 	
+	function Stage(){return $this->stage;}
 }
 
 ?>
