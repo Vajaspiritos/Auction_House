@@ -167,7 +167,7 @@ font-size: 1.4em;
 @keyframes attunesDoboz{
 
   	from {height: 8vw; width: 16vw; left: 84vw; }
-  	to {height:65vw; width: 100vw; left: 0; }
+  	to {height:60vw; width: 100vw; left: 0; }
   	}
 
 @keyframes eltunesDoboz{
@@ -176,7 +176,7 @@ font-size: 1.4em;
 
   	}
 
-.megjelent { width: 100vw; left: 0;  }
+.megjelent { width: 100vw; left: 0; height: 60vw; }
 
 .eltunt {height:8vw; width: 16vw; left: 84vw; }
 
@@ -184,7 +184,7 @@ font-size: 1.4em;
 	font-size: 3vw; margin: 1vw; padding: 1vw 2vw;
 }
 
-#publish {top:0; min-height: 3vw;}
+#publish {top:0; min-height: 3vw; }
 #pTartalom textarea 
 {
 	width: 80vw;
@@ -195,6 +195,8 @@ font-size: 1.4em;
 
 #pTartalom input 
 {
+	margin: 0;
+	margin-bottom: 5vh;
 		font-size: 3.5vw;
 }
 #pTartalom button 

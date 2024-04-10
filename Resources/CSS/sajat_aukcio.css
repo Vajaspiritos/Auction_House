@@ -56,7 +56,7 @@ overflow: hidden;
 {
 	margin-left: 0.1em;
 	margin-right: 0.1em;
-	font-size: 1.5vw;
+	font-size: 2.5vw;
 	border-bottom: 2px solid white;
 	color: white;
 	padding: 0.1em 0em;
@@ -92,8 +92,13 @@ margin: 1% auto;
 @media screen and (max-width: 995px) 
 {
 	#raktar-div{
-    height: 100vh;
+    height: 0;
     width: 100%;
+    display: hidden;
+	}
+	.menusor-spacer
+	{
+		height: 0;
 	}
 	
 	body{
@@ -114,11 +119,11 @@ margin: 1% auto;
 	height:auto;
 	}
 	.aukcio-cim {
-		font-size:5.5vh;
+		font-size:5.5vw;
 	}
 	
 	.aukcio button {
-    font-size: 9.4vw;
+    font-size: 6vw;
     text-decoration: underline;
     position: relative;
     padding: 0.2em 1em;

@@ -7,7 +7,7 @@
 }
 .menusor-spacer 
 {
-	height: 5vw;
+	height: 15vh;
 }
 
 #egyenleg-div, #egyenleg
@@ -178,8 +178,8 @@ content: " ";
 
 .menusor-spacer 
 {
-	max-height: 30vw;
-	height: 23vw;
+	max-height: 50vh;
+	height: 40vh;
 }
 
 
@@ -221,7 +221,7 @@ content: " ";
 #timig-container 
 {
 	width: fit-content;
-	height: 40vw;
+	height: 58vh;
 	overflow: auto;
 }
 

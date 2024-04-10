@@ -37,7 +37,7 @@
 		</div>
 	</div>
 
-	<div class="menusor-spacer-fooldal">
+	<div class="menusor-spacer">
 	</div>
 	
 	<div class="aukcios-felulet">

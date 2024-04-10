@@ -130,11 +130,11 @@ font-weight: bold;
 	
 	html{
 		
-		overflow-x:hidden;
+    
 	}
 	body{
 		
-		overflow-x:hidden;
+
 	}
 	
 	
@@ -151,12 +151,14 @@ font-weight: bold;
 }
 
 #Pfp{
+
 margin-left: 0;
   margin: 0;
   text-align: center;
   width: 65%;
 float: none;
 }
+
 
 #upload {
     float: right;
