@@ -31,7 +31,7 @@ function AdatokEllenorzes()
 
 let sikertelen = "";
 let regexUres = /\w/;
-let regexJelszo = /\w{0,}.[?!+%$€#&@~.-*]/;
+let regexJelszo = /\w{0,}.[?!+%$€#&@~.-].\*/;
 let regexBank = /[0-9]{4}[-][0-9]{4}[-][0-9]{4}[-][0-9]{4}/;
 let regexEmail = /\w+[@]+\w+\.+\w/; //először megnézi hogy valamilyen karakterrel kezdődik e, majd hogy azt kukac követi, majd hogy pont követi, majd hogy betűk követik
 let regEmail = document.getElementById("regEmail").value;
