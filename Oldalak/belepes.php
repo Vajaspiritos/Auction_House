@@ -2,30 +2,28 @@
 <html lang="hu">
 <head>
 	<?php
-	include '../Resources/Scriptek/CheckForLoggedIn.php';
-	include '../Resources/Scriptek/ErrorHandle.php';
-	
+	include '../Resources/Scriptek/CheckForLoggedIn.php';	
 	?>
 	<meta charset="UTF-8">
 	<title>Belépés</title>
 	<link rel="stylesheet" href="../Resources/CSS/belepes.css">
 		<link rel="stylesheet" href="../Resources/CSS/betuTipusok.css">
-	<script src="../Resources/Scriptek/belepes.js"></script>
 </head>
 <body>
 <div id="fejlec">
 </div>
 <div class="login" id="loginForm">
 	<button id="reg" class="valto" onclick="regisztralok()" >Regisztrálni akarok!</button>
-<form action="login.php" method="post">
+<form action="login.php" method="post" onsubmit="BelepesEllenorzes()">
 	<input type="text" placeholder="Felhasznalonév" name="username">
 	<input type="text" placeholder="Jelszó" name="password">
 	<div id="felejt_jelszo_doboz">
 	<input type="submit" id="felejt_jelszo" value="Elfelejtettem a jelszavam">
-	</div><
+	</div>
 	<input type="submit" value="Belépés" id="loginBtn" class="formGomb">
 </form>
 </div>
+<p id="hiba">nope</p>
 <div id="registerId" class = "register">
 <button id="log" class="valto" onclick="loginolok()" >Vigyél viszza ÁÁÁÁÁÁÁÁÁ</button>
 	<p>Regisztrálni akarok</p>
@@ -42,5 +40,6 @@
 	<input type="submit" value="Regisztrálás" id="regBtn" class="formGomb">
 </form>
 </div>
+<script src="../Resources/Scriptek/belepes.js"></script>
 </body>
 </html>

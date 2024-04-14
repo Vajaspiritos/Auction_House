@@ -1,4 +1,6 @@
-function regisztralok() {regBec
+
+
+function regisztralok() {
 var login = document.getElementById("loginForm");
 var reg = document.getElementById("registerId");
 login.style.opacity = "0";
@@ -13,25 +15,27 @@ setTimeout(function()
 
 function loginolok() 
 {
-var login = document.getElementById("loginForm");
-var reg = document.getElementById("registerId");
+let login = document.getElementById("loginForm");
+let reg = document.getElementById("registerId");
 reg.style.opacity = "0";
 login.style.display = "block";
 reg.style.display = "none";
-var speed = 50;
+let speed = 50;
 setTimeout(function() 
 	{
 		
 		login.style.opacity = "1";
 	},speed);
 }
-
+function BelepesEllenorzes() 
+{
+	document.getElementById('hiba').innerHTML = ERROR;
+}
 function AdatokEllenorzes() 
 {
-
 let sikertelen = "";
 let regexUres = /\w/;
-let regexJelszo = /\w{0,}.[?!+%$€#&@~.-].\*/;
+let regexJelszo = /\w{0,}.[?!+%$€#&@~.-].[*]/;
 let regexBank = /[0-9]{4}[-][0-9]{4}[-][0-9]{4}[-][0-9]{4}/;
 let regexEmail = /\w+[@]+\w+\.+\w/; //először megnézi hogy valamilyen karakterrel kezdődik e, majd hogy azt kukac követi, majd hogy pont követi, majd hogy betűk követik
 let regEmail = document.getElementById("regEmail").value;
