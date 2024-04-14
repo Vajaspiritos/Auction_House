@@ -1,6 +1,6 @@
 .login 
 {
-	width:40vw;
+	width:45%;
 	margin: auto;
 	margin-top: 10%;
 	background-color: rgb(38, 2, 64);
@@ -39,10 +39,10 @@ width: 40vw;
 max-width: 90%;
 margin-top: 15px;
 font-size: 2em;
-	font-weight: bold;
 	box-shadow: 2px 10px rgb(0,0,0,0.5);
 	padding: 20px 20px;
 }
+
 
 .register input:hover 
 {
@@ -54,16 +54,15 @@ font-size: 2em;
 	margin-top: -200px;
 }
 
-.login input, #loginBtn 
+.login input
 {
-	margin-top: 10px;
-	margin-bottom: 10px;
+	margin-top: 5%;
+margin-bottom: 3%;
 	width: 75%;
 	font-size: 2em;
-	font-weight: bold;
-	box-shadow: 2px 10px rgb(0,0,0,0.5);
+	box-shadow: 2px 10px rgb(0,0,0,0.6);
 	padding: 20px 20px;
-	background-color: rgb(240,240,240,0.6);
+	background-color: rgb(240,240,240,0.4);
 }
 
 .login input:focus 
@@ -78,11 +77,9 @@ font-size: 2em;
 #felejt_jelszo
 {
 
-float: right;
 width: 13em;
 height: 2em;
 font-size: 0.8em;
-text-align: center;
 margin-right: 10px;
 margin-bottom: 0px;
 margin-top: 0px;
@@ -90,15 +87,14 @@ padding: 0;
 background-color: white;
 transition: 0.3s;
 }
-
+#felejt_jelszo_doboz {text-align: right;}
 
 
 #loginBtn 
 {
 background-color: white;
 transition: 0.3s;
-position: relative;
-top: 40px;
+margin-bottom: -10%;
 }
 
 #regBtn 

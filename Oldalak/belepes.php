@@ -20,8 +20,9 @@
 <form action="login.php" method="post">
 	<input type="text" placeholder="Felhasznalonév" name="username">
 	<input type="text" placeholder="Jelszó" name="password">
+	<div id="felejt_jelszo_doboz">
 	<input type="submit" id="felejt_jelszo" value="Elfelejtettem a jelszavam">
-	</br>
+	</div><
 	<input type="submit" value="Belépés" id="loginBtn" class="formGomb">
 </form>
 </div>
