@@ -1,6 +1,6 @@
 <?php
 if(session_status() !== PHP_SESSION_ACTIVE) session_start();
-if(empty($_POST['username']) && empty($_POST['password'])) {returnWithError("Nem volt megadva felhasználónév és jelszó!");} 				 // ha a session még nincs elindítva elindítja.
+if(empty($_POST['username']) && empty($_POST['password'])) {returnWithError("Nem volt megadva se jelszó se felhasználónév!");} 				 // ha a session még nincs elindítva elindítja.
 if(empty($_POST['username'])) returnWithError("Nem volt megadva felhasználónév!");     //ellenőrizzük, hogy a szükséges infok biztosan megvannak e;
 if(empty($_POST['password'])) returnWithError("Nem volt megadva jelszó!");
 
