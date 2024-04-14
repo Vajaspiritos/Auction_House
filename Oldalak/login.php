@@ -1,9 +1,8 @@
 <?php
-echo "<script>AdatokEllenorzo()</script>";
 if(session_status() !== PHP_SESSION_ACTIVE) session_start();
-if(empty($_POST['username']) && empty($_POST['password'])) {returnWithError("Nem volt megadna felhasználónév;Nem volt megadva jelszó");} 				 // ha a session még nincs elindítva elindítja.
-if(empty($_POST['username'])) returnWithError("Nem volt megadna felhasználónév");     //ellenőrizzük, hogy a szükséges infok biztosan megvannak e;
-if(empty($_POST['password'])) returnWithError("Nem volt megadva jelszó");
+if(empty($_POST['username']) && empty($_POST['password'])) {returnWithError("Nem volt megadva felhasználónév és jelszó!");} 				 // ha a session még nincs elindítva elindítja.
+if(empty($_POST['username'])) returnWithError("Nem volt megadva felhasználónév!");     //ellenőrizzük, hogy a szükséges infok biztosan megvannak e;
+if(empty($_POST['password'])) returnWithError("Nem volt megadva jelszó!");
 
 
 $UN = $_POST["username"];													
@@ -23,12 +22,15 @@ while($row = $result->fetch_assoc()){
 	if(password_verify($PS.$row['Salt'],$row['Password'])){
 		
 		$_SESSION["UserID"] = $row['ID'];
-		returnWithError("Successful login");
+		returnWithError("Sikeres bejelentkezés");
 	}
 	
 	
 }
-returnWithError("Username or Password not correct");                         //Abban az esetben ha nem találunk felhasználót visszatérünk hibával.
+                  //Abban az esetben ha nem találunk felhasználót visszatérünk hibával.
+
+
+
 
 function returnWithError($text){
 

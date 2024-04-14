@@ -13,7 +13,15 @@
 	opacity: 1;
 
 }
+#hiba_doboz
+{
+	margin-top: 3%;
+margin-left: 35%;
+width: 30%;
+display: block;
+}
 
+#hiba_doboz p {color: red;}
 ::placeholder {color:black;}
 
 p {color: white;}
@@ -152,6 +160,10 @@ scale:110% 110%;
 
 @media screen and (max-width: 1200px) 
 {
+	#hiba_doboz
+{
+margin-left: 15%;
+}
 	.login 
 	{
 		width: 70%;
@@ -170,6 +182,10 @@ scale:110% 110%;
 
 @media screen and (max-width: 800px) 
 {
+	#hiba_doboz
+{
+margin-left: 5%;
+}
 	.login 
 	{
 		margin-top: 40%;

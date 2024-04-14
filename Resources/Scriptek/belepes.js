@@ -6,6 +6,7 @@ var reg = document.getElementById("registerId");
 login.style.opacity = "0";
 reg.style.display = "block";
 var speed = 100;
+document.getElementById("hiba_doboz").style.display = "none";
 setTimeout(function() 
 	{
 		login.style.display = "none";
@@ -15,6 +16,7 @@ setTimeout(function()
 
 function loginolok() 
 {
+	document.getElementById("hiba_doboz").style.display = "block";
 let login = document.getElementById("loginForm");
 let reg = document.getElementById("registerId");
 reg.style.opacity = "0";
@@ -27,12 +29,11 @@ setTimeout(function()
 		login.style.opacity = "1";
 	},speed);
 }
-function BelepesEllenorzes() 
-{
-	document.getElementById('hiba').innerHTML = ERROR;
-}
+
+if(typeof ERROR !== 'undefined') {document.getElementById('hiba').innerHTML = ERROR;}
 function AdatokEllenorzes() 
 {
+
 let sikertelen = "";
 let regexUres = /\w/;
 let regexJelszo = /\w{0,}.[?!+%$€#&@~.-].[*]/;
