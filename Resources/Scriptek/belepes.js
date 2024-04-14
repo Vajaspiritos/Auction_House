@@ -31,7 +31,7 @@ function AdatokEllenorzes()
 
 let sikertelen = "";
 let regexUres = /\w/;
-let regexJelszo = /\w{0,}.[?!+%$€#&@~.-]/;
+let regexJelszo = /\w{0,}.[?!+%$€#&@~.-*]/;
 let regexBank = /[0-9]{4}[-][0-9]{4}[-][0-9]{4}[-][0-9]{4}/;
 let regexEmail = /\w+[@]+\w+\.+\w/; //először megnézi hogy valamilyen karakterrel kezdődik e, majd hogy azt kukac követi, majd hogy pont követi, majd hogy betűk követik
 let regEmail = document.getElementById("regEmail").value;
@@ -46,7 +46,7 @@ if(!regexJelszo.test(regPass) || regPass.length < 5){sikertelen+="c";}
 let regPassA =document.getElementById("regPassA").value;
 if(!regexJelszo.test(regPassA) || regPassA.length < 5){sikertelen+="d";}
 
-//a 2 jelszo nem egyzik
+//Ha a 2 jelszo nem egyzik
 if(regPass != regPassA) {sikertelen+="CD";}
 
 let regBank = document.getElementById("regBank").value;
@@ -63,8 +63,7 @@ if(!regexUres.test(regSzul)){sikertelen+="h"}
 
 let regBec =document.getElementById("regBec").value;
 if(!regexUres.test(regBec)){sikertelen+="i"}
-alert(sikertelen);
-event.preventDefault();
-if(sikertelen != "") {event.preventDefault();}
+
+if(sikertelen != "") {alert(sikertelen); event.preventDefault();}
 
 }
