@@ -28,16 +28,16 @@
 <div id="registerId" class = "register">
 <button id="log" class="valto" onclick="loginolok()" >Vigyél viszza ÁÁÁÁÁÁÁÁÁ</button>
 	<p>Regisztrálni akarok</p>
-<form action="register.php" method="post">
-	<input type="text" placeholder="Email cím" name="email"><br>
-	<input type="text" placeholder="Felhasználónév" name="username"><br>
-	<input type="text" placeholder="Jelszó" name="password"><br>
-	<input type="text" placeholder="Jelszó újra"><br>
-	<input type="text" placeholder="Bankkártya adatok"><br>
-	<input type="text" placeholder="Édesanyád leánykori neve"><br>
-	<input type="text" placeholder="Első háziállatod neve"><br>
-	<input type="text" placeholder="Születési hely"><br>
-	<input type="text" placeholder="Gyerekkori becenév"><br>
+<form action="register.php" method="post" onsubmit="AdatokEllenorzes()">
+	<input type="text" placeholder="Email cím" name="email" id="regEmail"><br>
+	<input type="text" placeholder="Felhasználónév" name="username" id="regUname"><br>
+	<input type="text" placeholder="Jelszó" name="pasword" id="regPass"><br>
+	<input type="text" placeholder="Jelszó újra" id="regPassA"><br>
+	<input type="text" placeholder="Bankkártyaszám" id="regBank"><br>
+	<input type="text" placeholder="Édesanyád leánykori neve" id="regAnya"><br>
+	<input type="text" placeholder="Első háziállatod neve" id="regAllat"><br>
+	<input type="text" placeholder="Születési hely" id="regSzul"><br>
+	<input type="text" placeholder="Gyerekkori becenév" id="regBec"><br>
 	<input type="submit" value="Regisztrálás" id="regBtn" class="formGomb">
 </form>
 </div>

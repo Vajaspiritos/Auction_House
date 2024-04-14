@@ -1,7 +1,10 @@
 <?php
-if(session_status() !== PHP_SESSION_ACTIVE) session_start(); 				 // ha a session még nincs elindítva elindítja.
-if(empty($_POST['username'])) returnWithError("Didn'T recive username");     //ellenőrizzük, hogy a szükséges infok biztosan megvannak e;
-if(empty($_POST['password'])) returnWithError("Didn'T recive password");
+echo "<script>AdatokEllenorzo()</script>";
+if(session_status() !== PHP_SESSION_ACTIVE) session_start();
+if(empty($_POST['username']) && empty($_POST['password'])) {returnWithError("Nem volt megadna felhasználónév;Nem volt megadva jelszó");} 				 // ha a session még nincs elindítva elindítja.
+if(empty($_POST['username'])) returnWithError("Nem volt megadna felhasználónév");     //ellenőrizzük, hogy a szükséges infok biztosan megvannak e;
+if(empty($_POST['password'])) returnWithError("Nem volt megadva jelszó");
+
 
 $UN = $_POST["username"];													
 $PS = $_POST["password"];
@@ -28,9 +31,9 @@ while($row = $result->fetch_assoc()){
 returnWithError("Username or Password not correct");                         //Abban az esetben ha nem találunk felhasználót visszatérünk hibával.
 
 function returnWithError($text){
-	
+
 	$_SESSION["Error"] = $text;				//a hibákat session-ön keresztül közöljük.
-	echo "return";
+	echo $text;
 	header("Location: belepes.php");
 	die();
 	
