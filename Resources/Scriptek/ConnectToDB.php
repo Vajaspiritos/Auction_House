@@ -226,6 +226,19 @@ function GetAuctions($conn,$Limit=null){
 	
 }
 
+function GetMoneyOf($user){        //$user = user id;
+	global $conn;
+	return $conn->query("SELECT Money FROM `users` WHERE ID=".$user)->fetch_assoc()['Money'];
+};
+
+
+function Pay($amount,$user,$item,$current){
+	
+	global $conn;
+	$conn->query("UPDATE `users` SET `Money` = (Money - $amount) WHERE `users`.`ID` = $user;");
+	$conn->query("UPDATE `users` SET `Money` = (Money + $amount) WHERE `users`.`ID` = $current;");
+	$conn->query("UPDATE `items` SET `Current_owner` = $user, `Auction_ID` = '0' WHERE `items`.`ID` = $item;");
+}
 function GetItemsOfAuction($conn,$AuctionID,$pure=false){
 	
 	$result = $conn->query("SELECT * FROM `items` WHERE Auction_ID=".$AuctionID.";");
@@ -239,6 +252,7 @@ function GetItemsOfAuction($conn,$AuctionID,$pure=false){
 		$newassoc['Description'] = $row['Description'];
 		$newassoc['Original_owner'] = $row['Original_owner'];
 		$newassoc['Rarity'] = $row['Rarity'];
+		$newassoc['CO'] = $row['Current_owner'];
 		
 		$imgID = $row['Image_ID'];
 		

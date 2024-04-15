@@ -23,7 +23,7 @@ body
   font-family: title;
 }
 
-.clock{
+.clock, .money{
 	
 	font-family: clock;
 }

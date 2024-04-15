@@ -21,6 +21,35 @@ echo "<script>const AUCTIONS=".GetAuctions($conn)."</script>";
 
 </head>
 <body>
+	<div id="bg" class="curtain_closed">
+		<div id="box" >
+		<img id="manager" class="manager">
+		<div id="pedestal" >
+		<img id="item" ></div>
+		<div id="infos" >
+		<table>
+			<tr>
+				<td id="info_name"></td>
+			</tr>
+			<tr>
+				<td id="info_og"></td>
+			</tr>
+			<tr>
+				<td id="info_rarity"></td>
+			</tr>
+			<tr>
+				<td id="info_desc"></td>
+			</tr>
+		</table>
+		</div>
+		</div>
+	<img id="curtain" class="curtain_closed">
+	</div>
+	
+	<div id="screen" class="screen">
+		<p id="screen_text" class="clock">
+		</p>
+	</div>
 <script src="../Resources/Scriptek/auction.js"></script>
 </body>
 </html>

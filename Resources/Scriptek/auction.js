@@ -1,4 +1,5 @@
 const socket = new WebSocket("ws://127.0.0.1:443");
+window.speechSynthesis.cancel();
 socket.addEventListener("error", (event)=>{
 	if(event.target.readyState==3){
 	console.log("Az Aukcio kliens hibába ütközött. Ha nincs elindítva a Szerver ez normális. ");
@@ -43,18 +44,19 @@ socket.addEventListener("message", (event) => {
 let test = false;
 function wait(){
 	console.log("Waiting mode");
-		document.body.innerHTML="";
-	
-		document.body.setAttribute("class","curtain_closed");
 		
-		let screen = document.createElement("div");
-						
-			screen.setAttribute("class","screen");
+	
+		
+		
+		let screen = document.getElementById("screen");
+			screen.setAttribute("class","screen");		
 			
-			Text = document.createElement("p");
-			Text.setAttribute("class","clock");
+			
+			let Text = document.getElementById("screen_text");
+				Text.setAttribute("class","clock");
+			
 			if(test!=false||AUCTIONS.length >0){
-			let goal_date = new Date(test!=false?test.getTime():AUCTIONS[0].Date).getTime();
+			let goal_date = new Date(test!=false?test.getTime():AUCTIONS[0].Date).getTime(); 
 
 			let timer = setInterval(function(){
 				//milisecs, másodpercek, percek, órák, napok
@@ -70,12 +72,99 @@ function wait(){
 				if(distance <= 0) location.reload();
 			},1000);
 			}else Text.innerHTML = "∞";
-				screen.appendChild(Text);	
+					
 			
 		
-		document.body.appendChild(screen);
+		
 }
+var base = 0;
+window.onbeforeunload = function(event){
+	
+	window.speechSynthesis.cancel();
+	
+}
+window.speechSynthesis.cancel();
+var cl = 0;
+document.body.addEventListener("click",event=>{
+
+	let bg      = document.getElementById("bg");
+let screen  = document.getElementById("screen_text");
+let curtain = document.getElementById("curtain");
+let manager = document.getElementById("manager");
+let pedestal = document.getElementById("pedestal");
+let item = document.getElementById("item");
+let infos = document.getElementById("infos");
+let NAME = document.getElementById("info_name");
+let RARITY = document.getElementById("info_rarity");
+let DESC = document.getElementById("info_desc");
+let OG = document.getElementById("info_og");
+let rarity = 0;
+let name = "";
+let og = "";
+let desc = "";
+let item_id = 0;
+	if(cl==0){
+				let utterance = new SpeechSynthesisUtterance();
+					utterance.pitch =1;
+					utterance.rate =1;
+					utterance.text ="Na hellóka bellóka, békapicsa. Veri skibidi, fannum tax, gyatt, ez vajon már elég hosszú?";
+				window.speechSynthesis.speak(utterance)
+	
+
+	
+	curtain.setAttribute("class","curtain_on");
+						let t= setInterval(function(){
+							
+							curtain.setAttribute("class","");
+							clearInterval(t);
+						},7000);
+						
+						bg.setAttribute("class","background_formalities");
+						screen.setAttribute("class","welcome");
+						screen.innerHTML="Üdvözöljük!";
+						cl++;
+	}else{
+		
+		curtain.setAttribute("class","curtain_off");
+		var iteration = 0;
+						let t= setInterval(function(){
+							bg.backgroundImage="url(../Resources/Images/BG/bg_"+rarity+".png)";
+							pedestal.backgroundImage="url(../Resources/Images/BG/pedestal_"+rarity+".png)";
+							manager.setAttribute("class","manager_presenting");
+							item.src="../Resources/Images/Items/"+item_id+".png";
+							item.style.visibility= "visible";
+							infos.style.visibility= "visible";
+							NAME.innerHTML = name;
+							OG.innerHTML = og;
+							RARITY.innerHTML = rarity;
+							DESC.innerHTML = desc;
+							
+							iteration++;
+							curtain.setAttribute("class","curtain_on");
+							if(iteration==2){	
+							curtain.setAttribute("class","");
+							clearInterval(t);
+							}
+						},7000);
+		
+	}
+	
+})
+
+
 function  UPDATE(data){
+	let bg      = document.getElementById("bg");
+let screen  = document.getElementById("screen_text");
+let curtain = document.getElementById("curtain");
+let manager = document.getElementById("manager");
+let pedestal = document.getElementById("pedestal");
+let item = document.getElementById("item");
+let infos = document.getElementById("infos");
+let NAME = document.getElementById("info_name");
+let RARITY = document.getElementById("info_rarity");
+let DESC = document.getElementById("info_desc");
+let OG = document.getElementById("info_og");
+
 
 	if(socket.readyState==3||data=="wait"&&waiting){
 		wait();
@@ -83,22 +172,158 @@ function  UPDATE(data){
 	}else{
 		//console.log(data);
 		let parts = data.split("|");
-		let stage = parts[0];
-		let pitch = parts[1];
-		let speed = parts[2];
-		let msg = parts[3];
 		
-		let utterance = new SpeechSynthesisUtterance();
-			utterance.pitch =pitch;
-			utterance.rate =speed;
-			utterance.text =msg;
-		window.speechSynthesis.speak(utterance)
+		if(parts[0]=="ChangedPrice"){
+			
+				//itt írja átt a kijelzőn a cash összeget;
+				moneycountup(parts[1]);
+		}else{
+				let stage = parts[0];
+				let pitch = parts[1];
+				let speed = parts[2];
+				let msg = parts[3];
+				
+				let utterance = new SpeechSynthesisUtterance();
+				utterance.addEventListener("end",event=>{
+					if(curtain.classList.length==0&& stage != 2){
+					curtain.setAttribute("class","curtain_off");
+					let t= setInterval(function(){
+	
+							if(curtain.classList.contains("curtain_off"))curtain.setAttribute("class","curtain_closed");
+							clearInterval(t);
+							
+						},7000);
+					}
+					
+					if(stage==3){
+						window.location.reload();
+						
+					}
+					
+				})
+					utterance.pitch =pitch;
+					utterance.rate =speed;
+					utterance.text =msg;
+				window.speechSynthesis.speak(utterance)
+				
+				
+				if(stage==2){
+
+					let rarity 	= parts[4];
+					let name 	= parts[5];
+					let og 		= parts[6];
+					let desc 	= parts[7];
+					let item_src = parts[8];
+					let baseprice = parts[9];
+					
+							
+				
+				var iteration = 0;
+				if(curtain.classList.contains("curtain_closed")){ 
+				
+				iteration++;
+				tick();
+						curtain.setAttribute("class","");
+				}else{ curtain.setAttribute("class","curtain_off");
+						let t= setInterval(function(){
+							tick();
+							if(iteration==2){
+								
+							curtain.setAttribute("class","");
+							clearInterval(t);
+							}
+						},7000);
+				
+				}
+				function tick(){
+							bg.setAttribute("class","bg"+rarity);
+							//bg.backgroundImage="url(../Resources/Images/BG/bg_"+rarity+".png)";
+							//pedestal.backgroundImage="url(../Resources/Images/BG/pedestal_"+rarity+".png)";
+							pedestal.setAttribute("class","p"+rarity);
+							manager.setAttribute("class","manager_presenting");
+							item.src=item_src;
+							item.style.visibility= "visible";
+							infos.style.visibility= "visible";
+							NAME.innerHTML = name;
+							OG.innerHTML = og;
+							RARITY.innerHTML = rarity;
+							DESC.innerHTML = desc;
+							
+							if(baseprice != base){
+							base = 0;
+							moneycountup(baseprice);
+							screen.setAttribute("class","money");
+							}
+							
+							
+							iteration++;
+							curtain.setAttribute("class","curtain_on");
+							
+				}
+				
+				}
+				if(stage==1){
+						curtain.setAttribute("class","curtain_on");
+						let t= setInterval(function(){
+							
+							curtain.setAttribute("class","");
+							clearInterval(t);
+						},7000);
+						
+						bg.setAttribute("class","background_formalities");
+						screen.setAttribute("class","welcome");
+						screen.innerHTML="Üdvözöljük!";
+					}
+					
+					if(stage==3){
+						
+						
+						curtain.setAttribute("class","curtain_off");
+						let t= setInterval(function(){
+							
+							curtain.setAttribute("class","curtain_closed");
+							clearInterval(t);
+						},7000);
+						
+						//bg.setAttribute("class","background_formalities");
+						screen.setAttribute("class","goodbye");
+						screen.innerHTML="Várjuk vissza!";
+						
+						
+						
+					}
 		
 		
-		
-		
+		}
+
 	}
 	
+	
+}
+
+function moneycountup(amount){
+	let screen  = document.getElementById("screen_text");
+	console.log("amount: "+amount)
+	
+	amount = parseInt(amount);
+	base = Math.max(base,0)
+	
+	
+	let step = Math.max(1,Math.floor(1 *((amount-base)/100)));
+	
+	
+	if(step== NaN) step = 1;
+	let delay = 10
+	let i = setInterval(function(){
+		
+		base += step;
+		
+		base = Math.min(amount, base);
+		
+		screen.innerHTML="¢"+base;
+		if(base == amount) clearInterval(i);
+	},delay);
+
 	
 }
 
@@ -124,7 +349,7 @@ socket.onopen= function(){
 }
 socket.onclose= function(){
 	
-	UPDATE("");
+	wait();
 	
 	
 }

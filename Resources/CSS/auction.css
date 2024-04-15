@@ -9,6 +9,238 @@ body{
 	background-repeat:no-repeat;
 	background-size: cover;
 }
+.curtain_on{
+	background-image: url(../Images/BG/curtain.gif);
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+.curtain_off{
+	background-image: url(../Images/BG/curtain_closing.gif);
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+
+.background_formalities{
+	background-image: url(../Images/BG/formalitiesBG.png);
+	background-repeat:no-repeat;
+	background-size: cover;
+	
+}
+
+
+
+.p0{
+	background-image: url(../Images/BG/Pedestal_0.png);
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+.bg0{
+	background-image: url(../Images/BG/BG_0.png);
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+.p1{
+	background-image: url(../Images/BG/Pedestal_1.png);
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+.bg1{
+	background-image: url(../Images/BG/BG_1.png);
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+.p2{
+	background-image: url(../Images/BG/Pedestal_2.png);
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+.bg2{
+	background-image: url(../Images/BG/BG_2.png);
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+.p3{
+	background-image: url(../Images/BG/Pedestal_3.png);
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+.bg3{
+	background-image: url(../Images/BG/BG_3.png);
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+.p4{
+	background-image: url(../Images/BG/Pedestal_4.png);
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+.bg4{
+	background-image: url(../Images/BG/BG_4.png);
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+.p5{
+	background-image: url(../Images/BG/Pedestal_5.png);
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+.bg5{
+	background-image: url(../Images/BG/BG_5.png);
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+.p6{
+	background-image: url(../Images/BG/Pedestal_6.png);
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+.bg6{
+	background-image: url(../Images/BG/BG_6.png);
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+.p7{
+	background-image: url(../Images/BG/Pedestal_7.png);
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+.bg7{
+	background-image: url(../Images/BG/BG_7.png);
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+
+#curtain{
+	
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:1;
+	width:100%;
+	height:100%;
+}
+#pedestal{
+	position: relative;
+    height: 63%;
+    width: 40%;
+    display: grid;
+  
+    grid-row: 1;
+    grid-column: 1;
+    margin: 17% auto 0% auto;
+	background-repeat:no-repeat;
+	background-size: cover;
+	
+}
+#info_name{
+	height:10%;
+	border-bottom: 3px solid white;
+}
+
+#info_og{
+	height:10%;
+	border-bottom: 3px solid white;
+}
+#info_rarity{
+	height:10%;
+	border-bottom: 3px solid white;
+}
+#info_desc{
+	vertical-align: top;
+	overflow:auto;
+	height:70%;
+	
+}
+
+#infos{
+	overflow:hidden;
+	font-size: 1.5em;
+	color:wheat;
+	visibility: hidden; 
+    position: relative;
+    height: 90%;
+    width: 29%;
+    display: grid;
+    grid-row: 1;
+    grid-column: 1;
+    margin: 3% 1% auto;
+    background-color: rgb(0, 0, 0, 0.7);
+    
+	
+}
+
+#item{
+	visibility: hidden;
+    position: relative;
+   
+    width: 27vh;
+    display: grid;
+    grid-row: 1;
+    grid-column: 1;
+    margin: 5% auto 0% auto;
+	
+}
+
+#box{
+	display:grid;
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:1;
+	width:100%;
+	height:100%;
+	
+}
+
+.manager{
+	
+	display: grid;
+    grid-row: 1;
+    grid-column: 1;
+    margin: 15% auto auto auto;
+    height: 69vh;
+	content:url(../Images/BG/manager.png);
+	
+}
+.manager_presenting{
+	
+	display: grid;
+    grid-row: 1;
+    grid-column: 1;
+    margin: 15% 15% auto auto;
+    height: 69vh;
+	content:url(../Images/BG/manager.png);
+	
+}
+
+
+#bg{
+	
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:-2;
+	width:100%;
+	height:100%;
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+
+.clock{
+		color:red;
+	
+}
+.money{
+		color:green;
+}
+.welcome{
+	
+	color:yellow;
+}
+.goodbye{
+	color:blue;
+	
+}
 
 .screen img{
 	
@@ -22,7 +254,7 @@ body{
 }
 
 .screen p{
-	color:red;
+
 	width:80%;
 	height:20%;
 	margin:50% auto 0% auto;
