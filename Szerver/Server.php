@@ -38,6 +38,9 @@ $timer_start_auction = round(microtime(true));
 $auction_limit = 1; //millisec különbség 1 = minden 1. másodpercben meghívja
 $sleep_time = 100;
 $stage_counter = 0;
+
+$bids_allowed = false;
+
 while(true){
 	//$timer_end_clients = (microtime(true));
 	$timer_end_auction = round(microtime(true));
@@ -64,12 +67,27 @@ function ServerAction(){
 	
 }
 function progressAuction(){
-	global $current_AUCTION,$stage_counter;
-	$wait_times = [0,40,40,30]; //[0]= Aukció elkezdése [1]=köszönés, szabályok, stb [2]= idő / item [3] elköszönés
-	
-	if($wait_times[$current_AUCTION->stage()] <= $stage_counter ){
+	global $current_AUCTION,$stage_counter,$bids_allowed,$Auction_ongoing;
+	$wait_times  = [0,40,60,30]; //[0]= Aukció elkezdése [1]=köszönés, szabályok, stb [2]= idő / item [3] elköszönés
+	$base_prices = [0,20,500,3000,40000,700000,9999999,888888888]; //árak az aukció ritkaságszintjétől függnek. ez alapján kaphatjuk meg a kezdőárát egy tételnek.
+	sentenceprogression();
+	if($wait_times[$current_AUCTION->Stage()] <= $stage_counter ){
 		$stage_counter = 0;
-		$STAGE = ($current_AUCTION->stage != 2)?++$current_AUCTION->stage:2;
+		//Licitálás vége
+		if($current_AUCTION->stage == 2){
+			$bids_allowed = false;
+			$buyer = ($current_AUCTION->bidder==null)?0:($current_AUCTION->bidder)->ID;
+			
+			Pay($current_AUCTION->bestprice,$buyer,$current_AUCTION->items[$current_AUCTION->item_cusor ]["ID"],$current_AUCTION->items[$current_AUCTION->item_cusor]["CO"]);
+			$current_AUCTION->bidder = null;
+			$current_AUCTION->bestprice = 0;
+			
+			@$current_AUCTION->data ="4|".($current_AUCTION->pitch)."|".($current_AUCTION->speed)."|".($current_AUCTION->speak[1][0][1]); //stage| speaker pitch | speaker speed | text			
+			UpdateAuctions($current_AUCTION->data);
+			$current_AUCTION->item_cusor++;
+			if(count($current_AUCTION->speak[1])==0) ++$current_AUCTION->stage;
+		}
+		$STAGE = ($current_AUCTION->stage != 2 )?++$current_AUCTION->stage:2;
 		C("Advancing to next stage :".$STAGE);
 		
 		if($STAGE==1){
@@ -77,13 +95,32 @@ function progressAuction(){
 			
 			UpdateAuctions($current_AUCTION->data);
 		}else if($STAGE==2){
-		
-			$current_AUCTION->data = "2|".($current_AUCTION->pitch)."|".($current_AUCTION->speed)."|".$current_AUCTION->speak[1][0][0];
+			$bids_allowed = true;
+			
+			$item = $current_AUCTION->items[$current_AUCTION->item_cusor];
+				$current_AUCTION->bestprice = $base_prices[intval($item["Rarity"])];
+			@$current_AUCTION->data = 
+						"2|".($current_AUCTION->pitch)."|".
+						($current_AUCTION->speed)."|".
+						$current_AUCTION->speak[1][0][0]."|".
+						$item["Rarity"]."|".$item["Name"]."|".
+						$item["Original_owner"]."|".
+						$item["Description"]."|".
+						$item["Image_src"]."|".
+						$base_prices[intval($item["Rarity"])];
+				
+			
 			UpdateAuctions($current_AUCTION->data);
 			array_shift($current_AUCTION->speak[1]);
-			$current_AUCTION->item_cusor++;
-			if(count($current_AUCTION->speak[1])==0) ++$current_AUCTION->stage;
 			
+			
+			//C("Bids: ".$bids_allowed);
+		}else if($STAGE==4){
+			
+			$current_AUCTION->data ="3|".($current_AUCTION->pitch)."|".($current_AUCTION->speed)."|".($current_AUCTION->speak[2]); //stage| speaker pitch | speaker speed | text
+			
+			UpdateAuctions($current_AUCTION->data);
+			$Auction_ongoing = false;
 		}
 		
 		
@@ -91,13 +128,40 @@ function progressAuction(){
 	}else $stage_counter++;
 	C("time: ".$stage_counter);
 }
+function sentenceprogression(){
+	global $current_AUCTION;
+	if($current_AUCTION->data == "") return;
+	
+	$pieces = explode("|",$current_AUCTION->data);	
+	$pieces[3] = substr($pieces[3],3);
+	$current_AUCTION->data = implode("|",$pieces);
+	
+}
+function bid($user,$amount){
+	global $Server_user,$current_AUCTION,$bids_allowed;
+	if(!$bids_allowed){ Write($user->Conn,FORMAT("Jellenleg nem lehet licitálni",$Server_user)); return -1;}
+	if(!is_numeric($amount)){ Write($user->Conn,FORMAT("Nem megfelelő szám lett megadva",$Server_user)); return -1;}
+	if($current_AUCTION->bestprice >= $amount){ Write($user->Conn,FORMAT("A kivánt összeg kisebb mint a legnagyobb",$Server_user)); return -1;}
+	$user_wealth = GetMoneyOf($user->ID);
+	if($user_wealth < $amount){ Write($user->Conn,FORMAT("Sajnos nincs elegendő összeg az egyenlegén",$Server_user)); return -1;}
+	overlicit($user,$amount);
+	BROADCAST(FORMAT("!bid ".$amount,$user));
+}
+function overlicit($user,$amount){
+	global $Server_user,$current_AUCTION,$bids_allowed;
+	
+	$current_AUCTION->bestprice = $amount;
+	$current_AUCTION->bidder = $user;
+	UpdateAuctions("ChangedPrice|".$amount."|".$user->Name);
+	
+}
 function importTexts(){
 	global $managerSpeak;
 	$managerSpeak = json_decode(file_get_contents("./Resources/manager.json"),true);
 	
 }
 function Client_handle(){
-	global $CLIENTS, $SERVER, $INFOS, $Server_user,$Auction_ongoing,$current_AUCTION;
+	global $CLIENTS, $SERVER, $INFOS, $Server_user,$Auction_ongoing,$current_AUCTION,$NextAuction;
 		
 	$read=$CLIENTS;
 	$write=null;
@@ -181,8 +245,10 @@ function Client_handle(){
 					$found = true;
 					if(!$Auction_ongoing){ 
 						C("Made user wait");
-						WRITE($client,"wait");
-					}else{						
+						if($NextAuction- strtotime(date("Y-m-d H:i:s"))> 1) WRITE($client,"wait");
+					}else{	
+				
+						ProcessManagerSpeech($current_AUCTION->data);
 						WRITE($client,$current_AUCTION->data);
 					}
 				}else{
@@ -205,6 +271,9 @@ function Client_handle(){
 			if(!$Auction_ongoing)C("!true");
 			if($Auction_ongoing==true)C("true");
 			
+		}else if(explode(" ",$message)[0]=="!bid"){
+			
+			bid(FindUser($client),explode(" ",$message)[1]);
 		}else{
 			$user = FindUser($client);
 			if($user == null) return;
@@ -351,12 +420,12 @@ function UpdateAuctions($data){
 	ProcessManagerSpeech($data);
 	foreach($INFOS as $client){
 		
-		WRITE($client->Auction(),$data);
+		if($client->Auction()!= null)WRITE($client->Auction(),$data);
 		
 	}
 	
 }
-function ProcessManagerSpeech(&$data){
+@function ProcessManagerSpeech(&$data){
 	global $current_AUCTION;
 	
 	$data = str_replace("@manager",$current_AUCTION->manager,$data);
@@ -365,8 +434,8 @@ function ProcessManagerSpeech(&$data){
 	$data = str_replace("@description",$current_AUCTION->items[$current_AUCTION->item_cusor]["Description"],$data);
 	$data = str_replace("@tier",$current_AUCTION->items[$current_AUCTION->item_cusor]["Rarity"],$data);
 	$data = str_replace("@OG",$current_AUCTION->items[$current_AUCTION->item_cusor]["Original_owner"],$data);
-	//$data = str_replace("@price",,$data);
-	//$data = str_replace("@buyer_ID",,$data);
+	$data = str_replace("@price",$current_AUCTION->bestprice,$data);
+	$data = str_replace("@buyer_ID",$current_AUCTION->bidder->ID,$data);
 	//$data = str_replace("@best_buyer_ID",,$data);
 	//$data = str_replace("@best_price",,$data);
 	
@@ -408,6 +477,8 @@ class Auction{
 	public $data="";
 	public $item_cusor = 0;
 	
+	public $bidder=null;
+	public $bestprice = 0;
 	function GetRandomLine($array){
 	
 	return $array[rand(0,count($array)-1)];

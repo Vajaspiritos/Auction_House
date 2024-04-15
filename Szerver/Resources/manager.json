@@ -6,8 +6,8 @@
 			"1": "Köszöntök minden kedves Licitálót. @manager vagyok. Köszönöm hogy eljöttek."
 		}],
 		"Rules":[{
-			"0":"Mindenek elött tisztázzuk az aukció menetét. Tárgyakat fogok prezentálni, amikre adott időn belül Liciteket tehetnek a felkiáltójel: bet: és a kivánt összeg beírásával. Ezután, pedig ha senki más nem ajánl fel többet: abban az esetben szívből gratulálunk a vásárláshoz.",
-			"1":"Az aukció így fog lezajlani. Maguk elé tesszük az adott tárgyat: és elmondunk róla pár információt. Ez idő alatt, már megtehetik licitjeiket: Ezt a Felkiáltójel: Bé: E: Té: aztán Szóköz és az összeg beírásával tehetik meg. További információkért tekintsék meg az Információs fülünket. Amennyiben senki nem licitált nagyobb értékben, Ön nyerte a licitet."
+			"0":"Mindenek elött tisztázzuk az aukció menetét. Tárgyakat fogok prezentálni, amikre adott időn belül Liciteket tehetnek a felkiáltójel: bid: és a kivánt összeg beírásával. Ezután, pedig ha senki más nem ajánl fel többet: abban az esetben szívből gratulálunk a vásárláshoz.",
+			"1":"Az aukció így fog lezajlani. Maguk elé tesszük az adott tárgyat: és elmondunk róla pár információt. Ez idő alatt, már megtehetik licitjeiket: Ezt a Felkiáltójel: Bé: Í: Dé: aztán Szóköz és az összeg beírásával tehetik meg. További információkért tekintsék meg az Információs fülünket. Amennyiben senki nem licitált nagyobb értékben, Ön nyerte a licitet."
 		}],
 		"Goodbye":[{
 			"0":"Nem is húznám a drága idejüket. Lássunk is hozzá az árverésnek.",
@@ -64,7 +64,7 @@
 				}],
 			
 			"sold":[{
-				"0":"ÉSSS ELKELT!!!",
+				"0":"ÉS: ELKELT!!!",
 				"1":"Elkelt! Gratulálunk a vásárláshoz.",
 				"2":"Elkelt! @name a elkelt @price ért.",
 				"3":"Elkelt eme remek ereklye, de ne menjen messze mert jön a következő.",
