@@ -425,17 +425,17 @@ function UpdateAuctions($data){
 	}
 	
 }
-@function ProcessManagerSpeech(&$data){
+function ProcessManagerSpeech(&$data){
 	global $current_AUCTION;
 	
-	$data = str_replace("@manager",$current_AUCTION->manager,$data);
-	$data = str_replace("@i",($current_AUCTION->item_cusor)+1,$data);
-	$data = str_replace("@name",$current_AUCTION->items[$current_AUCTION->item_cusor]["Name"],$data);
-	$data = str_replace("@description",$current_AUCTION->items[$current_AUCTION->item_cusor]["Description"],$data);
-	$data = str_replace("@tier",$current_AUCTION->items[$current_AUCTION->item_cusor]["Rarity"],$data);
-	$data = str_replace("@OG",$current_AUCTION->items[$current_AUCTION->item_cusor]["Original_owner"],$data);
-	$data = str_replace("@price",$current_AUCTION->bestprice,$data);
-	$data = str_replace("@buyer_ID",$current_AUCTION->bidder->ID,$data);
+	@$data = str_replace("@manager",$current_AUCTION->manager,$data);
+	@$data = str_replace("@i",($current_AUCTION->item_cusor)+1,$data);
+	@$data = str_replace("@name",$current_AUCTION->items[$current_AUCTION->item_cusor]["Name"],$data);
+	@$data = str_replace("@description",$current_AUCTION->items[$current_AUCTION->item_cusor]["Description"],$data);
+	@$data = str_replace("@tier",$current_AUCTION->items[$current_AUCTION->item_cusor]["Rarity"],$data);
+	@$data = str_replace("@OG",$current_AUCTION->items[$current_AUCTION->item_cusor]["Original_owner"],$data);
+	@$data = str_replace("@price",$current_AUCTION->bestprice,$data);
+	@$data = str_replace("@buyer_ID",$current_AUCTION->bidder->ID,$data);
 	//$data = str_replace("@best_buyer_ID",,$data);
 	//$data = str_replace("@best_price",,$data);
 	
