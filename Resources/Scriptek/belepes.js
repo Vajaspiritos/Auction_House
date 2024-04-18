@@ -39,12 +39,32 @@ let elem = lista[melyiket-1].children[0];
 
 if(helyes == true) {
 	lista[melyiket-1].children[0].style.textDecoration = "none";
+	if(lista[melyiket-1].innerHTML.split(" :)").length <= 1){
+	lista[melyiket-1].innerHTML+=" :)";
 }
-else {lista[melyiket-1].children[0].style.textDecoration = "line-through";}
+	
+}
+else 
+{
+	lista[melyiket-1].children[0].style.textDecoration = "line-through";
+	lista[melyiket-1].innerHTML = lista[melyiket-1].innerHTML.split(" :)")[0];
+}
 	
 }
 
-
+function helyesek(jel) 
+{
+	let lista = document.getElementsByClassName("listaElem");
+	let db = 0;
+	for (i = 0; i < lista.length; i++) 
+	{
+		if(lista[i].innerHTML.split(jel).length >1) 
+		{
+			db++;
+		}
+	}
+	return db;
+}
 
 function AdatokEllenorzes(elem) 
 {
@@ -118,7 +138,6 @@ if(elem =="jelszo")
 				
 			}
 	}
-	event.preventDefault();
 if(elem =="bank") 
 {
 	if(regexBank.test(document.getElementById("regBank").value)) 
@@ -126,5 +145,7 @@ if(elem =="bank")
 		kihuzas(4,true);
 	}else {kihuzas(4,false)}
 }
+
+	if(helyesek(" :)") != 5) {event.preventDefault();}
 
 }
