@@ -9,6 +9,7 @@ var speed = 100;
 document.getElementById("hiba_doboz").style.display = "none";
 setTimeout(function() 
 	{
+		document.getElementById("check_list").style.display = "block";
 		login.style.display = "none";
 		reg.style.opacity = "1";
 	},speed);
@@ -17,6 +18,7 @@ setTimeout(function()
 function loginolok() 
 {
 	document.getElementById("hiba_doboz").style.display = "block";
+	document.getElementById("check_list").style.display = "none";
 let login = document.getElementById("loginForm");
 let reg = document.getElementById("registerId");
 reg.style.opacity = "0";
