@@ -19,8 +19,8 @@
 <div class="login" id="loginForm">
 	<button id="reg" class="valto" onclick="regisztralok()" >Regisztrálni akarok!</button>
 <form action="login.php" method="post" onsubmit="BelepesEllenorzes()">
-	<input type="text" placeholder="Felhasznalonév" name="username">
-	<input type="text" placeholder="Jelszó" name="password">
+	<input type="text" placeholder="Felhasznalonév" name="username"><br>
+	<input type="text" placeholder="Jelszó" name="password"><br>
 	<div id="felejt_jelszo_doboz">
 	<input type="submit" id="felejt_jelszo" value="Elfelejtettem a jelszavam">
 	</div><
@@ -31,7 +31,13 @@
 	<p id="hiba"></p>
 </div>
 </div>
-
+<div id="check_list">
+<p><span>Email cím</span><span>(pelda@nomail.hu)</span></p>
+<p><span>Jelszó</span><span>(Legalább 5 karakter és 1 speciális karakter(..felsoorlni..) )</span></p>
+<p><span>Két jelszó egyezik</span></p>
+<p><span>Bankkártyaszám</span><span>1234-1234-1234-1234</span></p>
+<p><span>Nincs üresen hagyott mező</span></p>
+</div>
 <div id="registerId" class = "register">
 <button id="log" class="valto" onclick="loginolok()" >Vigyél viszza ÁÁÁÁÁÁÁÁÁ</button>
 	<p>Regisztrálni akarok</p>
