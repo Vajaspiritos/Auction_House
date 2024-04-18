@@ -34,7 +34,11 @@ display: block;
 	right: 3%;
 	padding-left: 10px;
 }
-
+#check_list p > span:first-child
+{
+	text-decoration: line-through;
+	text-decoration-color: red;
+}
 
 .register 
 {

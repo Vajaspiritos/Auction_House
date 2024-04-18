@@ -31,44 +31,100 @@ setTimeout(function()
 }
 
 if(typeof ERROR !== 'undefined') {document.getElementById('hiba').innerHTML = ERROR;}
-function AdatokEllenorzes() 
+
+function kihuzas(melyiket,helyes) 
+{
+let lista = document.getElementsByClassName("listaElem");
+let elem = lista[melyiket-1].children[0];
+
+if(helyes == true) {
+	lista[melyiket-1].children[0].style.textDecoration = "none";
+}
+else {lista[melyiket-1].children[0].style.textDecoration = "line-through";}
+	
+}
+
+
+
+function AdatokEllenorzes(elem) 
 {
 
-let sikertelen = "";
-let regexUres = /\w/;
-let regexJelszo = /\w{0,}.[?!+%$€#&@~.-].[*]/;
+let regexUres = /[\w]/;
+let regexJelszo = /[?!+%$€#&@~.-]/;
 let regexBank = /[0-9]{4}[-][0-9]{4}[-][0-9]{4}[-][0-9]{4}/;
 let regexEmail = /\w+[@]+\w+\.+\w/; //először megnézi hogy valamilyen karakterrel kezdődik e, majd hogy azt kukac követi, majd hogy pont követi, majd hogy betűk követik
-let regEmail = document.getElementById("regEmail").value;
-if(!regexEmail.test(regEmail)){sikertelen+="a";}
+let db = 0;
+for(i = 0; i < document.getElementsByClassName("regElem").length; i++) 
+{
+	if(regexUres.test(document.getElementsByClassName("regElem")[i].value)) 
+	{
+		db++;
+	}
+} 
+if(db <document.getElementsByClassName("regElem").length) {kihuzas(5,false)}else {kihuzas(5,true)}
+if(elem =="email")
+	{	
+			if(regexEmail.test(document.getElementById("regEmail").value))
+			{
+				kihuzas(1,true);
+			}else 
+			{
+				kihuzas(1,false);
+				
+			}
+		
+	}
+if(elem =="jelszo")
+	{	
 
-let regUname= document.getElementById("regUname").value;
-if(!regexUres.test(regUname)){sikertelen+="b";}
-
-let regPass = document.getElementById("regPass").value;
-if(!regexJelszo.test(regPass) || regPass.length < 5){sikertelen+="c";}
-
-let regPassA =document.getElementById("regPassA").value;
-if(!regexJelszo.test(regPassA) || regPassA.length < 5){sikertelen+="d";}
-
-//Ha a 2 jelszo nem egyzik
-if(regPass != regPassA) {sikertelen+="CD";}
-
-let regBank = document.getElementById("regBank").value;
-if(!regexBank.test(regBank) || regBank.length != 19) {sikertelen+="e"} 
-
-let regAnya =document.getElementById("regAnya").value;
-if(!regexUres.test(regAnya)){sikertelen+="f"}
-
-let regAllat = document.getElementById("regAllat").value;
-if(!regexUres.test(regAllat)){sikertelen+="g"}
-
-let regSzul = document.getElementById("regSzul").value;
-if(!regexUres.test(regSzul)){sikertelen+="h"}
-
-let regBec =document.getElementById("regBec").value;
-if(!regexUres.test(regBec)){sikertelen+="i"}
-
-if(sikertelen != "") {alert(sikertelen); event.preventDefault();}
+			if(document.getElementById("regPass").value.length >= 5)
+			{
+				if(regexJelszo.test(document.getElementById("regPass").value) && regexUres.test(document.getElementById("regPass").value))
+				{
+					kihuzas(2,true);
+				}else 
+				{
+					kihuzas(2,false);
+				}
+				if(document.getElementById("regPass").value == document.getElementById("regPassA").value && regexJelszo.test(document.getElementById("regPass").value) 
+					&& regexUres.test(document.getElementById("regPass").value)) 
+					{
+					kihuzas(3,true);
+					}else {kihuzas(3,false);}
+				
+			}else 
+			{
+				kihuzas(2,false);
+				
+			}
+		
+	}
+	if(elem =="jelszoA") 
+	{
+		if(document.getElementById("regPass").value.length >= 5)
+			{
+				if(regexJelszo.test(document.getElementById("regPass").value) && regexUres.test(document.getElementById("regPass").value) &&
+					document.getElementById("regPass").value == document.getElementById("regPassA").value) 
+				{
+					kihuzas(3,true);
+				}else 
+				{
+					kihuzas(3,false);
+				}
+				
+			}else 
+			{
+				kihuzas(3,false);
+				
+			}
+	}
+	event.preventDefault();
+if(elem =="bank") 
+{
+	if(regexBank.test(document.getElementById("regBank").value)) 
+	{
+		kihuzas(4,true);
+	}else {kihuzas(4,false)}
+}
 
 }

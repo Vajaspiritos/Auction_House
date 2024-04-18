@@ -32,25 +32,25 @@
 </div>
 </div>
 <div id="check_list">
-<p><span>Email cím</span><span>(pelda@nomail.hu)</span></p>
-<p><span>Jelszó</span><span>(Legalább 5 karakter és 1 speciális karakter(..felsoorlni..) )</span></p>
-<p><span>Két jelszó egyezik</span></p>
-<p><span>Bankkártyaszám</span><span>1234-1234-1234-1234</span></p>
-<p><span>Nincs üresen hagyott mező</span></p>
+<p class="listaElem"><span>Email cím</span><span>(pelda@nomail.hu)</span></p>
+<p class="listaElem"><span>Jelszó</span><span>(Legalább 5 karakter és 1 speciális karakter(..felsoorlni..) )</span></p>
+<p class="listaElem"><span>Két jelszó egyezik</span></p>
+<p class="listaElem"><span>Bankkártyaszám</span><span>(1234-1234-1234-1234)</span></p>
+<p class="listaElem"><span>Nincs üresen hagyott mező</span></p>
 </div>
 <div id="registerId" class = "register">
 <button id="log" class="valto" onclick="loginolok()" >Vigyél viszza ÁÁÁÁÁÁÁÁÁ</button>
 	<p>Regisztrálni akarok</p>
 <form action="register.php" method="post" onsubmit="AdatokEllenorzes()">
-	<input type="text" placeholder="Email cím" name="email" id="regEmail"><br>
-	<input type="text" placeholder="Felhasználónév" name="username" id="regUname"><br>
-	<input type="text" placeholder="Jelszó" name="pasword" id="regPass"><br>
-	<input type="text" placeholder="Jelszó újra" id="regPassA"><br>
-	<input type="text" placeholder="Bankkártyaszám" id="regBank"><br>
-	<input type="text" placeholder="Édesanyád leánykori neve" id="regAnya"><br>
-	<input type="text" placeholder="Első háziállatod neve" id="regAllat"><br>
-	<input type="text" placeholder="Születési hely" id="regSzul"><br>
-	<input type="text" placeholder="Gyerekkori becenév" id="regBec"><br>
+	<input type="text" class="regElem" placeholder="Email cím" name="email" id="regEmail" oninput="AdatokEllenorzes('email')"><br>
+	<input type="text" class="regElem" placeholder="Felhasználónév" name="username" id="regUname" oninput="AdatokEllenorzes(this)"><br>
+	<input type="text" class="regElem" placeholder="Jelszó" name="password" id="regPass" oninput="AdatokEllenorzes('jelszo')"><br>
+	<input type="text" class="regElem" placeholder="Jelszó újra" id="regPassA" oninput="AdatokEllenorzes('jelszoA')"><br>
+	<input type="text" class="regElem" placeholder="Bankkártyaszám" id="regBank" oninput="AdatokEllenorzes('bank')"><br>
+	<input type="text" class="regElem" placeholder="Édesanyád leánykori neve" id="regAnya" oninput="AdatokEllenorzes(this)"><br>
+	<input type="text" class="regElem" placeholder="Első háziállatod neve" id="regAllat" oninput="AdatokEllenorzes(this)"><br>
+	<input type="text" class="regElem" placeholder="Születési hely" id="regSzul" oninput="AdatokEllenorzes(this)"><br>
+	<input type="text" class="regElem" placeholder="Gyerekkori becenév" id="regBec" oninput="AdatokEllenorzes(this)"><br>
 	<input type="submit" value="Regisztrálás" id="regBtn" class="formGomb">
 </form>
 </div>
