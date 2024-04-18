@@ -93,7 +93,7 @@ a
 
 @media screen and (min-width: 995px) 
 {
-	font-size: 0.9vw;
+		.menu-gombok {font-size: 190%; margin-top: 2%; }
 		.inactive, .active {display: block;}
 }
 
