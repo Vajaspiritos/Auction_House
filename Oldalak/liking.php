@@ -16,7 +16,12 @@ $query = parse_url($_SERVER['REQUEST_URI'],PHP_URL_QUERY);
 				
 			}else $conn->query("INSERT INTO `likes` (`Post_ID`, `User_ID`) VALUES (".$id.",".$_SESSION['UserID']." );");
 
-			header('Location: ' . $_SERVER['HTTP_REFERER']);
+			$res = ($conn->query("SELECT ID FROM `likes` WHERE Post_ID = ".$id));
+			echo mysqli_num_rows($res);
+
+
+
+			//header('Location: ' . $_SERVER['HTTP_REFERER']);
 			
 	}else header("Location: forum.php");
 		

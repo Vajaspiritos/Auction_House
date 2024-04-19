@@ -96,10 +96,23 @@ for(let i=0;i<POSTS.length;i++){
 		
 		let LIKES = document.createElement('button');
 		LIKES.innerHTML="Likes:"+POSTS[i]['Likes'];
-		LIKES.setAttribute("class","post-likes");
+		if(POSTS[i]["IsLiked"]){
+		LIKES.setAttribute("class","post-alreadyLiked");
+		}else LIKES.setAttribute("class","post-likes");
 		LIKES.onclick= function(){
 			
-			window.location.href="liking.php?for="+POSTS[i]['ID'];
+			//window.location.href="liking.php?for="+POSTS[i]['ID'];
+			const xhttp = new XMLHttpRequest();		
+					xhttp.onload = function() {
+					 LIKES.innerHTML="Likes:"+this.responseText;
+					 if(LIKES.classList.contains("post-alreadyLiked")){
+						 LIKES.setAttribute("class","post-likes");
+					 }else LIKES.setAttribute("class","post-alreadyLiked");
+					}			
+			  xhttp.open("POST", "liking.php?for="+POSTS[i]['ID'], true);
+			  
+			  xhttp.send();
+			
 		}
 		elem.appendChild(LIKES);
 				let br = document.createElement("br");

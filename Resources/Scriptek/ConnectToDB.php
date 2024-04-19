@@ -79,7 +79,7 @@ function GetNumOfItems($conn,$user){
 	return mysqli_num_rows($conn->query("SELECT ID FROM `items` WHERE Current_owner=".$user));
 }
 
-function ForumReceivePosts($conn,$from,$to){ //from és to: számban hogy hány postot akarunk betölteni a log-ból.0-tól indexelve
+function ForumReceivePosts($conn,$from,$to,$user){ //from és to: számban hogy hány postot akarunk betölteni a log-ból.0-tól indexelve
 	
 	$result = $conn->query("SELECT * FROM `forum` WHERE Comment_to=0 ORDER BY Date DESC LIMIT ".($to-$from)." OFFSET ".$from);
 	$posts = [];
@@ -95,6 +95,7 @@ function ForumReceivePosts($conn,$from,$to){ //from és to: számban hogy hány 
 		$newassoc['OP'] = $res->fetch_assoc()['Username'];
 		$res=$conn->query("SELECT ID FROM `forum` WHERE Comment_to=".$row['ID']);
 		$newassoc['Comments'] = mysqli_num_rows($res);
+		$newassoc['IsLiked'] =mysqli_num_rows($conn->query("SELECT ID FROM `likes` WHERE Post_ID=".$row['ID']." AND User_ID =".$user))>0;
 		
 		if($row['Image_IDs'] != "0"){
 		$imgID = $row['Image_IDs'];

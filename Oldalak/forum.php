@@ -17,13 +17,13 @@
 			
 		}else if(str_contains($query,"Page=")) {
 			$url_scraps = explode("-",explode("Page=",$query)[1]);
-			echo "<script> const POSTS=".ForumReceivePosts($conn, $url_scraps[0],$url_scraps[1]).";</script>";
+			echo "<script> const POSTS=".ForumReceivePosts($conn, $url_scraps[0],$url_scraps[1],$_SESSION["UserID"]).";</script>";
 			echo "<script> const CurrentPage=".$url_scraps[1].";</script>";
 		}else header("Location: forum.php");
 		
 	}else{
 		echo "<script> const CurrentPage=10;</script>";
-		echo "<script> const POSTS=".ForumReceivePosts($conn, 0,10).";</script>";
+		echo "<script> const POSTS=".ForumReceivePosts($conn, 0,10,$_SESSION["UserID"]).";</script>";
 	}
 	echo "<script> const FocusOn=".$Focused.";</script>";
 	echo "<script> const testmode=false;</script>";
