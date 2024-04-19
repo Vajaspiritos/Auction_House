@@ -73,38 +73,38 @@
 		<div id="timig-container">
 
 		<div class="tier-img-container" id="very-low-tier" onclick="buy(0)">
-			<img src="../Resources/Images/Icons/Default_Tier.png" alt="tier kep">
+			<img src="../Resources/Images/Icons/Tier_1.png" alt="tier kep">
 			<div class="penz-container">
 			<p class="penz" id="very-low">99</p>
 			</div>
 		</div>
 
 		<div class="tier-img-container" id="low-tier" onclick="buy(1)">
-			<img src="../Resources/Images/Icons/Default_Tier.png" alt="tier kep">
+			<img src="../Resources/Images/Icons/Tier_2.png" alt="tier kep">
 			<div class="penz-container">
 			<p class="penz" id="low">2,499</p>
 			</div>
 		</div>
 		<div class="tier-img-container" id="medium-tier" onclick="buy(2)">
-			<img src="../Resources/Images/Icons/Default_Tier.png" alt="tier kep">
+			<img src="../Resources/Images/Icons/Tier_3.png" alt="tier kep">
 			<div class="penz-container">
 			<p class="penz" id="medium">59,999</p>
 			</div>
 		</div>
 		<div class="tier-img-container" id="high-tier" onclick="buy(3)">
-			<img src="../Resources/Images/Icons/Default_Tier.png" alt="tier kep">
+			<img src="../Resources/Images/Icons/Tier_4.png" alt="tier kep">
 			<div class="penz-container">
 			<p class="penz" id="high">749,999</p>
 			</div>
 		</div>
 		<div class="tier-img-container" id="very-high-tier" onclick="buy(4)">
-			<img src="../Resources/Images/Icons/Default_Tier.png" alt="tier kep">
+			<img src="../Resources/Images/Icons/Tier_5.png" alt="tier kep">
 			<div class="penz-container">
 			<p class="penz" id="very-high">3,420,000</p>
 			</div>
 		</div>
 		<div class="tier-img-container" id="ultra-high-tier" onclick="buy(5)">
-			<img src="../Resources/Images/Icons/Default_Tier.png" alt="tier kep">
+			<img src="../Resources/Images/Icons/Tier_6.png" alt="tier kep">
 			<div class="penz-container">
 			<p class="penz" id="ultra-high">49,999,999</p>
 			</div>
