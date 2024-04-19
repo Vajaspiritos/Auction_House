@@ -19,9 +19,6 @@ echo "<script> const USER_INVENTORY=".GetInventory($conn).";</script>";
 		<button name="valami" type="submit" id="sendit">Küldés</button>
 	</form>
 </div>
-	<div id="items-container">
-		<span id="text"></span>
-	</div>
 	<div id="info-container" class="inline">
 	<img id="info_image" alt="Itt lenne a kép ha lenne"></img><br>
 	<a id="info-name"></a><br>
@@ -42,6 +39,8 @@ echo "<script> const USER_INVENTORY=".GetInventory($conn).";</script>";
 		<a id="info-description"></a>
 	</div>
 	</div>
+	<div id="items-container">
+		<span id="text"></span>
 	</div>
 	
 </body>
