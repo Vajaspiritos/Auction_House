@@ -30,15 +30,11 @@ $conn->query("INSERT INTO `users` (`Username`, `Email`, `Password`, `Salt`, `Tie
 echo "új felhasználó feljegyezve.<br>";
 
 
-/*             valóságban ez küóldené el az emailt, de mivel nem egy valódi webszerveren lesz futattva így nem lesz használva.
-$link = "";
-$text="Köszönjük a regisztrációt!\nA fiokja aktiválásához kattintson az alábbi linkre:\n".$link;
-$text = wordwrap($text,70);
-$headers = "From: AuctionHouse@Creativewebsitename.com" . "\r\n" ."CC: ".$EM;
-mail($EM,"Fiok Aktiválás",$text,$headers)or die("email not sent");
-*/
+if(mail($EM,"Értesítő új fiok létrejöttéről","Az aukciós ház weboldalán, erre az email címre, egy új fiokot regisztráltak","From: The Auction house")){
 returnWithError("Fiok létrehozva!");   //Visszatérünk a siker üzenettel. ez nem igazi hiba. csak újrafelhasználása a már létrehozott kódnak.
-
+}else{ 
+returnWithError("Nem sikerült Email-t küldeni");
+}
 function returnWithError($text){
 	
 	$_SESSION["Error"] = $text;
