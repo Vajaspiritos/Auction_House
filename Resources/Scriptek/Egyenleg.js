@@ -15,3 +15,25 @@ function work(){
 	window.location.href="work.php";
 	
 }
+
+let items= document.getElementsByClassName("tier-img-container")
+for(let i=0;i<TIER;i++){
+	items[i].classList.add("Bought");
+	items[i].onclick = undefined;
+	items[i].title = "Már megvásároltad ezt a rangot";
+}
+
+function buy(val){
+	
+	
+	const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    if(this.responseText==1){
+		window.location.reload();
+		
+	}else alert("sajnos nincs elég pénze ennek a megvásárlásához.");
+	
+    }
+  xhttp.open("POST", "buy.php?tier="+val, true);
+  xhttp.send();
+}

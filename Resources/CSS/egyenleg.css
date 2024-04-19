@@ -17,6 +17,12 @@
 	font-size: 5vw;
 }
 
+.Bought{
+	
+	opacity:0.3;
+	
+}
+
 .penz {color: white; font-size: 5vw;}
 .penz::after 
 {content: "¢";}
