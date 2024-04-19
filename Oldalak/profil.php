@@ -11,6 +11,7 @@
 	echo "<script> const USER_MONEY=".$_SESSION["Money"].";</script>";
 	echo "<script> const USER_NAME='".$_SESSION["Name"]."';</script>";
 	echo "<script> const USER_EMAIL='".$_SESSION["Email"]."';</script>";
+	echo "<script> const TIER='".$_SESSION["Tier"]."';</script>";
 	}else{
 		echo "<script> const USER_MONEY=120000;</script>";
 	echo "<script> const USER_NAME='Anonymus';</script>";
@@ -50,7 +51,10 @@
 	</div>
 	<div class="Nagydoboz">
 		<div id="Pfp" class="inline">
+			<div>
 			<img id="PP" src="../Resources/Images/Icons/Default_User.png" alt="Profilképed :)">
+			<img id="Bedge" src="" class="pfp-bedge" alt="Tier Bedge">
+			</div>
 			<form action="UploadPfp.php" method="post" enctype="multipart/form-data">
 			<input id="browse" type="file" name="PFP">
 			<input id="upload" type="submit" value="Kép feltöltése">

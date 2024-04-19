@@ -6,6 +6,17 @@ body
 	background-size: cover;
 }
 
+#Bedge {
+	background: none !important;
+    border: none !important;
+    position: absolute !important;
+   
+    min-height: 1vw !important;
+    height: 6vw !important;
+    left: 15vw !important;
+	
+}
+
 #Pfp img {
     max-height: 20vw;
     min-height: 20vw;
@@ -123,6 +134,13 @@ font-weight: bold;
 
 @media screen and (max-width: 1000px) 
 {
+
+#Bedge {
+	height: 17vw !important;
+    left: 61vw !important;
+	
+}
+
 
 .Raktar
 {
