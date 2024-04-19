@@ -19,7 +19,7 @@ if ($conn->connect_error) {
 
 	
 	
-
+$rarities = ["Újrahasznosított","Nem mindennapi", "Limitált", "Ritka", "Exotikus", "Legendás", "God-Like"];
 
 
 function UpdateGeneralInfos($conn){
@@ -39,7 +39,7 @@ function UpdateGeneralInfos($conn){
 
 //return a JSon encoded array, filled with assoc arrays about the user's currently owned items (that are not on auction);
 function GetInventory($conn){
-	
+	global $rarities;
 	$result = $conn->query("SELECT * FROM `items` WHERE Current_owner='".$_SESSION["UserID"]."' AND Auction_ID=0;");
 	$items = [];
 	
@@ -51,7 +51,7 @@ function GetInventory($conn){
 		$newassoc['Description'] = $row['Description'];
 		$newassoc['Original_owner'] = $row['Original_owner'];
 		$newassoc['Rarity'] = $row['Rarity'];
-		
+		$newassoc['Rarity_name'] = $rarities[intval($row['Rarity'])];
 		$imgID = $row['Image_ID'];
 		
 		$src = "../Resources/Images/Icons/Default_Item.png";
@@ -232,6 +232,11 @@ function GetMoneyOf($user){        //$user = user id;
 };
 
 
+function GetTierOf($user){        //$user = user id;
+	global $conn;
+	return $conn->query("SELECT Tier FROM `users` WHERE ID=".$user)->fetch_assoc()['Tier'];
+};
+
 function Pay($amount,$user,$item,$current){
 	
 	global $conn;
@@ -240,6 +245,7 @@ function Pay($amount,$user,$item,$current){
 	$conn->query("UPDATE `items` SET `Current_owner` = $user, `Auction_ID` = '0' WHERE `items`.`ID` = $item;");
 }
 function GetItemsOfAuction($conn,$AuctionID,$pure=false){
+	global $rarities;
 	
 	$result = $conn->query("SELECT * FROM `items` WHERE Auction_ID=".$AuctionID.";");
 	$items = [];
@@ -252,6 +258,7 @@ function GetItemsOfAuction($conn,$AuctionID,$pure=false){
 		$newassoc['Description'] = $row['Description'];
 		$newassoc['Original_owner'] = $row['Original_owner'];
 		$newassoc['Rarity'] = $row['Rarity'];
+		$newassoc['Rarity_name'] = $rarities[intval($row['Rarity'])];
 		$newassoc['CO'] = $row['Current_owner'];
 		
 		$imgID = $row['Image_ID'];

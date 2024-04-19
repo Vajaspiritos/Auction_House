@@ -40,6 +40,7 @@ $sleep_time = 100;
 $stage_counter = 0;
 
 $bids_allowed = false;
+$bye_tmp = "";
 
 while(true){
 	//$timer_end_clients = (microtime(true));
@@ -67,9 +68,10 @@ function ServerAction(){
 	
 }
 function progressAuction(){
-	global $current_AUCTION,$stage_counter,$bids_allowed,$Auction_ongoing;
+	global $current_AUCTION,$stage_counter,$bids_allowed,$Auction_ongoing,$bye_tmp;
 	$wait_times  = [0,40,60,30]; //[0]= Aukció elkezdése [1]=köszönés, szabályok, stb [2]= idő / item [3] elköszönés
 	$base_prices = [0,20,500,3000,40000,700000,9999999,888888888]; //árak az aukció ritkaságszintjétől függnek. ez alapján kaphatjuk meg a kezdőárát egy tételnek.
+	
 	sentenceprogression();
 	if($wait_times[$current_AUCTION->Stage()] <= $stage_counter ){
 		$stage_counter = 0;
@@ -82,7 +84,7 @@ function progressAuction(){
 			$current_AUCTION->bidder = null;
 			$current_AUCTION->bestprice = 0;
 			
-			@$current_AUCTION->data ="4|".($current_AUCTION->pitch)."|".($current_AUCTION->speed)."|".($current_AUCTION->speak[1][0][1]); //stage| speaker pitch | speaker speed | text			
+			@$current_AUCTION->data ="4|".($current_AUCTION->pitch)."|".($current_AUCTION->speed)."|".($bye_tmp); //stage| speaker pitch | speaker speed | text			
 			UpdateAuctions($current_AUCTION->data);
 			$current_AUCTION->item_cusor++;
 			if(count($current_AUCTION->speak[1])==0) ++$current_AUCTION->stage;
@@ -103,13 +105,15 @@ function progressAuction(){
 						"2|".($current_AUCTION->pitch)."|".
 						($current_AUCTION->speed)."|".
 						$current_AUCTION->speak[1][0][0]."|".
-						$item["Rarity"]."|".$item["Name"]."|".
+						$item["Rarity"]."|".
+						$item["Name"]."|".
 						$item["Original_owner"]."|".
 						$item["Description"]."|".
 						$item["Image_src"]."|".
-						$base_prices[intval($item["Rarity"])];
+						$base_prices[intval($item["Rarity"])]."|".
+						$item["Rarity_name"];
 				
-			
+			$bye_tmp = $current_AUCTION->speak[1][0][1];
 			UpdateAuctions($current_AUCTION->data);
 			array_shift($current_AUCTION->speak[1]);
 			
@@ -144,6 +148,13 @@ function bid($user,$amount){
 	if($current_AUCTION->bestprice >= $amount){ Write($user->Conn,FORMAT("A kivánt összeg kisebb mint a legnagyobb",$Server_user)); return -1;}
 	$user_wealth = GetMoneyOf($user->ID);
 	if($user_wealth < $amount){ Write($user->Conn,FORMAT("Sajnos nincs elegendő összeg az egyenlegén",$Server_user)); return -1;}
+	C(intval($user->ID));
+	C(intval($current_AUCTION->items[$current_AUCTION->item_cusor]["CO"]));
+	var_dump((intval($user->ID) === intval($current_AUCTION->items[$current_AUCTION->item_cusor]["CO"])));
+	if(intval($user->ID) === intval($current_AUCTION->items[$current_AUCTION->item_cusor]["CO"])){ Write($user->Conn,FORMAT("A saját tételére nem tehet licitet",$Server_user)); return -1;}
+	$user_tier = GetTierOf($user->ID);
+	if($user_tier < $current_AUCTION->tier){ Write($user->Conn,FORMAT("Sajnos túl alacsony a rangja, hogy résztvehessen ezen az aukción.",$Server_user)); return -1;}
+	
 	overlicit($user,$amount);
 	BROADCAST(FORMAT("!bid ".$amount,$user));
 }
@@ -432,7 +443,7 @@ function ProcessManagerSpeech(&$data){
 	@$data = str_replace("@i",($current_AUCTION->item_cusor)+1,$data);
 	@$data = str_replace("@name",$current_AUCTION->items[$current_AUCTION->item_cusor]["Name"],$data);
 	@$data = str_replace("@description",$current_AUCTION->items[$current_AUCTION->item_cusor]["Description"],$data);
-	@$data = str_replace("@tier",$current_AUCTION->items[$current_AUCTION->item_cusor]["Rarity"],$data);
+	@$data = str_replace("@tier",$current_AUCTION->items[$current_AUCTION->item_cusor]["Rarity_name"],$data);
 	@$data = str_replace("@OG",$current_AUCTION->items[$current_AUCTION->item_cusor]["Original_owner"],$data);
 	@$data = str_replace("@price",$current_AUCTION->bestprice,$data);
 	@$data = str_replace("@buyer_ID",$current_AUCTION->bidder->ID,$data);

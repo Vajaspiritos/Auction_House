@@ -209,12 +209,13 @@ let OG = document.getElementById("info_og");
 				
 				if(stage==2){
 
-					let rarity 	= parts[4];
-					let name 	= parts[5];
-					let og 		= parts[6];
-					let desc 	= parts[7];
-					let item_src = parts[8];
-					let baseprice = parts[9];
+					let rarity 			= parts[4];
+					let rarity_name 	= parts[10];
+					let name 			= parts[5];
+					let og 				= parts[6];
+					let desc 			= parts[7];
+					let item_src 		= parts[8];
+					let baseprice 		= parts[9];
 					
 							
 				
@@ -246,7 +247,7 @@ let OG = document.getElementById("info_og");
 							infos.style.visibility= "visible";
 							NAME.innerHTML = name;
 							OG.innerHTML = og;
-							RARITY.innerHTML = rarity;
+							RARITY.innerHTML = rarity_name;
 							DESC.innerHTML = desc;
 							
 							if(baseprice != base){
