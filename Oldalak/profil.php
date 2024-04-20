@@ -51,10 +51,8 @@
 	</div>
 	<div class="Nagydoboz">
 		<div id="Pfp" class="inline">
-			<div>
 			<img id="PP" src="../Resources/Images/Icons/Default_User.png" alt="Profilképed :)">
-			<img id="Bedge" src="" class="pfp-bedge" alt="Tier Bedge">
-			</div>
+			<img id="Bedge" src="" alt="Tier Bedge">
 			<form action="UploadPfp.php" method="post" enctype="multipart/form-data">
 			<input id="browse" type="file" name="PFP">
 			<input id="upload" type="submit" value="Kép feltöltése">

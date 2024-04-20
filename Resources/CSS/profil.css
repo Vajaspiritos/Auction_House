@@ -6,21 +6,19 @@ body
 	background-size: cover;
 }
 
-#Bedge {
-	background: none !important;
-    border: none !important;
-    position: absolute !important;
-   
-    min-height: 1vw !important;
-    height: 6vw !important;
-    left: 15vw !important;
-	
+#Bedge{
+	position: relative;
+    height: 7vw;
+    width: 7vw;
+    right: 5vw;
+    top: -15vw;
+
 }
 
-#Pfp img {
-    max-height: 20vw;
-    min-height: 20vw;
-    border-radius: 50px;
+#PP{
+  height: 20vw;
+  width: 20vw;
+    border-radius: 5vh;
     border: 2px solid rgb(255, 255, 255,0.6);
     border-top-width: 3px;
     border-bottom-width: 3px;
@@ -49,11 +47,11 @@ body
     background-color: rgb(210,210,210,0.5);
     width: 40vw;
     padding: 0px 2vw;
-    padding-top: 2vw;
-    margin-left: 2vw;
     color: white;
     border: 2px solid rgb(201, 201, 201,0.2);
     text-align: left;
+    position: relative;
+    top: -5vw;
 }
 
 #adatok button 
@@ -86,7 +84,6 @@ font-weight: bold;
 .Raktar
 {
 	
-	margin-left: 1%;
 	background-color: rgb(201,201,201,0.2);
     height: 32vw;
     max-height: 32vw;
@@ -105,24 +102,24 @@ font-weight: bold;
 {
 	background-color: rgb(221, 255, 0,0.3);
 	color: white;
-	font-size: 2em;
 	border: 2px solid rgb(255,255,255,0.3);
     max-height: 58vw;
 	width: 20.5%;
 	float: right;
 }
-#upload 
+#upload,#browse 
 {
+    font-size: 3vh;
 	float: left;
 }
 #browse 
 {
-	float: left;
+    font-size: 2.5vh;
 }
 
 .feliratok
 {
-	font-size: 3vw;
+	font-size: 4vw;
     margin-left: 0.5vw;
 }
 
@@ -132,65 +129,37 @@ font-weight: bold;
     font-weight: bold;
 }
 
-@media screen and (max-width: 1000px) 
+@media screen and (max-width: 995px) 
 {
+    .menusor-spacer {height: 10vh;}
+}
+@media screen and (max-width: 600px) 
+{
+   
 
 #Bedge {
-	height: 17vw !important;
-    left: 61vw !important;
-	
+top: -32vw;
+right: 7vw;
+height: 10vw;
+width: 10vw;
 }
 
+	
+	#PP {
 
-.Raktar
-{
-	display:inline;
-	
-}
-	
-	html{
-		
-    
-	}
-	body{
-		
-
-	}
-	
-	
-	
-	#Pfp img {
-    height: 60vw;
-    max-height: none;
-    border-radius: 50px;
-    border: 2px solid rgb(255, 255, 255,0.6);
-    border-top-width: 3px;
-    border-bottom-width: 3px;
-    background-color: rgb(255,255,255,0.1);
-    margin-top: -10vw;
+  height: 40vw;
+  width: 40vw;
 }
 
 #Pfp{
-
-margin-left: 0;
-  margin: 0;
-  text-align: center;
   width: 65%;
 float: none;
 }
-
-
-#upload {
-    float: right;
-}
-
 .inline input {
-    text-align: center;
     font-size:4vh;
     width: 100%;
-    padding:auto;
     margin-left: 0vw;
-    margin-bottom: 3vw;
+    margin-bottom: 6vw;
     margin-top: 3vw;
 
 }
@@ -201,8 +170,9 @@ float: none;
 }
 
 
-#adatok button, #logout {font-size: 2em;margin-left: 4vw;}
+#adatok button, #logout {font-size: 5vh;margin-left: 4vw;}
 #adatok button {margin-right: 10vw;}
+body{overflow-x:hidden; }
 
 .label {
     text-transform: uppercase;
@@ -215,37 +185,26 @@ float: none;
 
 }
 #History {
-    background-color: rgb(221, 255, 0,0.3);
-    color: white;
-    font-size: 2em;
-    border: 2px solid rgb(255,255,255,0.3);
     height: fit-content;
-    float:left;
+    display: block;
+    font-size: 5vh;
     width: 101vw;
-    margin-left:-2vw;
+    position: absolute;
+
 }
 
 
 
 .Raktar {
-    background-color: rgb(201,201,201,0.2);
-    height: 100vw;
-    border: 1px solid white;
-    width: 101vw;
-    margin-left: -2vw;
-    overflow: auto;
-
-}
-.Raktar iframe {
-    width: 100vw;
-    height: 58vh;
+    width: 50%;
+    margin-left: 10vh;
     border: none;
-}
+    margin-top: 10vh;
 
+}
 
 
 #browse {
-    float: left;
     width: 116vw;
 }
 
@@ -254,7 +213,6 @@ float: none;
 	
 }
 
-#items-container {background-color: red;}
 #veglegesit {background-color: rgb(120,120,120,0.5)}
 }
 

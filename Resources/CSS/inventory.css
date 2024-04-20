@@ -42,26 +42,29 @@ background-image: none;
 }
 
 #items-container{
-display: inline-block;
 overflow:auto;
-height: 88vh;
+height: 100%;
+top: 0;
+left: 0;
+position: absolute;
 text-align: center;
 width: 48vw;
 padding-top: 1em;
+
 }
 
 
 #info-container{
 	float:right;
-	width: 49vw;
-	
-    height: 100vh;
-	border: 0.2vw solid black;
+	width: 50%;
+	height: 95%;
+	border: 2px	 solid black;
 	display: inline-block;
+	margin-top: -10vh;
 	background-color: rgb(220,220,220,0.2);
 	text-align: center;
-	font-size: 1.5em;
 	word-break: break-all;
+	border-collapse: collapse;
 }
 
 #info-container span 
@@ -80,15 +83,13 @@ padding-top: 1em;
 
 #info-OG_owner
 {
-	font-size: 4.5vh;
+	font-size: 10vh;
 	padding: 5px 10px;
 	color: white;
-	font-weight: bold;
-}
+	}
 #info-description-containter{
 	overflow:auto;
 	text-align: center;
-	font-size: 0.7em;
 	padding: 5px 6px;
 
 
@@ -96,8 +97,7 @@ padding-top: 1em;
 
 table{
 	width:100%;
-	font-size:1.5em;
-	border:2px solid black;
+	font-size:10vh;
 	text-align:center;
 	border-collapse: collapse;
 
@@ -110,14 +110,17 @@ table{
 {
 	width: 50%;
 	background-color: rgb(201,201,201,0.5);
-	font-size: 1em;
+	font-size: 10vh;
+	border-collapse: collapse;
+	border: 2px solid black;
+	border-right: none;	
 }
 
 #owner-div 
 {
-	border-top: 2px solid black;
-	border-right: 2px solid black;
+	border: 2px solid black;
 	border-left: none;
+	border-collapse: collapse;
 
 }
 
@@ -128,14 +131,13 @@ table{
 
 #info-sorkizart
 {
-	margin-top: 2%;
 	text-align: justify;
 	color: rgb(255,255,255,0.9);
 	padding: 10px;
-	height: 20%;
+	  height: fit-content;
+	font-size: 3.5vh;
 	background-color: rgb(201,201,201,0.5);
 	overflow: auto;
-	font-size: 2vw;
 }
 
 #info-name 
@@ -152,12 +154,12 @@ table{
 .selected{
 	
 	transition: 0.03s;
-	background-color: rgb(250,250,250,0.7) !important;
+	background-color: rgb(250,250,250,0.7);
 	scale: 110% 110%;
 	
 }
 
-@media screen and (max-width:1000px) 
+@media screen and (max-width:454px) 
 {
 	
 	body{
@@ -166,18 +168,9 @@ table{
 		overflow-x:hidden;
 	}
 	
-	#info-OG_owner {
-    font-size: 4.5vw;
-    padding: 5px 10px;
-    color: white;
-    font-weight: bold;
-}
-
-
 
 #info-container span {
-    font-size: 3.8vh;
-    text-decoration: underline;
+    font-size: 10vh;
 }
 	
 	#items-container {
@@ -185,51 +178,28 @@ table{
     overflow: auto;
     height: 67vh;
     text-align: center;
-    width: 100vw;
-    padding-top: 1em;
-    position: absolute;
-    margin-top: 65vh;
+    width: 100%;
+    top: -4;
+    position: relative;
 	
 	}
 #info-container {
-    width: 95vw;
-    margin-left: -2vh;
-    margin-top: 0vw;
-    height: auto;
-    border: 0.2vw solid black;
-    display: inline-block;
-    background-color: rgb(220,220,220,0.2);
-    text-align: center;
-    font-size: 1.5em;
-    word-break: break-all;
-}
-#veglegesit label {
-    margin-left: 1%;
-    font-size: 7vw;
-    border: 2px solid black;
+    width: 100%;
+    margin-top: -5vw;
+    height: fit-content;
 }
 
+.Item 
+{
+	width: 25vw;
+}
 #info_image {
-    width: 20vh;
+    width: 50vh;
 }
 
-#veglegesit button {
-    font-size: 7vw;
-    border: 2px solid black;
-    background-color: white;
-    float: right;
-    width: 4em;
-}
 
 	#info-sorkizart {
-    margin-top: 1vh;
-    text-align: justify;
-    color: rgb(255,255,255,0.9);
-    padding: 10px;
-    height: 13vh;
-    background-color: rgb(201,201,201,0.5);
-    overflow: auto;
-    font-size: 3vh;
+    font-size: 10vh;
 }
 	
 }
