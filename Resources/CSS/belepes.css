@@ -105,10 +105,7 @@ margin-bottom: 3%;
 
 #felejt_jelszo
 {
-
-width: 13em;
-height: 2em;
-font-size: 2vh;
+font-size: 1.5vh;
 margin-right: 10px;
 margin-bottom: 0px;
 margin-top: 0px;
@@ -160,7 +157,7 @@ background-color: rgb(201,201,201);
 	background-color: white;
 }
 
-.valto:hover, #felejt_jelszo:hover
+.valto:hover
 {
 	transition: 0.3s;
 scale:110% 110%;
@@ -267,7 +264,6 @@ border: 1px solid black;
 }
 @media screen and (max-width: 990px) 
 {
-
 #ForgotContainer 
 {
 width: 50vw;
