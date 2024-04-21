@@ -121,7 +121,7 @@ margin: 1% auto;
 		font-size:5.5vw;
 	}
 	#aukcio .aukcio button {
-    font-size: 6vw;
+    font-size: 10vw;
     text-decoration: underline;
     position: relative;
     padding: 0.2em 1em;
@@ -131,7 +131,7 @@ margin: 1% auto;
     background-color: transparent;
     color: white;
 }
-
+.aukcio button {font-size: 7vw;}
 
 #host{
 	white-space: unset;
