@@ -174,7 +174,7 @@ float: none;
 }
 
 
-#adatok button, #logout {font-size: 8vw;}
+#adatok button, #logout {font-size: 5vw; margin:0 4vh;}
 body{overflow-x:hidden; }
 
 .label {
