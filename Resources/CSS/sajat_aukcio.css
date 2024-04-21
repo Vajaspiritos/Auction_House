@@ -4,6 +4,7 @@ overflow: hidden;
 }
 
 
+
 .aukcio
 {
 	display: inline-block;
@@ -88,8 +89,7 @@ margin: 1% auto;
 	
 	
 }
-
-@media screen and (max-width: 995px) 
+@media screen and (max-width: 800px) 
 {
 	#raktar-div{
     height: 0;
@@ -98,11 +98,10 @@ margin: 1% auto;
 	}
 	.menusor-spacer
 	{
-		height: 0;
+		height: 5vh;
 	}
 	
 	body{
-		
 		overflow:auto;
 	}
 	
@@ -115,14 +114,13 @@ margin: 1% auto;
     display: inline-block;
     background-color: rgb(201,201,201,0.3);
     width: 100%;
-	margin-bottom: 3vh;
+	margin-bottom: 5vw;
 	height:auto;
 	}
 	.aukcio-cim {
 		font-size:5.5vw;
 	}
-	
-	.aukcio button {
+	#aukcio .aukcio button {
     font-size: 6vw;
     text-decoration: underline;
     position: relative;
@@ -133,6 +131,8 @@ margin: 1% auto;
     background-color: transparent;
     color: white;
 }
+
+
 #host{
 	white-space: unset;
 }
