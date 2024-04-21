@@ -151,3 +151,17 @@ if(elem =="bank")
 	if(helyesek(" :)") != 5) {event.preventDefault();}
 
 }
+
+function bezar() {
+	document.getElementById("ForgotContainer").style.display = "none";
+	document.getElementById("blur").style.display = "none";
+
+}
+function megjelenit() 
+{
+	document.getElementById("ForgotContainer").style.display = "block";
+	document.getElementById("ForgotContainer").style.zIndex = "5";
+	document.getElementById("blur").style.zIndex = "1";
+	document.getElementById("blur").style.display = "block";
+}
+

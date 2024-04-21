@@ -20,16 +20,16 @@
 	<button id="reg" class="valto" onclick="regisztralok()" >Regisztrálni akarok!</button>
 <form action="login.php" method="post" onsubmit="BelepesEllenorzes()">
 	<input type="text" placeholder="Felhasznalonév" name="username"><br>
-	<input type="text" placeholder="Jelszó" name="password"><br>
+	<input type="password" placeholder="Jelszó" name="password"><br>
 	<div id="felejt_jelszo_doboz">
-	<input type="submit" id="felejt_jelszo" value="Elfelejtettem a jelszavam">
-	</div><
+	<a id="felejt_jelszo" onclick="megjelenit()"> Elfelejtettem a jelszavam</a>
+	</div>
 	<input type="submit" value="Belépés" id="loginBtn" class="formGomb">
-</form>
 </div>
 <div id="hiba_doboz">
 	<p id="hiba"></p>
 </div>
+</form>
 </div>
 <div id="check_list">
 <p class="listaElem"><span>Email cím</span><span>(pelda@nomail.hu)</span></p>
@@ -44,8 +44,8 @@
 <form action="register.php" method="post" onsubmit="AdatokEllenorzes()">
 	<input type="text" class="regElem" placeholder="Email cím" name="email" id="regEmail" oninput="AdatokEllenorzes('email')"><br>
 	<input type="text" class="regElem" placeholder="Felhasználónév" name="username" id="regUname" oninput="AdatokEllenorzes(this)"><br>
-	<input type="text" class="regElem" placeholder="Jelszó" name="password" id="regPass" oninput="AdatokEllenorzes('jelszo')"><br>
-	<input type="text" class="regElem" placeholder="Jelszó újra" id="regPassA" oninput="AdatokEllenorzes('jelszoA')"><br>
+	<input type="password" class="regElem" placeholder="Jelszó" name="password" id="regPass" oninput="AdatokEllenorzes('jelszo')"><br>
+	<input type="password" class="regElem" placeholder="Jelszó újra" id="regPassA" oninput="AdatokEllenorzes('jelszoA')"><br>
 	<input type="text" class="regElem" placeholder="Bankkártyaszám" id="regBank" oninput="AdatokEllenorzes('bank')"><br>
 	<input type="text" class="regElem" placeholder="Édesanyád leánykori neve" id="regAnya" oninput="AdatokEllenorzes(this)"><br>
 	<input type="text" class="regElem" placeholder="Első háziállatod neve" id="regAllat" oninput="AdatokEllenorzes(this)"><br>
@@ -54,6 +54,15 @@
 	<input type="submit" value="Regisztrálás" id="regBtn" class="formGomb">
 </form>
 </div>
+<div id="ForgotContainer">
+	<form action="ForgotPass"method="POST" id="ForgotForm">
+		<a onclick="bezar()">X</a>
+		<p>Adja megy fiókjának emailcímét.</p>
+		<input type="text" placeholder="ezzel@regisztraltam.hu" name="forgotEmail"><br>
+		<input type="submit">
+	</form>
+</div>
+<div id="blur"></div>
 <script src="../Resources/Scriptek/belepes.js"></script>
 </body>
 </html>

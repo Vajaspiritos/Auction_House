@@ -14,10 +14,10 @@ body
     top: -15vw;
 
 }
-
 #PP{
   height: 20vw;
   width: 20vw;
+  margin-left: 5vh;
     border-radius: 5vh;
     border: 2px solid rgb(255, 255, 255,0.6);
     border-top-width: 3px;
