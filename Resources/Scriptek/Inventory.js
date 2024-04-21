@@ -37,7 +37,8 @@ if(USER_INVENTORY=="test"){
 }else
 if(USER_INVENTORY.length == 0){
 	document.getElementById("info-container").style.visibility="hidden";
-	document.getElementById("veglegesit").innerHTML="Jellenleg csóró vagy, és SEMMID nincs.";
+	document.getElementById("veglegesit").innerHTML="Jellenleg nincs egy tárgya sem.";
+	document.getElementById("veglegesit").style.color="white";
 	document.getElementById("veglegesit").style.visibility="visible";
 	
 	
@@ -64,7 +65,8 @@ if(USER_INVENTORY.length == 0){
 	document.getElementById("info-description").innerHTML = Item['Description'];
 	document.getElementById("info-name").innerHTML = Item['Name'];
 	document.getElementById("info-OG_owner").innerHTML = Item['Original_owner'];
-	document.getElementById("info-rarity").innerHTML = Item['Rarity'];
+	document.getElementById("info-rarity").innerHTML = Item['Rarity_name'];
+	document.getElementById("info-rarity").style.color = "white";
 	
 								}
 		

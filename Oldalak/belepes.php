@@ -55,7 +55,7 @@
 </form>
 </div>
 <div id="ForgotContainer">
-	<form action="ForgotPass"method="POST" id="ForgotForm">
+	<form action="ForgotPass.php"method="POST" id="ForgotForm">
 		<a onclick="bezar()">X</a>
 		<p>Adja megy fiókjának emailcímét.</p>
 		<input type="text" placeholder="ezzel@regisztraltam.hu" name="forgotEmail"><br>

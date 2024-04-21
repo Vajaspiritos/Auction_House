@@ -88,7 +88,7 @@ font-weight: bold;
 	border: 1px solid white;
 	width: 75%;
     margin-left: 12%;
-	overflow: auto;
+	
 }
 
 
@@ -170,6 +170,7 @@ float: none;
     width: 65%;
    display: block;
     float: none;
+	margin-left: -2vw;
 
 }
 
@@ -202,8 +203,8 @@ body{overflow-x:hidden; }
 }
 
 .Raktar {
-    width: 50%;
-    margin-left: 10vw;
+    width: 66%;
+    margin-left: -1vw;
     border: none;
     margin-top: 10vh;
 

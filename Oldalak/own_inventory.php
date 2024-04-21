@@ -22,6 +22,8 @@ function update(){
 	document.getElementById("SELECTED").value = JSON.stringify(selected);
 	if(selected.length >1){
 	document.getElementById("veglegesit").style.visibility = "visible";
+	document.getElementById("info-container").style.marginTop = "0vh";
+	document.getElementById("items-container").style.paddingTop = "6em";
 	}else document.getElementById("veglegesit").style.visibility = "hidden";
 	if(selected.length >=6){
 		

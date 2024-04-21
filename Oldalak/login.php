@@ -29,7 +29,7 @@ while($row = $result->fetch_assoc()){
 }
                   //Abban az esetben ha nem találunk felhasználót visszatérünk hibával.
 
-
+returnWithError("A felhasználónév vagy jelszó hibás");
 
 
 function returnWithError($text){

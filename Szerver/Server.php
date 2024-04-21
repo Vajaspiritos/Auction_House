@@ -8,7 +8,8 @@ $current_AUCTION = null;
 $current_AUCTION_infos = null;
 $Auction_ongoing = false;
 $managerSpeak;
-
+$itemcollection;
+$chat;
 
 
 importTexts();
@@ -60,12 +61,142 @@ while(true){
 	usleep($sleep_time*1000);
 }
 function ServerAction(){
-	global $Auction_ongoing;
-	if(!$Auction_ongoing){CheckForAuction();}else{		
+	global $Auction_ongoing,$conn;
+	if(!$Auction_ongoing){
 		
-		progressAuction();			
+		if(!mysqli_num_rows($conn->query("SELECT * FROM `auction`"))){
+			GenerateAuctions();
+		}else CheckForAuction();
+		
+		}else{		
+		
+		progressAuction();	
+		SimulateChat();		
 	}
 	
+	
+	
+}
+function SimulateChat(){
+	global $bids_allowed,$current_AUCTION,$Server_user,$chat;
+	
+	
+	if($current_AUCTION->stage >= 0 && $current_AUCTION->stage <=3){
+		if(rand(1,7)==5){
+			
+			$phase = $chat[$current_AUCTION->stage-1];
+			$msg = $phase[rand(0,count($phase)-1)];
+			
+			BROADCAST(FORMAT($msg,randomUser()));
+			
+		}
+	}
+	$overlicit = [1.1,1.2,1.25,1.5,1.75,1.33,1.99,2];
+	
+	if($bids_allowed&& rand(0,15)==1){
+		$index = 0;
+		while(rand(0,1)==0){
+			$index++;
+			if($index+1 == count($overlicit)) break;
+		}
+		
+		
+		
+		$new = floor($current_AUCTION->bestprice+1 * $overlicit[$index]);
+		$user = randomUser();
+		
+		BROADCAST(FORMAT("!bid ".$new,$user));
+		$current_AUCTION->bestprice = $new;
+		$current_AUCTION->bidder = $user;
+		UpdateAuctions("ChangedPrice|".$new."|".$name);
+	}
+}
+function randomUser(){
+	$red = mt_rand(120, 255);
+	$green = mt_rand(120, 255);
+	$blue = mt_rand(120, 255);
+	$rgbColor = "rgb($red, $green, $blue)";
+	$names = ["DarkSouls","Kőgazdag", "Auction", "Jhon", "Sajtos Tucc", "oh the Furtive Pygmy is so easily forgotten", "Balázs", "ferenc", "kingdom come", "kenyérpirító", "Béla) DROP TABLE banlist","skyrim"];
+	
+	$name ="John ". $names[rand(0,count($names)-1)];
+	
+	$user = new Client("0",$rgbColor,$name,null);
+	
+	
+	return $user;
+}
+function GenerateAuctions(){
+	global $itemcollection,$conn;
+	
+	for($auction = 0; $auction < rand(3,9);$auction++){
+		
+		$target_rarity = rand(1,100);
+		if($target_rarity <= 40){ $target_rarity = 0;}else
+		if($target_rarity <= 70){ $target_rarity = 1;}else
+		if($target_rarity <= 85){ $target_rarity = 2;}else
+		if($target_rarity <= 93){ $target_rarity = 3;}else
+		if($target_rarity <= 98){ $target_rarity = 4;}else
+		if($target_rarity <= 101){ $target_rarity = 5;}
+		
+		$id = CreateAuction($target_rarity);
+		
+		for($item = 0; $item < rand(4,8);$item++){
+			
+			do{
+			$choosen =$itemcollection[rand(0,count($itemcollection)-1)];
+			}while(abs($choosen[3]-$target_rarity) > 1);
+			
+			if($choosen[1] == "nincs") $choosen[1] = "Nincs róla semmi infórmáció.";
+			if($choosen[2] == "nincs") $choosen[2] = "ismeretlen.";
+			$conn->query("INSERT INTO `items` (`ID`, `Name`, `Description`, `Original_owner`, `Rarity`, `Current_owner`, `Auction_ID`, `Image_ID`, `BoughtFor`) VALUES (NULL, '".$choosen[0]."', '".$choosen[1]."', '".$choosen[2]."', '".$choosen[3]."', '0', '$id', '0', '0');");
+			
+			
+			}
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+	CheckForAuction();
+	
+}
+function CreateAuction($tier){
+	global $conn;
+$time_window = 10; //10 perc
+$break_time = 5;
+$time_per_item = 1;
+$result = $conn -> query("SELECT Date,ID FROM `auction`");
+
+$date = strtotime(date("Y-m-d H:i:s", (time() + $time_window*60)));
+$tmp_time = $time_window;
+while(true){
+	
+foreach($result as $row){
+	$counter = mysqli_num_rows($conn->query("SELECT ID FROM `items` WHERE Auction_ID=".$row["ID"]));
+	if( ($date-strtotime($row["Date"])) < ($time_window+$break_time+($time_per_item*$counter))*60 ){
+			
+			
+		
+		$date += rand(1,6) *10*60;
+		continue;
+	}
+	
+}
+
+break;
+}
+$date= date("Y-m-d H:i:s",$date);
+$managers=["Raigen","Dougdoug","Gavlan","John Manager"];
+$manager = $managers[rand(0,count($managers)-1)];
+
+$conn->query("INSERT INTO `auction` (Date,Tier,Manager) VALUES ('$date',$tier,'$manager')");
+$id = $conn->query("SELECT ID FROM `auction` WHERE Date='$date'")->fetch_assoc()["ID"];
+
+return $id;
 }
 function progressAuction(){
 	global $current_AUCTION,$stage_counter,$bids_allowed,$Auction_ongoing,$bye_tmp;
@@ -73,6 +204,7 @@ function progressAuction(){
 	$base_prices = [0,20,500,3000,40000,700000,9999999,888888888]; //árak az aukció ritkaságszintjétől függnek. ez alapján kaphatjuk meg a kezdőárát egy tételnek.
 	
 	sentenceprogression();
+	if(!$bids_allowed&&$current_AUCTION->stage==2&&$stage_counter > $wait_times[2]/3)$bids_allowed = true;
 	if($wait_times[$current_AUCTION->Stage()] <= $stage_counter ){
 		$stage_counter = 0;
 		//Licitálás vége
@@ -97,7 +229,7 @@ function progressAuction(){
 			
 			UpdateAuctions($current_AUCTION->data);
 		}else if($STAGE==2){
-			$bids_allowed = true;
+			
 			
 			$item = $current_AUCTION->items[$current_AUCTION->item_cusor];
 				$current_AUCTION->bestprice = $base_prices[intval($item["Rarity"])];
@@ -167,8 +299,11 @@ function overlicit($user,$amount){
 	
 }
 function importTexts(){
-	global $managerSpeak;
+	global $managerSpeak,$itemcollection,$chat;
 	$managerSpeak = json_decode(file_get_contents("./Resources/manager.json"),true);
+	$itemcollection = json_decode(file_get_contents("./Resources/Items.json"),true);
+	$chat = json_decode(file_get_contents("./Resources/chat.json"),true);
+
 	
 }
 function Client_handle(){

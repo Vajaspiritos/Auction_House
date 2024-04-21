@@ -18,8 +18,13 @@ function update(){
 	if(selected.length >1){
 	document.getElementById("veglegesit").style.visibility = "visible";
 	document.getElementById("sendit").style.visibility = "visible";
+	document.getElementById("info-container").style.marginTop = "0vh";
+	document.getElementById("items-container").style.paddingTop = "6em";
+	
 	}else{ document.getElementById("veglegesit").style.visibility = "hidden";
 	document.getElementById("sendit").style.visibility = "hidden";
+	document.getElementById("info-container").style.marginTop = "-10vh";
+	document.getElementById("items-container").style.paddingTop = "1em";
 	}
 }
 

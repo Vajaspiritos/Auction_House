@@ -19,7 +19,7 @@ include '../Resources/Scriptek/ConnectToDB.php';								//csatlakozás az adatb�
 echo "<br>Csatlakozva az adatbázishoz.<br>";
 
 $result=$conn -> query("SELECT users.Email FROM `users` WHERE users.Email='".$EM."'");
-if(mysqli_num_rows($result)){ returnWithError("Email already registered!"); die();}		//ellenörízzük, hogy létezik e már felhasználó ezzel az emailel.
+if(mysqli_num_rows($result)){ returnWithError("Email-cím már regisztrálva van!"); die();}		//ellenörízzük, hogy létezik e már felhasználó ezzel az emailel.
 echo "Email looks fine.<br>";
 
 $salt = bin2hex(random_bytes(32));

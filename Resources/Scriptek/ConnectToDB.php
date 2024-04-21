@@ -92,7 +92,9 @@ function ForumReceivePosts($conn,$from,$to,$user){ //from és to: számban hogy 
 		$newassoc['Text'] = $row['Text'];
 		$newassoc['Date'] = $row['Date'];
 		$res=$conn->query("SELECT Username FROM `users` WHERE ID=".$row['Owner_ID']);
-		$newassoc['OP'] = $res->fetch_assoc()['Username'];
+		if(mysqli_num_rows($res)==0){
+			$newassoc['OP'] = "[Törölt Felhasználó]";
+		}else $newassoc['OP'] = $res->fetch_assoc()['Username'];
 		$res=$conn->query("SELECT ID FROM `forum` WHERE Comment_to=".$row['ID']);
 		$newassoc['Comments'] = mysqli_num_rows($res);
 		$newassoc['IsLiked'] =mysqli_num_rows($conn->query("SELECT ID FROM `likes` WHERE Post_ID=".$row['ID']." AND User_ID =".$user))>0;

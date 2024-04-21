@@ -68,7 +68,7 @@
 			<p><span  class="feliratok label">Email cim:</span>
 			<span id="email" class="feliratok">Aző ímél cím</span></p>
 
-			<button>Fiok torlese</button>
+			<button onclick="deleteUser()">Fiok torlese</button>
 			<a href="logout.php" style="color:cyan" id="logout">Kijelentkezés</a>
 		</div>
 		<div class="Raktar">	
