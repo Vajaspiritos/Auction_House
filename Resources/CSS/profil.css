@@ -72,7 +72,7 @@ body
     float: right;
 	font-size: 2.5vw;
 	color: cyan;
-    margin-right: 5%;
+    display: inline-block;
 }
 
 #logout:hover
@@ -106,7 +106,7 @@ font-weight: bold;
 	width: 20.5%;
 	float: right;
 }
-#browse {width: fit-content; font-size: 2vw; margin-left: 5vw;}
+#browse {width: fit-content; font-size: 2vw; margin-left: 5vw; color: white;}
 #upload 
 {
     margin-left: 5vw;
@@ -174,8 +174,7 @@ float: none;
 }
 
 
-#adatok button, #logout {font-size: 5vh;margin-left: 4vw;}
-#adatok button {margin-right: 10vw;}
+#adatok button, #logout {font-size: 8vw;}
 body{overflow-x:hidden; }
 
 .label {
@@ -204,7 +203,7 @@ body{overflow-x:hidden; }
 
 .Raktar {
     width: 50%;
-    margin-left: 10vh;
+    margin-left: 10vw;
     border: none;
     margin-top: 10vh;
 
