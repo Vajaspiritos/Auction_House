@@ -17,7 +17,6 @@ body
 #PP{
   height: 20vw;
   width: 20vw;
-  margin-left: 5vh;
     border-radius: 5vh;
     border: 2px solid rgb(255, 255, 255,0.6);
     border-top-width: 3px;
@@ -25,8 +24,6 @@ body
     background-color: rgb(255,255,255,0.1);
     margin-bottom: 2vw;
 }
-
-
 
 .inline 
 {
@@ -46,12 +43,13 @@ body
 #adatok {
     background-color: rgb(210,210,210,0.5);
     width: 40vw;
+    float: right;
     padding: 0px 2vw;
     color: white;
     border: 2px solid rgb(201, 201, 201,0.2);
     text-align: left;
-    position: relative;
-    top: -5vw;
+    position: absolute;
+    right: 6vw;
 }
 
 #adatok button 
@@ -89,6 +87,7 @@ font-weight: bold;
     max-height: 32vw;
 	border: 1px solid white;
 	width: 75%;
+    margin-left: 12%;
 	overflow: auto;
 }
 
@@ -107,19 +106,19 @@ font-weight: bold;
 	width: 20.5%;
 	float: right;
 }
-#upload,#browse 
+#browse {width: fit-content; font-size: 2vw; margin-left: 5vw;}
+#upload 
 {
-    font-size: 3vh;
+    margin-left: 5vw;
+    width: fit-content;
+    font-size: 2vw;
 	float: left;
 }
-#browse 
-{
-    font-size: 2.5vh;
-}
+
 
 .feliratok
 {
-	font-size: 4vw;
+	font-size: 3vw;
     margin-left: 0.5vw;
 }
 
@@ -132,6 +131,7 @@ font-weight: bold;
 @media screen and (max-width: 995px) 
 {
     .menusor-spacer {height: 10vh;}
+    #adatok {float: right;}
 }
 @media screen and (max-width: 600px) 
 {
@@ -165,8 +165,12 @@ float: none;
 }
 
 #adatok {
-    width: 100vw;
-    margin-left: -2vw;
+    position: relative;
+    right: 0;
+    width: 65%;
+   display: block;
+    float: none;
+
 }
 
 
@@ -193,7 +197,10 @@ body{overflow-x:hidden; }
 
 }
 
-
+#PP 
+{
+ margin-left: 10vw;   
+}
 
 .Raktar {
     width: 50%;
@@ -203,16 +210,27 @@ body{overflow-x:hidden; }
 
 }
 
-
+#upload 
+{
+    width: 100%;
+    margin-left: 0;
+    left: 0;
+    font-size: 5vw;
+ 
+}
 #browse {
-    width: 116vw;
+    margin-left: 10vw;
+   width: fit-content;
+   color: white;
+    display: block;
+    font-size: 5vw;
 }
 
 .Nagydoboz{
 	width:152vw;
 	
 }
-
+#logout {margin-right: 15vw;}
 #veglegesit {background-color: rgb(120,120,120,0.5)}
 }
 

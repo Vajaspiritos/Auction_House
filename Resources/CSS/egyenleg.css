@@ -119,10 +119,11 @@ content: " ";
 	max-height: 40vw;
 	border: 3px solid white;
 	float: right;
-		overflow: auto;
-		text-align: center;
-		margin-right: 3em;
-		margin-top: 4.2vw;
+	overflow: auto;
+	display: inline-block;
+	text-align: center;
+	margin-right: 3vh;
+	margin-top: 4.2vw;
 }
 
 .tier-img-container 
@@ -179,13 +180,12 @@ content: " ";
 }
 
 
-@media screen and (max-width: 1020px) 
+@media screen and (max-width: 800px) 
 {
 
 .menusor-spacer 
 {
-	max-height: 50vh;
-	height: 40vh;
+	height: 10vh;
 }
 
 
@@ -197,7 +197,7 @@ content: " ";
 
 #egyenleg-div
 {
-	margin-top: -17vw;
+	margin-top: none;
 }
 #munka-container 
 {
@@ -211,7 +211,7 @@ content: " ";
 		scale: 150% 150%;
 		margin-left: 26vw;
 		margin-top: 30vw;
-		max-height: 40vw;
+		margin-bottom: 15vh;
 		overflow: visible;
 }
 
@@ -219,7 +219,6 @@ content: " ";
 {
 	
 	left: 0vw;
-	margin-top: -3em;
 	margin-left: 13vw;
 	overflow: visible;
 }
@@ -227,13 +226,13 @@ content: " ";
 #timig-container 
 {
 	width: fit-content;
-	height: 58vh;
 	overflow: auto;
 }
 
 .tier-img-container img
 {
-	max-height: 10vw;
+	max-height: none;
+	height: 10vw;
 
 }
 
