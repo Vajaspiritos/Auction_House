@@ -71,7 +71,6 @@
 			<button>Fiok torlese</button>
 			<a href="logout.php" style="color:cyan" id="logout">Kijelentkezés</a>
 		</div>
-		<div id="History" class="inline"><span>Histroy</span></div>
 		<div class="Raktar">	
 		<iframe src="Inventory.php" title="Raktár"></iframe>
 		</div>
