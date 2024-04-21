@@ -23,6 +23,7 @@ function replace(mode){
 
 		iframe.src = mode?"own_inventory.php":"auto_inventory.php";
 		iframe.style.visibility="visible";
+		iframe.parentElement.style.display="flex";
 		
 	let tomb =document.getElementsByClassName("aukcio")
 		
