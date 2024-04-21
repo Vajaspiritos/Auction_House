@@ -108,11 +108,11 @@ margin-bottom: 3%;
 
 width: 13em;
 height: 2em;
-font-size: 0.8em;
+font-size: 2vh;
 margin-right: 10px;
 margin-bottom: 0px;
 margin-top: 0px;
-padding: 2vh;
+padding: 1vh 2vh;
 background-color: white;
 transition: 0.3s;
 }
