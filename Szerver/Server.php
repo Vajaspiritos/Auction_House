@@ -23,7 +23,7 @@ echo "Starting server...\n";
 
 $SERVER = socket_create(AF_INET,SOCK_STREAM,SOL_TCP) or die("Server couldn't be created\n");
 
-socket_set_option($SERVER, SOL_SOCKET, SO_REUSEADDR, 1) or die("Server couldn't set option\n"); //Ez arra kell, hogy ha cask úgy bezáom pl a szervert, akkor a rendszer hajlandó legyen újra használni a porott, úgy is hogy már használva van. (azért hiszi hogy még használva van mert nem volt rendesen lezárva)
+socket_set_option($SERVER, SOL_SOCKET, SO_REUSEADDR, 1) or die("Server couldn't set option\n"); //Ez arra kell, hogy ha cask úgy bezárom pl a szervert, akkor a rendszer hajlandó legyen újra használni a portot, úgy is hogy már használva van. (azért hiszi hogy még használva van mert nem volt rendesen lezárva)
 socket_bind($SERVER, $address, $port) or die("Server couldn't bind to address or port\n"); 
 socket_listen($SERVER) or die("Server is deaf\n"); //mert hogy can'T listen
 socket_set_nonblock($SERVER);
